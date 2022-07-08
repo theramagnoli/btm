@@ -1,0 +1,82 @@
+{
+  "desc": "We offer you extraordinary experiences for your adventutes in Mexico as our hundreds of reviews on TripAdvisor testify the quality and fun of all our tours.#Enjoy a day full of fun, adventure, history, delicious food and unforgetable memories. We will take you to the most beautiful Cenotes, impressive Mayan Archeological sites or idyllic places such as the Biosphere of Sian kan. We suggest some ideas for your activities but you can also customize your own experience.#Join us, we love our country and we have a passion for it and we would love to share all of our knowledge and experience with you.#We have been awarded with the 2018 & 2019 CERTIFICATE of EXCELLENCE and a 2020 TRAVELERS' CHOICE certificate by Tripadvisor.",
+  "list": [
+    "Immersion in the local culture",
+    "An inspiring and rewarding travel experience",
+    "Private tour guide",
+    "All entrance fees",
+    "Snacks and drinks",
+    "Delicious lunch",
+    "Snorkeling equipment",
+    "Travel comfortably in an air-conditioned van",
+    "Everything included in one price whithout surprises"
+  ],
+  "reviews": {
+    "1": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Famazing-homemade-mayan.jpg?alt=media&token=07046b50-9c35-46fc-8ab8-3c1480e02d87",
+      "titulo": "Unique Mexican Adventure"
+    },
+    "2": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fcasa-cenote.jpg?alt=media&token=76de55d6-21eb-43a6-b54b-d020c499763a",
+      "titulo": "Unforgettable"
+    },
+    "3": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2F1607536103.jpg?alt=media",
+      "titulo": "Literally Perfect"
+    },
+    "4": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fphoto2jpg.jpg?alt=media&token=774db287-a2b5-4aa0-887e-7f2a205b4beb",
+      "titulo": "Memory to last a lifetime!"
+    },
+    "5": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fpallen%20(1).png?alt=media",
+      "titulo": "BEYOND WORDS"
+    },
+    "6": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fsnorkeling%20(4).png?alt=media",
+      "titulo": "Magical day!"
+    },
+    "7": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fboutique-tours-mexico.jpg?alt=media",
+      "titulo": "Stunning experience"
+    },
+    "8": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fmuyil%20(1).jpg?alt=media&token=0ecd24c2-a025-4de0-b01d-65a73225e6f5",
+      "titulo": "AMAZING! A true Mayan experience"
+    },
+    "9": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Four-tour-with-leo-fantastic.jpg?alt=media&token=3f7b375b-d120-4031-98b4-eedf3ba4e8d9",
+      "titulo": "Best tour guides ever!"
+    },
+    "10": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fphoto0jpg.jpg?alt=media&token=b6ebb472-3dff-4c03-9751-5b653e08ebd1",
+      "titulo": "A MUST DO EXPERIENCE!"
+    },
+    "11": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2F1628319029%20(3).png?alt=media",
+      "titulo": "Top-notch excursion!"
+    },
+    "12": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fexcursion-privada-a-chichen.jpg?alt=media&token=caeda504-e30c-4c90-bb16-5a05c2595356",
+      "titulo": "SHEEEEEESH"
+    }
+  },
+  "recommendations": {
+    "1": {
+      "title": "BTM IS SIMPLY WORLD CLASS. Bravo!",
+      "desc": "We have toured with guiding companies worldwide (literally) and Boutique Tours Mexico is second to none. Wonderful service from the day we jointly began planning our holidays - weeks in advance - with perfect execution on all four days we spent with Leo and Caleb; fantastic guides with whom we not only learned a lot of history and Mexican culture but had a lot of fun. VERY HIGHLY RECOMMENDED!",
+      "author": "Juan Vergara (TripAdvisor)"
+    },
+    "2": {
+      "title": "Wonderful, In-the-know Tour Company",
+      "desc": "Aside from the wonderful staff, what also sets this company apart is their ability to get off the main tourist path and really give you up-close opportunities to experience the amazing culture and wonders of Quintana Roo. Swimming in and exploring beautiful cenotes as well as sharing an amazing meal at a Mayan family's home, will remain highlights of our trip to the Mayan Riviera. If you're looking for 1st class adventures near Playa del Carmen, give the wonderful staff at Boutique Tours Mexico a call. They are the best!",
+      "author": "Brigid Dombrowski (TripAdvisor)"
+    }
+  },
+  "faq": [
+    {
+      "question": "What is your refund policy?",
+      "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
+    }
+  ]
+}
