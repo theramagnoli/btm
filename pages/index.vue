@@ -5,38 +5,42 @@
 
       <!-- slider -->
       <ul
-        class="w-full flex gap-x-6 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-md"
+        class="w-full flex gap-x-2 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-md"
         id="slider"
       >
         <li
           v-for="(review, i) in data.reviews"
           :key="i"
-          class="snap-center laptop:last:snap-end laptop:first:snap-start first:ml-20 laptop:first:ml-0 last:mr-20 laptop:last:mr-0"
+          class="snap-center laptop:last:snap-end laptop:first:snap-start"
         >
-          <div
-            class="relative overflow-hidden m-auto grayscale transition-all rounded-md"
-            :id="i"
-          >
+          <div class="relative overflow-hidden m-auto transition-all">
             <img
               :src="review.img"
               alt=""
               class="absolute inset-0 w-full h-full object-cover object-center"
+              v-show="imgLoaded[i]"
+              @load="imgLoaded[i] = true"
             />
             <div
-              class="absolute inset-0 h-full w-full bg-gradient-radial-to-tr from-gray-900"
-            ></div>
+              class="absolute inset-0 w-full h-full bg-gray-500 opacity-30 animate-pulse"
+              v-if="!imgLoaded[i]"
+            />
             <div
-              class="relative h-[250px] w-[250px] tablet:w-[444.4px] p-3 flex flex-col justify-between items-start"
+              class="absolute inset-0 h-full w-full bg-gradient-radial-to-t from-black via-transparent"
+              v-else
+            />
+            <div
+              class="relative h-[250px] w-[300px] tablet:w-[444.4px] p-2 flex flex-col justify-between items-center"
             >
               <span></span>
-              <div>
-                <div class="flex">
+              <div class="grid justify-center w-full">
+                <div class="flex justify-center">
                   <svg
                     v-for="n in 5"
                     :num-labels="5"
                     :key="n"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-yellow-500"
+                    class="h-5 w-5 text-yellow-600 drop-shadow-md"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -47,7 +51,11 @@
                     />
                   </svg>
                 </div>
-                <h3 class="leading-tight mt-1">"{{ review.titulo }}"</h3>
+                <h3
+                  class="leading-tight mt-1 text-gray-200 text-center drop-shadow-md"
+                >
+                  "{{ review.titulo }}"
+                </h3>
               </div>
             </div>
           </div>
@@ -57,11 +65,11 @@
       <div class="relative -top-[139px] hidden laptop:flex justify-between">
         <button
           @click="scrollback()"
-          class="bg-gray-200/70 dark:bg-gray-800/80 rounded-r-full w-10 p-1 grid justify-end items-center"
+          class="w-10 grid justify-end items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+            class="h-7 w-7 p-1 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -76,11 +84,11 @@
         </button>
         <button
           @click="scrollnext()"
-          class="bg-gray-200/70 dark:bg-gray-800/80 rounded-l-full w-10 p-1 grid justify-start items-center"
+          class="w-10 grid justify-start items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+            class="h-7 w-7 p-1 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -132,33 +140,34 @@
       </div>
 
       <h1>Frequently asked questions</h1>
-      <details
-        class="pr-3 ml-5 group"
-        v-for="question of data.faq"
-        :key="question"
-      >
-        <summary class="flex items-center gap-x-4 transition-all group">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 transition-all group-open:rotate-90"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-
-          <p class="">{{ question.question }}</p>
-        </summary>
-        <p class="p-3 mt-3">
-          {{ question.answer }}
-        </p>
-      </details>
+      <div class="grid gap-y-4">
+        <details
+          class="ml-5 group"
+          v-for="question of data.faq"
+          :key="question"
+        >
+          <summary class="flex items-center gap-x-4 transition-all group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 mb-1 transition-all group-open:rotate-90"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            <p class="">{{ question.question }}</p>
+          </summary>
+          <p class="p-3 pl-0">
+            {{ question.answer }}
+          </p>
+        </details>
+      </div>
     </div>
   </div>
 </template>
@@ -177,9 +186,9 @@ export default {
   name: "Home",
   data() {
     return {
-      inFocus: 1,
       play: true,
       playing: null,
+      imgLoaded: [],
     };
   },
   methods: {
@@ -189,6 +198,7 @@ export default {
       if (scroll > width) {
         document.getElementById("slider").scrollLeft = 0;
       }
+      this.reestartInvertal();
     },
     scrollback() {
       const scroll = (document.getElementById("slider").scrollLeft -= 444);
@@ -196,6 +206,11 @@ export default {
         document.getElementById("slider").scrollLeft =
           444 * Object.keys(this.data.reviews).length;
       }
+      this.reestartInvertal();
+    },
+    reestartInvertal() {
+      clearInterval(this.playing);
+      this.autoplay();
     },
     autoplay() {
       this.playing = setInterval(() => {
@@ -207,40 +222,14 @@ export default {
         }
       }, 4200);
     },
-    onScroll() {
-      let sliderLeft = document.getElementById("slider").scrollLeft;
-      this.inFocus =
-        Math.round(
-          window.matchMedia("(min-width: 500px)").matches
-            ? sliderLeft / 444
-            : sliderLeft / 274
-        ) + 1;
-    },
   },
   mounted() {
-    setTimeout(() => {
-      document.getElementById("1").classList.remove("grayscale");
-      document
-        .getElementById("slider")
-        .addEventListener("scroll", this.onScroll, true);
-    }, 50);
-
     this.autoplay();
   },
   unmounted() {
-    document
-      .getElementById("slider")
-      .removeEventListener("scroll", this.onScroll, true);
     clearInterval(this.playing);
   },
   beforeUnmount() {},
-  watch: {
-    inFocus(a, de) {
-      const properties = "grayscale";
-      document.getElementById(de).classList.add(properties);
-      document.getElementById(a).classList.remove(properties);
-    },
-  },
 };
 </script>
 

@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <nuxt-link
           to="/tours"
-          class="hover:-translate-x-1 transition-transform mt-3 ml-5 mr-2"
+          class="hover:-translate-x-1 transition-transform mt-1 ml-5 mr-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,14 +24,14 @@
         <h1 class="text-left">{{ tour.titulo }} Tour</h1>
       </div>
 
-      <!-- skeleton slider loader -->
+      <!-- slider -->
       <ul
         class="w-full flex gap-x-2 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-md"
         id="slider"
       >
         <li
-          v-for="img in tour.imgs"
-          :key="img"
+          v-for="(img, i) of tour.imgs"
+          :key="i"
           class="snap-center laptop:snap-start"
         >
           <div
@@ -48,7 +48,18 @@
               <img
                 :src="img.src"
                 :alt="img.alt"
-                class="h-full rounded-md first:rounded-l-none last:rounded-r-none"
+                class="h-full"
+                @load="imgLoaded[i] = true"
+                v-show="imgLoaded[i]"
+              />
+              <div
+                class="bg-gray-500 opacity-30 animate-pulse"
+                :class="
+                  img.ar == '4:3'
+                    ? 'h-[250px] w-[333.3px]'
+                    : 'h-[250px] w-[188px]'
+                "
+                v-if="!imgLoaded[i]"
               />
             </div>
           </div>
@@ -122,6 +133,11 @@ useHead({
 
 <script>
 export default {
+  data() {
+    return {
+      imgLoaded: [],
+    };
+  },
   methods: {
     scrollnext() {
       let width = document.getElementById("slider").scrollWidth - 200;
@@ -136,6 +152,11 @@ export default {
         document.getElementById("slider").scrollLeft =
           444 * this.tour.imgs.length;
       }
+    },
+  },
+  watch: {
+    imgLoaded(de, a) {
+      console.log(de, a);
     },
   },
 };

@@ -75,6 +75,14 @@
   },
   "faq": [
     {
+      "question": "Can I pay with PayPal?",
+      "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
+    },
+    {
+      "question": "How much does the tour lasts?",
+      "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
+    },
+    {
       "question": "What is your refund policy?",
       "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
     }

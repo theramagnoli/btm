@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="fixed w-full z-50 bg-gray-200/70 dark:bg-black/70 text-gray-900 dark:text-gray-200 drop-shadow-xl transition-all backdrop-blur-md"
+      class="fixed w-full z-50 bg-gray-100/70 dark:bg-black/70 text-gray-900 dark:text-gray-200 shadow-lg dark:shadow-gray-800/50 transition-all backdrop-blur-md"
     >
       <div class="flex justify-between items-center max-w-[768px] m-auto px-5">
         <div class="flex">
@@ -12,7 +12,6 @@
               class="h-12 brightness-[.20] dark:brightness-100"
           /></nuxt-link>
         </div>
-
         <div
           class="justify-items-end gap-4 transition-colors flex items-center"
           id="menu"

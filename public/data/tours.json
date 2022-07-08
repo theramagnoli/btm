@@ -374,34 +374,5 @@
       }
     ],
     "id": "MayanAdventure"
-  },
-  "ScubaDiving": {
-    "titulo": "Scuba Diving",
-    "desc": "There are experiences that mark your life and definitely Scuba Diving in Cenotes is one of them. Make everlasting memories scuba diving in the pristine waters of these amazing underground river cenotes. Such as Dos Ojos, Tajmaha, Dreamgate or if you are just starting scuba diving Casa Cenote o Manatee is a great option for you. We have the best guide for this activity. Join us in this great adventure.",
-    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FScubaDiving%2Fscuba%20(4).jpg?alt=media",
-    "imgs": [
-      {
-        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FScubaDiving%2Fscuba%20(4).jpg?alt=media",
-        "alt": "Group exploring underground cave",
-        "ar": "4:3"
-      },
-      {
-        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FScubaDiving%2Fscuba%20(3).jpg?alt=media",
-        "alt": "Group in the surface of cenote, after diving",
-        "ar": "3:4"
-      },
-
-      {
-        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FScubaDiving%2Fscuba%20(1).jpg?alt=media",
-        "alt": "Group exploring underground river",
-        "ar": "4:3"
-      },
-      {
-        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FScubaDiving%2Fscuba%20(2).jpg?alt=media",
-        "alt": "Person diving in cenote",
-        "ar": "3:4"
-      }
-    ],
-    "id": "ScubaDiving"
   }
 }

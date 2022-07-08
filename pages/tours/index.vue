@@ -2,10 +2,10 @@
   <div class="c-div">
     <h1>Explore our tour catalogue</h1>
     <!-- tour catalogue -->
-    <div class="grid tablet:grid-cols-2 gap-4 p-3">
+    <div class="grid tablet:grid-cols-2 gap-4 p-4 pb-0">
       <nuxt-link
         :to="'/tours/' + tour.id"
-        v-for="tour of tours"
+        v-for="(tour, i) of tours"
         :key="tour"
         class="h-[200px] grid group"
       >
@@ -13,6 +13,12 @@
           <img
             :src="tour.portada"
             class="inset-0 w-full h-[150px] object-cover group-hover:scale-110 transition-all object-center"
+            @load="imgLoaded[i] = true"
+            v-show="imgLoaded[i]"
+          />
+          <div
+            class="inset-0 w-full h-[150px] bg-gray-500 opacity-30 animate-pulse"
+            v-if="!imgLoaded[i]"
           />
         </div>
 
@@ -77,4 +83,14 @@ useHead({
   charset: "utf-8",
   meta: [{ name: "description", content: "Discover our tour catalogue" }],
 });
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      imgLoaded: [],
+    };
+  },
+};
 </script>
