@@ -2,7 +2,7 @@
   <div class="c-div">
     <h1>Explore our tour catalogue</h1>
     <!-- tour catalogue -->
-    <div class="grid tablet:grid-cols-2 gap-4 p-4 pb-0">
+    <div class="grid tablet:grid-cols-2 gap-5 mx-5 laptop:mx-0 pb-0">
       <nuxt-link
         :to="'/tours/' + tour.id"
         v-for="(tour, i) of tours"
@@ -12,12 +12,12 @@
         <div class="relative w-full h-full overflow-hidden rounded-t-md">
           <img
             :src="tour.portada"
-            class="inset-0 w-full h-[150px] object-cover group-hover:scale-110 transition-all object-center"
+            class="inset-0 w-full h-[150px] object-cover group-hover:scale-110 transition-all delay-100 object-center"
             @load="imgLoaded[i] = true"
             v-show="imgLoaded[i]"
           />
           <div
-            class="inset-0 w-full h-[150px] bg-gray-500 opacity-30 animate-pulse"
+            class="inset-0 w-full h-[150px] bg-gray-500 opacity-30 animate-pulse rounded-t-md"
             v-if="!imgLoaded[i]"
           />
         </div>
@@ -43,19 +43,17 @@
               ? 'bg-slate-500 dark:bg-slate-700'
               : tour.id === 'MayanAdventure'
               ? 'bg-green-600 dark:bg-green-800'
-              : tour.id === 'ScubaDiving'
-              ? 'bg-black'
               : 'bg-emerald-600 dark:bg-emerald-800'
           "
         >
           <h2
-            class="italic text-xl w-full group-hover:translate-x-2 transition-all"
+            class="italic text-xl w-full group-hover:translate-x-2 transition-all delay-100"
           >
             {{ tour.titulo }}
           </h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-gray-200 transition-all laptop:opacity-0 laptop:group-hover:opacity-100 mr-2"
+            class="h-5 w-5 text-gray-200 transition-all laptop:opacity-0 laptop:group-hover:opacity-100 mr-2 delay-100"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

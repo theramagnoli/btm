@@ -1,13 +1,19 @@
 <template>
-  <div class="laptop:mx-auto max-w-3xl">
+  <div class="tablet:mx-auto max-w-3xl">
     <div
-      class="transition-all text-gray-900 dark:text-gray-200 mt-6 py-5 grif gap-2 mx-5"
+      class="transition-all text-gray-800 dark:text-gray-300 grif gap-2 mt-8 mx-5 laptop:mx-0 tablet:pb-8 pb-[70px]"
       id="footer"
     >
-      <div class="h-[3px] bg-gray-900 dark:bg-gray-200 w-48 m-auto mb-6"></div>
-      <div class="grid-cols-3 grid items-center">
-        <div class="grid items-center col-span-2 space-y-2 pl-2 py-2">
-          <h2 class="text-gray-900 dark:text-gray-50 font-semibold text-xl">
+      <div
+        class="h-[2px] bg-gray-800 dark:bg-gray-300 mb-6 rounded-full mx-5"
+      />
+      <div
+        class="laptop:grid-cols-4 grid-cols-10 grid justify-between items-center tablet:items-start"
+      >
+        <div
+          class="grid items-center col-span-8 tablet:col-span-6 laptop:col-span-3 space-y-2"
+        >
+          <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-300">
             Get in touch with us
           </h2>
           <div class="flex items-center">
@@ -39,31 +45,36 @@
             sergeitravel22@gmail.com
           </div>
         </div>
-        <div class="grid justify-self-end w-auto">
-          <div
-            class="grid tablet:flex w-full justify-items-center items-center justify-center"
-          >
-            <a
-              href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
-              target="_blank"
-              ><img
-                src="/static/tripadvisor.svg"
-                alt="tripadvisor"
-                class="w-12 h-12 dark:invert hover:scale-105 transition-transform"
-            /></a>
+        <div
+          class="grid justify-self-end col-span-2 tablet:col-span-4 laptop:col-auto"
+        >
+          <div class="grid tablet:flex gap-2">
             <a
               href="https://www.instagram.com/boutiquetoursmexico/"
               target="_blank"
+              class="border-2 border-gray-300 rounded-xl justify-center grid aspect-square items-center group bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
               ><img
                 src="/static/insta.svg"
                 alt="instagram"
-                class="w-12 h-12 dark:invert hover:scale-105 transition-transform"
+                class="w-10 h-10 pl-2 pb-2 p-1 aspect-square invert group-hover:scale-110 transition-transform"
             /></a>
-            <a href="https://www.facebook.com/BoutiqueTM/" target="_blank"
+            <a
+              href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
+              target="_blank"
+              class="border-2 border-gray-300 rounded-xl justify-center grid aspect-square items-center group bg-green-700"
+              ><img
+                src="/static/tripadvisor.svg"
+                alt="tripadvisor"
+                class="w-10 h-10 p-1 aspect-square invert group-hover:scale-110 transition-transform"
+            /></a>
+            <a
+              href="https://www.facebook.com/BoutiqueTM/"
+              target="_blank"
+              class="border-2 border-gray-300 rounded-xl justify-center grid aspect-square items-baseline group bg-blue-700"
               ><img
                 src="/static/fb.svg"
                 alt="facebook"
-                class="w-12 h-12 dark:invert hover:scale-105 transition-transform"
+                class="w-10 h-10 p-1 aspect-square invert group-hover:scale-110 transition-transform"
             /></a>
           </div>
         </div>

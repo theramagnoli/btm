@@ -105,9 +105,30 @@
           </svg>
         </button>
       </div>
-
+      <div class="grid tablet:justify-end laptop:-mt-2 mt-8 mx-5 laptop:mx-0">
+        <button
+          class="border-[2px] rounded-lg items-center justify-center p-1 pb-0 font-semibold transition-all flex border-gray-800 dark:border-gray-300 px-2"
+          @click="toFareharborItem(tour.book)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 mr-2 mb-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+            />
+          </svg>
+          Book the {{ tour.titulo }} tour
+        </button>
+      </div>
       <!-- description -->
-      <div class="p-div text-left laptop:-mt-2">
+      <div class="p-div text-left">
         <p v-for="parrafo of tour.desc" :key="parrafo">{{ parrafo }}</p>
       </div>
     </div>
@@ -115,20 +136,24 @@
 </template>
 
 <script setup>
-let tourID = useRoute().params.id;
+let id = useRoute().params.id;
 let { data: tour } = await useAsyncData("tour", () =>
   $fetch("/data/tours.json")
 );
-tour = tour.value[tourID];
-if (typeof tour.desc === "string" || tour.desc instanceof String) {
-  tour.desc = tour.desc.split("#");
+tour = tour.value[id];
+if (tour == undefined) {
+  useRouter().push({ path: "/404" });
+} else {
+  if (typeof tour.desc === "string" || tour.desc instanceof String) {
+    tour.desc = tour.desc.split("#");
+  }
+  useHead({
+    title: `${tour.titulo} Tour • Boutique Tours Mexico`,
+    viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+    charset: "utf-8",
+    meta: [{ name: "description", content: tour.desc[0] }],
+  });
 }
-useHead({
-  title: `${tour.titulo} Tour • Boutique Tours Mexico`,
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-  charset: "utf-8",
-  meta: [{ name: "description", content: tour.desc[0] }],
-});
 </script>
 
 <script>
@@ -153,10 +178,12 @@ export default {
           444 * this.tour.imgs.length;
       }
     },
-  },
-  watch: {
-    imgLoaded(de, a) {
-      console.log(de, a);
+    toFareharborItem(itemNo) {
+      return !FH.open({
+        shortname: "boutiquetoursmexico",
+        flow: 278797,
+        view: { item: itemNo },
+      });
     },
   },
 };

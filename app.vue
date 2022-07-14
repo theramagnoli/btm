@@ -4,8 +4,7 @@
       <navigation-comp @changeMode="changeMode" />
       <NuxtPage class="pt-20" />
       <footer-comp />
-      <!-- hermoso div, NO BORRAR -->
-      <div class="h-1"></div>
+      <booking-button />
     </div>
   </div>
 </template>
@@ -25,16 +24,25 @@ export default {
       },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content:
+          "tours, tour, private tours, vacation, tour mexico, cancun, tulum",
+      },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/static/favicon.svg" }],
+    script: [{ src: "https://fareharbor.com/embeds/api/v1/" }],
   },
   watch: {
     $route() {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+      setTimeout(() => {
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }, 200);
     },
     darkMode(a) {
       if (a == true) {

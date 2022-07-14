@@ -13,52 +13,69 @@
   ],
   "reviews": {
     "1": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Famazing-homemade-mayan.jpg?alt=media&token=07046b50-9c35-46fc-8ab8-3c1480e02d87",
-      "titulo": "Unique Mexican Adventure"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FGroupCasaCenote.jpg?alt=media",
+      "titulo": "Unique Mexican Adventure",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r837354001-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "2": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fcasa-cenote.jpg?alt=media&token=76de55d6-21eb-43a6-b54b-d020c499763a",
-      "titulo": "Unforgettable"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCoupleChichenitza.jpg?alt=media",
+      "titulo": "Unforgettable",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r832629666-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "3": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2F1607536103.jpg?alt=media",
-      "titulo": "Literally Perfect"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FExploringCenote.jpg?alt=media",
+      "titulo": "And that my fiends is what you call EXPERIENCE!",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r469173877-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "4": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fphoto2jpg.jpg?alt=media&token=774db287-a2b5-4aa0-887e-7f2a205b4beb",
-      "titulo": "Memory to last a lifetime!"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FPuntaAllen.png?alt=media",
+      "titulo": "Literally Perfect",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r783300881-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "5": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fpallen%20(1).png?alt=media",
-      "titulo": "BEYOND WORDS"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FMayanAdventure.jpg?alt=media",
+      "titulo": "Memory to last a lifetime!",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r831137004-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "6": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fsnorkeling%20(4).png?alt=media",
-      "titulo": "Magical day!"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCenote.png?alt=media",
+      "titulo": "Stunning experience",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r793633058-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "7": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fboutique-tours-mexico.jpg?alt=media",
-      "titulo": "Stunning experience"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FSianKaan.jpg?alt=media",
+      "titulo": "BEYOND WORDS",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r774664694-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "8": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fmuyil%20(1).jpg?alt=media&token=0ecd24c2-a025-4de0-b01d-65a73225e6f5",
-      "titulo": "AMAZING! A true Mayan experience"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FGuideInHammock.png?alt=media",
+      "titulo": "Couldn't ask for anything better! #1",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r539528968-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "9": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Four-tour-with-leo-fantastic.jpg?alt=media&token=3f7b375b-d120-4031-98b4-eedf3ba4e8d9",
-      "titulo": "Best tour guides ever!"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCovidTimesAtCoba.jpg?alt=media",
+      "titulo": "AMAZING! A true Mayan experience",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r751247919-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "10": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fphoto0jpg.jpg?alt=media&token=b6ebb472-3dff-4c03-9751-5b653e08ebd1",
-      "titulo": "A MUST DO EXPERIENCE!"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCasaCenote.jpg?alt=media",
+      "titulo": "Best tour guides ever!",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r811928487-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "11": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2F1628319029%20(3).png?alt=media",
-      "titulo": "Top-notch excursion!"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FLazyRiver.jpg?alt=media",
+      "titulo": "Perfect. Amazing. Awesome.",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r508779463-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "12": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2Fexcursion-privada-a-chichen.jpg?alt=media&token=caeda504-e30c-4c90-bb16-5a05c2595356",
-      "titulo": "SHEEEEEESH"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FInCoba.jpg?alt=media",
+      "titulo": "A MUST DO EXPERIENCE!",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r802519751-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
+    },
+    "13": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FGroupChichenitza.jpg?alt=media",
+      "titulo": "SHEEEEEESH",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r821307218-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     }
   },
   "recommendations": {
@@ -75,16 +92,12 @@
   },
   "faq": [
     {
-      "question": "Can I pay with PayPal?",
-      "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
-    },
-    {
       "question": "How much does the tour lasts?",
-      "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
+      "answer": "An average tour lasts about 6 to 8 hours, but remember: they are highly customizable, so we can adapt to your needs and/or preferences."
     },
     {
       "question": "What is your refund policy?",
-      "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laborum, recusandae minus earum perferendis cupiditate corporis sed magni porro ipsam fuga et perspiciatis fugiat accusamus in voluptatibus vero, enim aperiam."
+      "answer": "If you cancel with 48 hours of anticipation, you get a full refund. If you cancel with 24 hours of anticipation, you get 50% of refund. If you cancel with less than 24 hour of anticipacion, you don't get a refund."
     }
   ]
 }
