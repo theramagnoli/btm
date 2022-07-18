@@ -2,7 +2,8 @@
   <div id="colorMode">
     <div class="s-div">
       <navigation-comp @changeMode="changeMode" />
-      <NuxtPage class="pt-20" />
+      <div class="h-20"></div>
+      <NuxtPage />
       <footer-comp />
       <booking-button />
     </div>
@@ -13,7 +14,7 @@
 import "./assets/css/tailwind.css";
 export default {
   head: {
-    title: "Boutique Tours Mexico • Premiere Archeology & History Tours",
+    title: "Boutique Tours Mexico | Premiere Archeology & History Tours",
     meta: [
       { charset: "utf-8" },
       {

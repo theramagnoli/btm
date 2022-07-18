@@ -3,7 +3,7 @@
     <h1>Enjoy an amazing experience, not a tour</h1>
     <!-- slider -->
     <ul
-      class="w-full flex gap-x-2 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-md"
+      class="w-full flex gap-x-2 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-lg"
       id="slider"
     >
       <li
@@ -64,7 +64,7 @@
       <button @click="scrollback()" class="w-10 grid justify-end items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7 p-1 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+          class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -83,7 +83,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7 p-1 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+          class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-all text-gray-800 dark:text-gray-300 dark:bg-black bg-gray-100"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -100,7 +100,11 @@
 
     <div>
       <div class="p-div laptop:-mt-2">
-        <p v-for="p of data.desc" :key="p" class="last:font-semibold">
+        <p
+          v-for="p of data.desc"
+          :key="p"
+          class="last:font-semibold laptop:px-5"
+        >
           {{ p }}
         </p>
       </div>
@@ -159,7 +163,9 @@
           <p class="">{{ question.question }}</p>
         </summary>
         <div class="flex">
-          <p class="border-l-2 border-gray-500/50 ml-[6.5px] pl-3 py-3">
+          <p
+            class="border-l-2 border-gray-800 dark:border-gray-300 ml-[7px] pl-3 py-3"
+          >
             {{ question.answer }}
           </p>
         </div>

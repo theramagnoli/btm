@@ -2,7 +2,7 @@
   "ChichenItza": {
     "titulo": "Chichen Itzá",
     "desc": "Come to Chichenitza and visit the amazing Kukulcan pyramid right in the middle of this impressive archeological site in the state of Yucatán, Mexico.#It was recently discovered this pyramid was built above a huge Cenote (sinkhole) making the construction of this building a real feat.#You can not miss visiting and knowing the history of this marvelous Mayan Toltec city.  You will also visit other impressive buildings like the biggest prehispanic ball court in America,  the great Planetarium, the Venus Platform and many other temples.#Near Chichenitza, there are some wonderful refreshing Cenotes which are like an Oasis in the middle of this jungle, here you will be able to swim and snorkel and relax in the pristine waters of these natural swimming pools.#Finally we are going to visit the beautiful colonial town of Valladolid where you will get to know more of the real Mexico, visiting old churches, markets, etc. This is also a great place for shopping pretty handicrafts or delicious chocolate.",
-    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FChichenItzaWatson.jpg?alt=media",
+    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FChichenItzaPyramidAgain.jpg?alt=media",
     "imgs": [
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FChichenItzaAceves.jpg?alt=media",
@@ -25,6 +25,16 @@
         "ar": "3:4"
       },
       {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FChichenItzaPyramidAgain.jpg?alt=media",
+        "alt": "Chichen-Itzá Pryamid",
+        "ar": "4:3"
+      },
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FTheMarket.jpg?alt=media",
+        "alt": "The Market at Chichen Itzá",
+        "ar": "3:4"
+      },
+      {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FCenoteIkKil.jpg?alt=media",
         "alt": "Cenote Ik-Kil",
         "ar": "3:4"
@@ -43,6 +53,11 @@
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FIguanaWatson.jpg?alt=media",
         "alt": "Iguana at Chichen-Itzá by Marv Watson",
         "ar": "4:3"
+      },
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FValladolidChurchAgain.jpg?alt=media",
+        "alt": "Women in front of Valladolid church",
+        "ar": "3:4"
       },
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FBallGameAveces.jpg?alt=media",
@@ -311,11 +326,11 @@
   "SianKaan&PuntaAllen": {
     "titulo": "Sian Ka'an & Punta Allen",
     "desc": "If you love nature and enjoy watching wildlife this is the tour for you. Sian Ka'an means the place where heaven is born and it is a UNESCO World Heritage and a great place to visit.#You will start your adventure in Paso Lagartos where you will take a boat in the beautiful Ascension lagoon  where you can see different type of birds like sea eagles, frigates, jabiru storks, cormorant, pelicans and if you are lucky enough some manatees. Then you will head where the lagoon and the ocean meet, that is the place in which you will see many dolphins.#After this you will sail a little bit into the ocean to watch big sea turtles. Afterwards you will be taken to a section of the second longest reef in the world where you will do some great snorkeling watching all kind of beautiful fish and sea life. After this activity I will take you to a beautiful crystal clear shallow area of the sea just to relax and have some beers, sodas or water.#Finally you will be having a delicious lunch in Punta Allen town.",
-    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26PuntaAllen%2FGroupSeeingDolphins.jpg?alt=media",
+    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26PuntaAllen%2FDolphin.jpg?alt=media",
     "imgs": [
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26PuntaAllen%2FDolphin.jpg?alt=media",
-        "alt": "Dolphin jumping out of the water at Punta Allen",
+        "alt": "Dolphins at Punta Allen",
         "ar": "4:3"
       },
       {
@@ -326,6 +341,11 @@
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26PuntaAllen%2FGroupInPuntaAllen.png?alt=media",
         "alt": "Group at Punta Allen with one of our guides",
+        "ar": "4:3"
+      },
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26PuntaAllen%2FDolphinJumping.jpg?alt=media",
+        "alt": "Dolphin jumping out of the water at Punta Allen",
         "ar": "4:3"
       },
       {
@@ -350,8 +370,13 @@
   "SianKaan&Muyil": {
     "titulo": "Sian Ka'an & Muyil",
     "desc": "If you are looking for a great relaxing day, I invite you to go with me to this Amazing World Heritage site called Sian Ka’an (door to Heaven). Once we get there we are going to take a beautiful ride in a boat through two crystal clear turquoise lagoons.#Then we are going to swim and just let go in a breathtaking lazy river for about 30 or 40 minutes, this experience is so relaxing only floating while watching birds, mangroves, trees, total contact with nature.#On the way back we can visit the wonderful small Mayan city of Muyil if you want to learn about Mayan culture. And finally, a delicious ceviche in Tulum.",
-    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FCoupleAtLazyRiver.jpg?alt=media",
+    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FSianKaanAtAfternoon.jpg?alt=media",
     "imgs": [
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FSianKaanAtAfternoon.jpg?alt=media",
+        "alt": "Sian Kaan at afternoon",
+        "ar": "4:3"
+      },
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FLazyRiver.jpg?alt=media",
         "alt": "Mother a daughter in the lazy river",
@@ -366,6 +391,11 @@
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FCoupleAtLazyRiver.jpg?alt=media",
         "alt": "Couple in the lazy river",
         "ar": "3:4"
+      },
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FSiaanKaanGuideInBoat.jpg?alt=media",
+        "alt": "Guide in boat at Sian Kaan",
+        "ar": "4:3"
       },
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26Muyil%2FFamilyInBoat.jpg?alt=media",
@@ -428,8 +458,13 @@
   "MayanAdventure": {
     "titulo": "Mayan Adventure",
     "desc": "If you want to spend a full day. of fun and adventure doing zip- linning, rappelling, rock-climbing, hiking and swimming in a breathtaking underground river.#I invite you to explore the Mayan jungle with me and do all these activities. You will also enjoy a delicious Mayan lunch in this park. ",
-    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FCrazyGuide.jpg?alt=media",
+    "portada": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FRidingATVS.jpg?alt=media",
     "imgs": [
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FRidingATVS.jpg?alt=media",
+        "alt": "Guide rinding ATV",
+        "ar": "4:3"
+      },
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FCrazyGuide.jpg?alt=media",
         "alt": "One of our guides going upside down in a zipline",
@@ -440,10 +475,11 @@
         "alt": "Group about to do rappel with one of our guides",
         "ar": "4:3"
       },
+
       {
-        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FGuyInZipLine.png?alt=media",
-        "alt": "Man in zip line",
-        "ar": "4:3"
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FGoinfDownTheZipLine.jpg?alt=media",
+        "alt": "Someone going down zip line",
+        "ar": "3:4"
       },
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FGroupZinLine.jpg?alt=media",
@@ -453,6 +489,11 @@
       {
         "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FGroupInAdventure.jpg?alt=media",
         "alt": "Family with one of our guides",
+        "ar": "4:3"
+      },
+      {
+        "src": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FGuyInZipLine.png?alt=media",
+        "alt": "Man in zip line",
         "ar": "4:3"
       }
     ],

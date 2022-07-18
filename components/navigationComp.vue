@@ -3,7 +3,9 @@
     <div
       class="fixed w-full z-50 bg-gray-100/70 dark:bg-black/70 text-gray-900 dark:text-gray-200 shadow-lg dark:shadow-gray-800/50 transition-all backdrop-blur-md"
     >
-      <div class="flex justify-between items-center max-w-[768px] m-auto px-5">
+      <div
+        class="flex justify-between items-center max-w-[768px] m-auto px-5 laptop:px-0"
+      >
         <div class="flex">
           <nuxt-link to="/"
             ><img

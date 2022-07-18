@@ -17,12 +17,12 @@
 
 h1 {
   font-family: var(--display-font);
-  @apply text-center text-2xl pb-5 pt-8 px-5 font-bold uppercase tracking-wider transition-all text-gray-800 dark:text-gray-300;
+  @apply text-center text-2xl pb-5 pt-8 px-5 font-bold uppercase tracking-wider transition-all text-stone-900 dark:text-gray-200;
 }
 
 h2 {
   font-family: var(--display-font);
-  @apply w-3/4 text-2xl text-gray-200 tracking-wider;
+  @apply w-3/4 text-2xl text-gray-100 tracking-wider;
 }
 
 h3 {
@@ -35,7 +35,7 @@ p {
 }
 
 .p-div {
-  @apply space-y-4 text-center mt-7 px-5;
+  @apply space-y-4 text-center mt-7 px-5 laptop:px-0;
 }
 
 .s-div {
@@ -43,7 +43,7 @@ p {
 }
 
 .c-div {
-  @apply m-auto text-gray-800 grid laptop:max-w-3xl dark:text-gray-300;
+  @apply m-auto text-stone-900 grid laptop:max-w-3xl dark:text-gray-200;
 }
 
 #slider::-webkit-scrollbar {

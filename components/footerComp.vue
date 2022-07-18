@@ -1,19 +1,17 @@
 <template>
   <div class="tablet:mx-auto max-w-3xl">
     <div
-      class="transition-all text-gray-800 dark:text-gray-300 grif gap-2 mt-8 mx-5 laptop:mx-0 tablet:pb-8 pb-[70px]"
+      class="transition-all text-stone-900 dark:text-gray-200 grif gap-2 mt-8 mx-5 laptop:mx-0 tablet:pb-8 pb-[75px]"
       id="footer"
     >
-      <div
-        class="h-[2px] bg-gray-800 dark:bg-gray-300 mb-6 rounded-full mx-5"
-      />
+      <div class="h-[2px] bg-stone-900 dark:bg-gray-200 mb-6 mx-5" />
       <div
         class="laptop:grid-cols-4 grid-cols-10 grid justify-between items-center tablet:items-start"
       >
         <div
           class="grid items-center col-span-8 tablet:col-span-6 laptop:col-span-3 space-y-2"
         >
-          <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-300">
+          <h2 class="font-semibold text-xl text-stone-900 dark:text-gray-200">
             Get in touch with us
           </h2>
           <div class="flex items-center">
@@ -52,7 +50,7 @@
             <a
               href="https://www.instagram.com/boutiquetoursmexico/"
               target="_blank"
-              class="border-2 border-gray-300 rounded-xl justify-center grid aspect-square items-center group bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
+              class="border-2 border-gray-200 rounded-md justify-center grid aspect-square items-center group bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
               ><img
                 src="/static/insta.svg"
                 alt="instagram"
@@ -61,7 +59,7 @@
             <a
               href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
               target="_blank"
-              class="border-2 border-gray-300 rounded-xl justify-center grid aspect-square items-center group bg-green-700"
+              class="border-2 border-gray-200 rounded-md justify-center grid aspect-square items-center group bg-green-700"
               ><img
                 src="/static/tripadvisor.svg"
                 alt="tripadvisor"
@@ -70,7 +68,7 @@
             <a
               href="https://www.facebook.com/BoutiqueTM/"
               target="_blank"
-              class="border-2 border-gray-300 rounded-xl justify-center grid aspect-square items-baseline group bg-blue-700"
+              class="border-2 border-gray-300 rounded-md justify-center grid aspect-square items-baseline group bg-blue-700"
               ><img
                 src="/static/fb.svg"
                 alt="facebook"

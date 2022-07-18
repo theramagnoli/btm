@@ -24,7 +24,7 @@
     },
     "3": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FExploringCenote.jpg?alt=media",
-      "titulo": "And that my fiends is what you call EXPERIENCE!",
+      "titulo": "And that my friends is what you call EXPERIENCE!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r469173877-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "4": {
@@ -39,8 +39,8 @@
     },
     "6": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCenote.png?alt=media",
-      "titulo": "Stunning experience",
-      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r793633058-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
+      "titulo": "PERFECTION!",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r622144075-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "7": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FSianKaan.jpg?alt=media",
@@ -48,8 +48,8 @@
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r774664694-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "8": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FGuideInHammock.png?alt=media",
-      "titulo": "Couldn't ask for anything better! #1",
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FClosedCenote.jpg?alt=media",
+      "titulo": "Exciting, breathtaking...",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r539528968-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "9": {
@@ -58,13 +58,13 @@
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r751247919-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "10": {
-      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCasaCenote.jpg?alt=media",
-      "titulo": "Best tour guides ever!",
-      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r811928487-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
+      "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCoupleSnorkeling.png?alt=media",
+      "titulo": "BTM IS SIMPLY WORLD CLASS. Bravo!",
+      "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r781584720-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "11": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FLazyRiver.jpg?alt=media",
-      "titulo": "Perfect. Amazing. Awesome.",
+      "titulo": "Spectacular adventure!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r508779463-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "12": {
@@ -78,26 +78,14 @@
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r821307218-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     }
   },
-  "recommendations": {
-    "1": {
-      "title": "BTM IS SIMPLY WORLD CLASS. Bravo!",
-      "desc": "We have toured with guiding companies worldwide (literally) and Boutique Tours Mexico is second to none. Wonderful service from the day we jointly began planning our holidays - weeks in advance - with perfect execution on all four days we spent with Leo and Caleb; fantastic guides with whom we not only learned a lot of history and Mexican culture but had a lot of fun. VERY HIGHLY RECOMMENDED!",
-      "author": "Juan Vergara (TripAdvisor)"
-    },
-    "2": {
-      "title": "Wonderful, In-the-know Tour Company",
-      "desc": "Aside from the wonderful staff, what also sets this company apart is their ability to get off the main tourist path and really give you up-close opportunities to experience the amazing culture and wonders of Quintana Roo. Swimming in and exploring beautiful cenotes as well as sharing an amazing meal at a Mayan family's home, will remain highlights of our trip to the Mayan Riviera. If you're looking for 1st class adventures near Playa del Carmen, give the wonderful staff at Boutique Tours Mexico a call. They are the best!",
-      "author": "Brigid Dombrowski (TripAdvisor)"
-    }
-  },
   "faq": [
     {
-      "question": "How much does the tour lasts?",
+      "question": "How long does a tour last?",
       "answer": "An average tour lasts about 6 to 8 hours, but remember: they are highly customizable, so we can adapt to your needs and/or preferences."
     },
     {
-      "question": "What is your refund policy?",
-      "answer": "If you cancel with 48 hours of anticipation, you get a full refund. If you cancel with 24 hours of anticipation, you get 50% of refund. If you cancel with less than 24 hour of anticipacion, you don't get a refund."
+      "question": "What is our refund policy?",
+      "answer": "If you cancel with 48 hours of anticipation, you get 80% refund due to taxes and commissions paid in Mexico. If you cancel with 24 hours of anticipation, you get 50% of refund. If you cancel with less than 24 hour of anticipacion, you don't get a refund."
     }
   ]
 }

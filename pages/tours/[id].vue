@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <nuxt-link
           to="/tours"
-          class="hover:-translate-x-1 transition-transform mt-1 ml-5 mr-2"
+          class="hover:-translate-x-1 transition-transform mt-1 ml-5 laptop:ml-0 mr-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7 p-1 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+            class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-al text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -91,7 +91,7 @@
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7 p-1 rounded-full hover:scale-110 transition-all bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+            class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -107,12 +107,12 @@
       </div>
       <div class="grid tablet:justify-end laptop:-mt-2 mt-8 mx-5 laptop:mx-0">
         <button
-          class="border-[2px] rounded-lg items-center justify-center p-1 pb-0 font-semibold transition-all flex border-gray-800 dark:border-gray-300 px-2"
+          class="border-[2px] rounded-md items-center justify-center font-semibold transition-all flex border-stone-900 dark:border-gray-200 px-2"
           @click="toFareharborItem(tour.book)"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 mr-2 mb-1"
+            class="h-7 w-7 pr-2 mr-2 border-r-2 border-stone-900 dark:border-gray-200"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -121,10 +121,12 @@
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
-          Book the {{ tour.titulo }} tour
+          <p class="pt-1 w-full leading-tight">
+            Book the {{ tour.titulo }} tour
+          </p>
         </button>
       </div>
       <!-- description -->
@@ -148,7 +150,7 @@ if (tour == undefined) {
     tour.desc = tour.desc.split("#");
   }
   useHead({
-    title: `${tour.titulo} Tour • Boutique Tours Mexico`,
+    title: `${tour.titulo} Tour | Boutique Tours Mexico`,
     viewport: "width=device-width, initial-scale=1, maximum-scale=1",
     charset: "utf-8",
     meta: [{ name: "description", content: tour.desc[0] }],
@@ -175,7 +177,7 @@ export default {
       const scroll = (document.getElementById("slider").scrollLeft -= 200);
       if (scroll < -140) {
         document.getElementById("slider").scrollLeft =
-          444 * this.tour.imgs.length;
+          200 * this.tour.imgs.length;
       }
     },
     toFareharborItem(itemNo) {
