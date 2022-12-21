@@ -9,7 +9,7 @@
         <div class="flex">
           <nuxt-link to="/"
             ><img
-              src="/static/logo.png"
+              src="../assets/icons/logo.png"
               alt="logo"
               class="h-12 brightness-[.20] dark:brightness-100"
           /></nuxt-link>
@@ -18,15 +18,15 @@
           class="justify-items-end gap-4 transition-colors flex items-center"
           id="menu"
         >
-          <nuxt-link
+          <NuxtLink
             to="/"
             class="w-[100%] tracking-wider px-2 py-7 border-b-2 border-transparent"
-            ><div class="items-center flex">Home</div></nuxt-link
+            ><div class="items-center flex">Home</div></NuxtLink
           >
-          <nuxt-link
+          <NuxtLink
             to="/tours"
             class="w-[100%] tracking-wider px-2 py-7 border-b-2 border-transparent"
-            ><div class="items-center flex">Tours</div></nuxt-link
+            ><div class="items-center flex">Tours</div></NuxtLink
           >
           <div>
             <button

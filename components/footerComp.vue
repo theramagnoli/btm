@@ -53,27 +53,22 @@
               href="https://www.instagram.com/boutiquetoursmexico/"
               target="_blank"
               class="border-2 border-gray-200 rounded-md justify-center grid aspect-square items-center group bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
-              ><img
-                src="/static/insta.svg"
-                alt="instagram"
-                class="w-10 h-10 pl-2 pb-2 p-1 aspect-square invert group-hover:scale-110 transition-transform"
+              ><InstagramLogo
+                class="w-10 h-10 p-1 aspect-square invert group-hover:scale-110 transition-transform"
             /></a>
             <a
               href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
               target="_blank"
               class="border-2 border-gray-200 rounded-md justify-center grid aspect-square items-center group bg-green-700"
-              ><img
-                src="/static/tripadvisor.svg"
-                alt="tripadvisor"
+              ><TripAdvisorLogo
                 class="w-10 h-10 p-1 aspect-square invert group-hover:scale-110 transition-transform"
-            /></a>
+              />
+            </a>
             <a
               href="https://www.facebook.com/BoutiqueToursMexico/"
               target="_blank"
               class="border-2 border-gray-300 rounded-md justify-center grid aspect-square items-baseline group bg-blue-700"
-              ><img
-                src="/static/fb.svg"
-                alt="facebook"
+              ><FacebookLogo
                 class="w-10 h-10 p-1 aspect-square invert group-hover:scale-110 transition-transform"
             /></a>
           </div>
@@ -82,3 +77,8 @@
     </div>
   </div>
 </template>
+<script setup>
+import FacebookLogo from "/assets/icons/FacebookLogo";
+import InstagramLogo from "/assets/icons/InstagramLogo";
+import TripAdvisorLogo from "/assets/icons/TripAdvisorLogo";
+</script>
