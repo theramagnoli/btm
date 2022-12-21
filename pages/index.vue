@@ -1,7 +1,6 @@
 <template>
   <div class="c-div">
     <h1>Enjoy an amazing experience, not a tour</h1>
-    <!-- slider -->
     <ul
       class="w-full flex gap-x-2 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-lg"
       id="slider"
@@ -16,12 +15,12 @@
             :src="review.img"
             alt=""
             class="absolute inset-0 w-full h-full object-cover object-center"
-            v-show="imgLoaded[i]"
-            @load="imgLoaded[i] = true"
+            v-show="isImageLoaded[i]"
+            @load="isImageLoaded[i] = true"
           />
           <div
             class="absolute inset-0 w-full h-full bg-gray-500 opacity-30 animate-pulse"
-            v-if="!imgLoaded[i]"
+            v-if="!isImageLoaded[i]"
           />
           <div
             class="absolute inset-0 h-full w-full bg-gradient-radial-to-t from-black via-transparent"
@@ -33,26 +32,16 @@
             <span></span>
             <div class="grid justify-center w-full">
               <div class="flex justify-center">
-                <svg
+                <StarIcon
                   v-for="n in 5"
-                  :num-labels="5"
                   :key="n"
-                  xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5 text-yellow-600 drop-shadow-md"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                  />
-                </svg>
+                />
               </div>
               <h3
                 class="leading-tight mt-1 text-gray-200 text-center drop-shadow-lg"
               >
-                <a :href="review.ref" target="_blank">"{{ review.titulo }}"</a>
+                <a :href="review.ref" target="_blank">"{{ review.title }}"</a>
               </h3>
             </div>
           </div>
@@ -61,51 +50,28 @@
     </ul>
     <!-- slider arrows -->
     <div class="relative -top-[139px] hidden laptop:flex justify-between">
-      <button @click="scrollback()" class="w-10 grid justify-end items-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
+      <button
+        @click="scrollBack()"
+        class="grid items-center justify-center h-7 w-7 rounded-full hover:scale-110 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100 ml-2"
+      >
+        <ChevronLeftIcon class="w-7 h-7" />
       </button>
       <button
-        @click="scrollnext()"
-        class="w-10 grid justify-start items-center"
+        @click="scrollNext()"
+        class="grid items-center justify-center h-7 w-7 rounded-full hover:scale-110 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100 mr-2"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-all text-gray-800 dark:text-gray-300 dark:bg-black bg-gray-100"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
+        <ChevronRigthIcon class="w-7 h-7" />
       </button>
     </div>
 
     <div>
       <div class="p-div laptop:-mt-2">
         <p
-          v-for="p of data.desc"
-          :key="p"
+          v-for="paragraph of description"
+          :key="paragraph"
           class="last:font-semibold laptop:px-5"
         >
-          {{ p }}
+          {{ paragraph }}
         </p>
       </div>
       <h1>We help you discover the best of Mexico</h1>
@@ -160,7 +126,7 @@
               d="M9 5l7 7-7 7"
             />
           </svg>
-          <p class="">{{ question.question }}</p>
+          <p>{{ question.question }}</p>
         </summary>
         <div class="flex">
           <p
@@ -174,65 +140,63 @@
   </div>
 </template>
 
-<script setup>
-const { data: data } = await useAsyncData("data", () =>
-  $fetch("/data/inicio.json")
-);
-if (typeof data.value.desc === "string" || data.value.desc instanceof String) {
-  data.value.desc = data.value.desc.split("#");
-}
-</script>
+<script setup lang="ts">
+import { onUnmounted, ref } from "#imports";
+import data from "../assets/json/inicio.json";
+import ChevronRigthIcon from "assets/icons/ChevronRigthIcon.vue";
+import ChevronLeftIcon from "assets/icons/ChevronLeftIcon";
+import StarIcon from "assets/icons/StarIcon";
 
-<script>
-export default {
-  name: "Home",
-  data() {
-    return {
-      play: true,
-      playing: null,
-      imgLoaded: [],
-    };
-  },
-  methods: {
-    scrollnext() {
-      let width = document.getElementById("slider").scrollWidth - 444;
-      const scroll = (document.getElementById("slider").scrollLeft += 444);
-      if (scroll > width) {
-        document.getElementById("slider").scrollLeft = 0;
-      }
-      this.reestartInvertal();
-    },
-    scrollback() {
-      const scroll = (document.getElementById("slider").scrollLeft -= 444);
-      if (scroll < -400) {
-        document.getElementById("slider").scrollLeft =
-          444 * Object.keys(this.data.reviews).length;
-      }
-      this.reestartInvertal();
-    },
-    reestartInvertal() {
-      clearInterval(this.playing);
-      this.autoplay();
-    },
-    autoplay() {
-      this.playing = setInterval(() => {
-        if (
-          window.matchMedia("(min-width: 800px)").matches &&
-          this.play === true
-        ) {
-          this.scrollnext();
-        }
-      }, 4200);
-    },
-  },
-  mounted() {
-    this.autoplay();
-  },
-  unmounted() {
-    clearInterval(this.playing);
-  },
-  beforeUnmount() {},
-};
+const description = data.desc.split("#");
+const sliderIsPlaying = ref(true);
+const sliderInterval = ref<NodeJS.Timer | null>();
+const isImageLoaded = ref<Boolean[]>([]);
+
+function scrollNext() {
+  const slider = document.getElementById("slider");
+  if (slider) {
+    let width = slider.scrollWidth - 444;
+    const scroll = (slider.scrollLeft += 444);
+    if (scroll > width) {
+      slider.scrollLeft = 0;
+    }
+    restartInterval();
+  }
+}
+
+function scrollBack() {
+  const slider = document.getElementById("slider");
+  if (slider) {
+    const scroll = (slider.scrollLeft -= 444);
+    if (scroll < -400) {
+      slider.scrollLeft = 444 * Object.keys(data.reviews).length;
+    }
+    restartInterval();
+  }
+}
+
+function restartInterval() {
+  if (sliderInterval.value) {
+    clearInterval(sliderInterval.value);
+  }
+  autoplaySlider();
+}
+
+function autoplaySlider() {
+  sliderInterval.value = setInterval(() => {
+    if (window.matchMedia("(min-width: 800px)").matches && sliderIsPlaying) {
+      scrollNext();
+    }
+  }, 5000);
+}
+
+onUnmounted(() => {
+  if (sliderInterval.value) {
+    clearInterval(sliderInterval.value);
+  }
+});
+
+autoplaySlider();
 </script>
 
 <style>

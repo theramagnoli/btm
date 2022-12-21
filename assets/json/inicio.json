@@ -14,67 +14,67 @@
   "reviews": {
     "1": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FGroupCasaCenote.jpg?alt=media",
-      "titulo": "Unique Mexican Adventure",
+      "title": "Unique Mexican Adventure",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r837354001-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "2": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCoupleChichenitza.jpg?alt=media",
-      "titulo": "Unforgettable",
+      "title": "Unforgettable",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r832629666-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "3": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FExploringCenote.jpg?alt=media",
-      "titulo": "And that my friends is what you call EXPERIENCE!",
+      "title": "And that my friends is what you call EXPERIENCE!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r469173877-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "4": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FPuntaAllen.png?alt=media",
-      "titulo": "Literally Perfect",
+      "title": "Literally Perfect",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r783300881-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "5": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FMayanAdventure.jpg?alt=media",
-      "titulo": "Memory to last a lifetime!",
+      "title": "Memory to last a lifetime!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r831137004-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "6": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCenote.png?alt=media",
-      "titulo": "PERFECTION!",
+      "title": "PERFECTION!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r622144075-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "7": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FSianKaan.jpg?alt=media",
-      "titulo": "BEYOND WORDS",
+      "title": "BEYOND WORDS",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r774664694-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "8": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FClosedCenote.jpg?alt=media",
-      "titulo": "Exciting, breathtaking...",
+      "title": "Exciting, breathtaking...",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r539528968-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "9": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCovidTimesAtCoba.jpg?alt=media",
-      "titulo": "AMAZING! A true Mayan experience",
+      "title": "AMAZING! A true Mayan experience",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r751247919-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "10": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FCoupleSnorkeling.png?alt=media",
-      "titulo": "BTM is simply world class",
+      "title": "BTM is simply world class",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r781584720-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "11": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FLazyRiver.jpg?alt=media",
-      "titulo": "Spectacular adventure!",
+      "title": "Spectacular adventure!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r508779463-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "12": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FInCoba.jpg?alt=media",
-      "titulo": "A MUST DO EXPERIENCE!",
+      "title": "A MUST DO EXPERIENCE!",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r802519751-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     },
     "13": {
       "img": "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/inicio%2FGroupChichenitza.jpg?alt=media",
-      "titulo": "SHEEEEEESH",
+      "title": "SHEEEEEESH",
       "ref": "https://www.tripadvisor.com/ShowUserReviews-g150812-d12246056-r821307218-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
     }
   },

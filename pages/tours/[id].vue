@@ -138,13 +138,17 @@
 </template>
 
 <script setup>
-let id = useRoute().params.id;
+import {useAsyncData, useHead, useRoute, useRouter} from "nuxt/app";
+let route = useRoute();
+let router = useRouter();
+
+let id = route.params.id;
 let { data: tour } = await useAsyncData("tour", () =>
   $fetch("/data/tours.json")
 );
 tour = tour.value[id];
-if (tour == undefined) {
-  useRouter().push({ path: "/404" });
+if (tour === undefined) {
+  router.push({ path: "/404" });
 } else {
   if (typeof tour.desc === "string" || tour.desc instanceof String) {
     tour.desc = tour.desc.split("#");

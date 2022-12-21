@@ -47,7 +47,7 @@
           "
         >
           <h2 class="italic text-xl w-full transition-all delay-100">
-            {{ tour.titulo }}
+            {{ tour.title }}
           </h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
