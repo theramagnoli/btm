@@ -1,51 +1,17 @@
 <template>
   <div id="colorMode">
     <div class="s-div">
-      <navigation-comp @changeMode="changeMode" />
+      <NavigationComp @changeMode="changeMode" />
       <div class="h-20"></div>
       <NuxtPage />
-      <footer-comp />
-      <booking-button />
+      <FooterComp />
+      <BookingButton />
     </div>
   </div>
 </template>
 
 <script>
-import "./assets/css/tailwind.css";
 export default {
-  head: {
-    title: "Boutique Tours Mexico | Premiere Archeology & History Tours",
-    meta: [
-      { charset: "utf-8" },
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "Specialist in perzonalized flexible, small-group and private tours to the most amazing cenotes and impressive archeological areas. We help you discover the best of Mexico!",
-      },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "format-detection", content: "telephone=no" },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content:
-          "tours, tour, private tours, vacation, tour mexico, cancun, tulum",
-      },
-    ],
-    link: [
-      {
-        rel: "icon",
-        href: "/static/favicon.ico",
-        sizes: "any",
-      },
-      {
-        rel: "icon",
-        href: "/static/favicon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    script: [{ src: "https://fareharbor.com/embeds/api/v1/" }],
-  },
   watch: {
     $route() {
       setTimeout(() => {
