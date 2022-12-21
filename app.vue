@@ -21,7 +21,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Specialist in perzonalized flexible, small-group and private tours to the most amazing cenotes and impressive archeological áreas such as Tulum, Coba and Chichen-Itza. We help you discover the best of Mexico!",
+          "Specialist in perzonalized flexible, small-group and private tours to the most amazing cenotes and impressive archeological areas. We help you discover the best of Mexico!",
       },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "format-detection", content: "telephone=no" },
@@ -32,7 +32,18 @@ export default {
           "tours, tour, private tours, vacation, tour mexico, cancun, tulum",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/static/favicon.svg" }],
+    link: [
+      {
+        rel: "icon",
+        href: "/static/favicon.ico",
+        sizes: "any",
+      },
+      {
+        rel: "icon",
+        href: "/static/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
     script: [{ src: "https://fareharbor.com/embeds/api/v1/" }],
   },
   watch: {

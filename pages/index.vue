@@ -204,7 +204,7 @@ export default {
     },
     scrollback() {
       const scroll = (document.getElementById("slider").scrollLeft -= 444);
-      if (scroll < -140) {
+      if (scroll < -400) {
         document.getElementById("slider").scrollLeft =
           444 * Object.keys(this.data.reviews).length;
       }

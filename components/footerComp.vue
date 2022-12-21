@@ -11,7 +11,9 @@
         <div
           class="grid items-center col-span-8 tablet:col-span-6 laptop:col-span-3 space-y-2"
         >
-          <h2 class="font-semibold text-xl text-stone-900 dark:text-gray-200">
+          <h2
+            class="font-semibold text-xl text-stone-900 dark:text-gray-200 w-full"
+          >
             Get in touch with us
           </h2>
           <div class="flex items-center">
@@ -66,7 +68,7 @@
                 class="w-10 h-10 p-1 aspect-square invert group-hover:scale-110 transition-transform"
             /></a>
             <a
-              href="https://www.facebook.com/BoutiqueTM/"
+              href="https://www.facebook.com/BoutiqueToursMexico/"
               target="_blank"
               class="border-2 border-gray-300 rounded-md justify-center grid aspect-square items-baseline group bg-blue-700"
               ><img
