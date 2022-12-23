@@ -23,6 +23,28 @@ module.exports = {
         "gradient-radial-to-t":
           "radial-gradient(110% 100% at 50% 115%, var(--tw-gradient-stops))",
       }),
+      animation: {
+        blob: "blob 8s infinite",
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0, 0) scale(1)",
+          },
+          "25%": {
+            transform: "translate(5vw, 5vh) scale(1.2)",
+          },
+          "50%": {
+            transform: "translate(5vw, -5vh) scale(1)",
+          },
+          "75%": {
+            transform: "translate(-5vw, -5vh), scale(1.2)",
+          },
+          "100%": {
+            transform: "translate(0, 0) scale(1)",
+          },
+        },
+      },
     },
   },
   variants: {

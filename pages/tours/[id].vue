@@ -66,7 +66,7 @@
           <ChevronLeftIcon class="w-6 h-6 pr-[1px]" />
         </button>
         <button @click="scrollNext()" class="arrow-button mr-4">
-          <ChevronRigthIcon class="w-6 h-6 pl-[1px]" />
+          <ChevronRightIcon class="w-6 h-6 pl-[1px]" />
         </button>
       </div>
       <div
@@ -96,9 +96,8 @@ import untypedTours from "assets/json/tours.json";
 import { ref } from "#imports";
 import { Tours } from "assets/entities/Tour";
 import CalendarIcon from "assets/icons/CalendarIcon";
-import ChevronRigthIcon from "assets/icons/ChevronRigthIcon";
+import ChevronRightIcon from "assets/icons/ChevronRightIcon.vue";
 import ChevronLeftIcon from "assets/icons/ChevronLeftIcon";
-import ArrowCircleIcon from "assets/icons/ArrowCircleIcon.vue";
 
 const tours: Tours = untypedTours;
 const route = useRoute();

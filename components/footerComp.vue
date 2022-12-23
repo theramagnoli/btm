@@ -1,7 +1,7 @@
 <template>
   <div class="tablet:mx-auto w-full laptop:max-w-3xl">
     <div
-      class="transition-all text-gray-200 grid gap-2 mt-8 tablet:pb-4 pb-[90px] rounded-t-0 laptop:rounded-t-3xl p-4 laptop:p-8 bg-gradient-to-tr from-blue-700 to-green-700"
+      class="transition-all text-gray-200 grid gap-2 mt-8 tablet:pb-4 pb-[90px] rounded-t-0 laptop:rounded-t-3xl p-4 laptop:p-8 bg-gradient-to-tr from-blue-700 to-green-800"
       id="footer"
     >
       <div
