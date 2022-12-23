@@ -1,28 +1,18 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 import { defineNuxtConfig } from "nuxt/config";
-import Tours from "./assets/json/tours.json";
+import untypedTours from "./assets/json/tours.json";
+import { Tours } from "assets/entities/Tour";
+const tours: Tours = untypedTours;
 
-for (const tour in Tours) {
-  // @ts-ignore
-  console.log(Tours[tour]);
+let tourRoutes = [];
+for (const tour in tours) {
+  tourRoutes.push(`/tours/${tours[tour].id}`);
 }
 
 export default defineNuxtConfig({
   nitro: {
     prerender: {
-      routes: [
-        "/tours",
-        "/tours/ChichenItza",
-        "/tours/Tulum",
-        "/tours/Cenotes",
-        "/tours/Coba",
-        "/tours/Akumal",
-        "/tours/EkBalam",
-        "/tours/SianKaan&PuntaAllen",
-        "/tours/SianKaan&Muyil",
-        "/tours/Kayaking&Snorkeling",
-        "/tours/MayanAdventure",
-      ],
+      routes: tourRoutes,
     },
   },
   postcss: {
@@ -34,6 +24,7 @@ export default defineNuxtConfig({
   css: ["assets/css/tailwind.css"],
   ssr: false,
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Boutique Tours Mexico | Premiere Archeology & History Tours",
       meta: [
@@ -42,7 +33,7 @@ export default defineNuxtConfig({
           hid: "description",
           name: "description",
           content:
-            "Specialist in personalized flexible, small-group and private tours to the most amazing cenotes and impressive archeological areas. We help you discover the best of Mexico!",
+            "Specialist in personalized flexible, small-group and private tours to the most amazing cenotes and impressive archaeological areas. We help you discover the best of Mexico!",
         },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "format-detection", content: "telephone=no" },
@@ -50,18 +41,18 @@ export default defineNuxtConfig({
           hid: "keywords",
           name: "keywords",
           content:
-            "tours, tour, private tours, vacation, tour mexico, cancun, tulum",
+            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichen, playa del carmen, private, mexico, mexico tours",
         },
       ],
       link: [
         {
           rel: "icon",
-          href: "/static/favicon.ico",
+          href: "/assets/icons/favicon.icon",
           sizes: "any",
         },
         {
           rel: "icon",
-          href: "/static/favicon.svg",
+          href: "/assets/icons/favicon.svg",
           type: "image/svg+xml",
         },
       ],

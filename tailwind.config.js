@@ -10,9 +10,13 @@ module.exports = {
   ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ["Josefin Sans", "sans-serif"],
+      display: ["Unbounded", "sans-serif"],
+    },
     screens: {
       tablet: "520px",
-      laptop: "800px",
+      laptop: "1000px",
     },
     extend: {
       backgroundImage: () => ({

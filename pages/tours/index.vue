@@ -1,92 +1,78 @@
 <template>
   <div class="c-div">
-    <h1>Explore our tour catalogue</h1>
-    <!-- tour catalogue -->
-    <div class="grid tablet:grid-cols-2 gap-5 mx-5 laptop:mx-0 pb-0">
-      <nuxt-link
-        :to="'/tours/' + tour.id"
-        v-for="(tour, i) of tours"
-        :key="tour"
-        class="h-[225px] grid group"
-      >
-        <div class="relative w-full h-full overflow-hidden rounded-t-md">
-          <img
-            :src="tour.portada"
-            class="inset-0 w-full h-[175px] object-cover group-hover:scale-110 transition-all delay-100 object-center"
-            @load="imgLoaded[i] = true"
-            v-show="imgLoaded[i]"
-          />
-          <div
-            class="inset-0 w-full h-[175px] bg-gray-500 opacity-30 animate-pulse rounded-t-md"
-            v-if="!imgLoaded[i]"
-          />
-        </div>
-
-        <div
-          class="rounded-b-md flex items-center h-full w-full p-3"
-          :class="
-            tour.id === 'ChichenItza'
-              ? 'bg-green-600 dark:bg-green-800'
-              : tour.id === 'Tulum'
-              ? 'bg-sky-600 dark:bg-sky-700'
-              : tour.id === 'Cenotes'
-              ? 'bg-slate-600 dark:bg-slate-800'
-              : tour.id === 'Coba'
-              ? 'bg-stone-500 dark:bg-stone-700'
-              : tour.id === 'Akumal'
-              ? 'bg-cyan-600 dark:bg-cyan-700'
-              : tour.id === 'SianKaan&PuntaAllen'
-              ? 'bg-blue-600 dark:bg-blue-800'
-              : tour.id === 'SianKaan&Muyil'
-              ? 'bg-yellow-500 dark:bg-yellow-700'
-              : tour.id === 'Kayaking&Snorkeling'
-              ? 'bg-slate-600 dark:bg-slate-700'
-              : tour.id === 'MayanAdventure'
-              ? 'bg-green-600 dark:bg-green-800'
-              : 'bg-emerald-600 dark:bg-emerald-800'
-          "
+    <div>
+      <h1>Explore our tour catalogue</h1>
+      <!-- tour catalogue -->
+      <div class="grid tablet:grid-cols-2 gap-4 mx-4 laptop:mx-0 pb-0 mb-4">
+        <nuxt-link
+          :to="'/tours/' + tour.id"
+          v-for="(tour, i) of tours"
+          :key="tour"
+          class="h-[250px] grid group relative"
         >
-          <h2 class="italic text-xl w-full transition-all delay-100">
-            {{ tour.title }}
-          </h2>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 transition-all laptop:opacity-0 laptop:group-hover:opacity-100 delay-100 text-gray-200"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
+          <div class="relative w-full h-full overflow-hidden rounded-2xl">
+            <img
+              :alt="tour.title"
+              :src="tour.portada"
+              class="inset-0 w-full h-[250px] object-cover group-hover:scale-110 transition-all delay-100 object-center"
+              @load="isImageLoaded[i] = true"
+              v-show="isImageLoaded[i]"
             />
-          </svg>
-        </div>
-      </nuxt-link>
+            <div
+              class="inset-0 w-full h-[250px] bg-gray-500 opacity-30 animate-pulse rounded-2xl"
+              v-if="!isImageLoaded[i]"
+            />
+          </div>
+
+          <div
+            class="tour-name"
+            :class="
+              tour.id === 'ChichenItza'
+                ? 'from-green-600 dark:from-green-800 to-green-600 dark:to-green-800'
+                : tour.id === 'Tulum'
+                ? 'from-sky-600 dark:from-sky-700 to-sky-600 dark:to-sky-800'
+                : tour.id === 'Cenotes'
+                ? 'from-slate-600 dark:from-slate-800 to-slate-600 dark:to-slate-800'
+                : tour.id === 'Coba'
+                ? 'from-stone-500 dark:from-stone-700 to-stone-600 dark:to-stone-800'
+                : tour.id === 'Akumal'
+                ? 'from-cyan-600 dark:from-cyan-700 to-cyan-600 dark:to-cyan-800'
+                : tour.id === 'SianKaan&PuntaAllen'
+                ? 'from-blue-600 dark:from-blue-800 to-blue-600 dark:to-blue-800'
+                : tour.id === 'SianKaan&Muyil'
+                ? 'from-yellow-500 dark:from-yellow-700 to-yellow-600 dark:to-yellow-800'
+                : tour.id === 'Kayaking&Snorkeling'
+                ? 'from-slate-600 dark:from-slate-700 to-slate-600 dark:to-slate-800'
+                : tour.id === 'MayanAdventure'
+                ? 'from-green-600 dark:from-green-800 to-green-600 dark:to-green-800'
+                : 'from-emerald-600 dark:from-emerald-800 to-emerald-600 dark:to-emerald-800'
+            "
+          >
+            <h3 class="w-full transition-all delay-100">
+              {{ tour.title }}
+            </h3>
+          </div>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
 
-<script setup>
-const { data: tours } = await useAsyncData("tours", () =>
-  $fetch("/data/tours.json")
-);
+<script setup lang="ts">
+import { useHead } from "nuxt/app";
+import tours from "/assets/json/tours.json";
+import { ref } from "#imports";
+
 useHead({
   title: "Tours | Boutique Tours Mexico",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-  charset: "utf-8",
   meta: [{ name: "description", content: "Discover our tour catalogue" }],
 });
+
+const isImageLoaded = ref<Boolean[]>([]);
 </script>
 
-<script>
-export default {
-  data() {
-    return {
-      imgLoaded: [],
-    };
-  },
-};
-</script>
+<style scoped lang="postcss">
+.tour-name {
+  @apply rounded-xl p-4 absolute bg-gradient-to-r bottom-3.5 left-3.5 right-3.5 w-auto group-hover:pb-8 transition-all grid gap-2;
+}
+</style>

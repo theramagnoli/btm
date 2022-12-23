@@ -1,17 +1,24 @@
+<script setup lang="ts">
+import { useRoute } from "nuxt/app";
+defineProps<{ prefersDarkMode: Boolean }>();
+
+const route = useRoute();
+</script>
+
 <template>
   <div>
     <div
       class="fixed w-full z-50 bg-gray-100/70 dark:bg-black/70 text-gray-900 dark:text-gray-200 shadow-lg dark:shadow-gray-800/50 transition-all backdrop-blur-md"
     >
       <div
-        class="flex justify-between items-center max-w-[768px] m-auto px-5 laptop:px-0"
+        class="flex justify-between items-center max-w-3xl m-auto px-4 laptop:px-0"
       >
         <div class="flex">
           <nuxt-link to="/"
             ><img
               src="../assets/icons/logo.png"
               alt="logo"
-              class="h-12 brightness-[.20] dark:brightness-100"
+              class="h-10 tablet:h-12 brightness-[.20] dark:brightness-100"
           /></nuxt-link>
         </div>
         <div
@@ -20,14 +27,20 @@
         >
           <NuxtLink
             to="/"
-            class="w-[100%] tracking-wider px-2 py-7 border-b-2 border-transparent"
-            ><div class="items-center flex">Home</div></NuxtLink
-          >
+            class="w-[100%] tracking-wider py-7 flex flex-col relative"
+            ><div class="items-center flex">Home</div>
+            <div
+              v-if="route.path === '/'"
+              class="h-1.5 bg-gradient-to-r from-blue-500 to-green-700 dark:from-blue-700 dark:to-green-900 rounded-t-lg absolute bottom-0 left-0 right-0"
+          /></NuxtLink>
           <NuxtLink
             to="/tours"
-            class="w-[100%] tracking-wider px-2 py-7 border-b-2 border-transparent"
-            ><div class="items-center flex">Tours</div></NuxtLink
-          >
+            class="w-[100%] tracking-wider px-2 py-7 flex flex-col relative"
+            ><div class="items-center flex">Tours</div>
+            <div
+              v-if="route.path === '/tours'"
+              class="h-1.5 bg-gradient-to-r from-blue-500 to-green-700 dark:from-blue-700 dark:to-green-900 rounded-t-lg absolute bottom-0 left-0 right-0"
+          /></NuxtLink>
           <div>
             <button
               @click="$emit('changeMode')"
@@ -38,7 +51,7 @@
                 class="h-4 w-4"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                v-if="$parent.darkMode"
+                v-if="prefersDarkMode"
               >
                 <path
                   fill-rule="evenodd"
@@ -65,8 +78,4 @@
   </div>
 </template>
 
-<style lang="postcss">
-#menu .router-link-exact-active {
-  @apply font-semibold border-sky-500;
-}
-</style>
+<style lang="postcss"></style>

@@ -1,7 +1,10 @@
 <template>
   <div id="colorMode">
     <div class="s-div">
-      <NavigationComp @changeMode="changeMode" />
+      <NavigationComp
+        @changeMode="prefersDarkMode = !prefersDarkMode"
+        :prefers-dark-mode="prefersDarkMode"
+      />
       <div class="h-20"></div>
       <NuxtPage />
       <FooterComp />
@@ -10,43 +13,47 @@
   </div>
 </template>
 
-<script>
-export default {
-  watch: {
-    $route() {
-      setTimeout(() => {
-        window.scroll({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 200);
-    },
-    darkMode(a) {
-      if (a == true) {
-        document.querySelector("#colorMode").classList.add("dark");
-      } else {
-        document.querySelector("#colorMode").classList.remove("dark");
-      }
-    },
-  },
-  data() {
-    return {
-      darkMode: false,
-    };
-  },
-  methods: {
-    changeMode() {
-      if (this.darkMode == false) {
-        this.darkMode = true;
-      } else {
-        this.darkMode = false;
-      }
-    },
-  },
-  mounted() {
-    let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (matched) this.darkMode = true;
-  },
-};
+<script setup lang="ts">
+import { useRoute } from "nuxt/app";
+import { watch, ref, onMounted } from "#imports";
+
+const prefersDarkMode = ref(false);
+
+const route = useRoute();
+watch(route, () => {
+  setTimeout(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, 200);
+});
+
+watch(prefersDarkMode, (to) => {
+  const colorModeDiv = document.querySelector("#colorMode");
+  if (colorModeDiv) {
+    if (to) {
+      colorModeDiv.classList.add("dark");
+    } else {
+      colorModeDiv.classList.remove("dark");
+    }
+  }
+});
+
+onMounted(() => {
+  let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (matched) prefersDarkMode.value = true;
+});
 </script>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+</style>

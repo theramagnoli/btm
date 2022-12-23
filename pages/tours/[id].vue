@@ -1,196 +1,153 @@
 <template>
-  <div>
-    <div class="c-div">
+  <div class="c-div">
+    <div>
       <div class="flex items-center">
         <nuxt-link
           to="/tours"
-          class="hover:-translate-x-1 transition-transform mt-1 ml-5 laptop:ml-0 mr-2"
+          class="ml-4 laptop:ml-0 flex items-center gap-2 bg-stone-900 dark:bg-gray-200 text-gray-200 dark:text-stone-900 px-2 rounded-full mt-2 py-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 mt-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-5 h-5"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              fill-rule="evenodd"
+              d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
+              clip-rule="evenodd"
             />
           </svg>
         </nuxt-link>
-        <h1 class="text-left">{{ tour.titulo }} Tour</h1>
+        <h1 class="text-left">{{ tour.title }} Tour</h1>
       </div>
 
       <!-- slider -->
       <ul
-        class="w-full flex gap-x-2 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-md"
+        class="w-full flex gap-x-4 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-2xl"
         id="slider"
       >
         <li
           v-for="(img, i) of tour.imgs"
           :key="i"
-          class="snap-center laptop:snap-start"
+          class="snap-center laptop:snap-start first:ml-4 last:mr-4 laptop:first:ml-0 laptop:last:mr-0"
         >
-          <div
-            class="relative overflow-hidden transition-all rounded-md first:rounded-l-none last:rounded-r-none"
-          >
+          <div class="relative transition-all rounded-2xl overflow-hidden">
             <div
               class="relative"
               :class="
-                img.ar == '4:3'
-                  ? 'h-[250px] w-[333.3px]'
-                  : 'h-[250px] w-[188px]'
+                img.ar === '4:3'
+                  ? 'h-[250px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
+                  : 'h-[250px] tablet:h-[300px] aspect-[3/4]'
               "
             >
               <img
                 :src="img.src"
                 :alt="img.alt"
-                class="h-full"
-                @load="imgLoaded[i] = true"
-                v-show="imgLoaded[i]"
+                class="h-full object-cover"
+                @load="isImageLoaded[i] = true"
+                v-show="isImageLoaded[i]"
               />
               <div
                 class="bg-gray-500 opacity-30 animate-pulse"
                 :class="
-                  img.ar == '4:3'
-                    ? 'h-[250px] w-[333.3px]'
-                    : 'h-[250px] w-[188px]'
+                  img.ar === '4:3'
+                    ? 'h-[250px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
+                    : 'h-[250px] tablet:h-[300px] aspect-[3/4]'
                 "
-                v-if="!imgLoaded[i]"
+                v-if="!isImageLoaded[i]"
               />
             </div>
           </div>
         </li>
       </ul>
-      <div class="relative -top-[139px] hidden laptop:flex justify-between">
-        <button
-          @click="scrollback()"
-          class="w-10 grid justify-end items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-al text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
+      <div class="relative -top-[164px] hidden laptop:flex justify-between">
+        <button @click="scrollBack()" class="arrow-button ml-4">
+          <ChevronLeftIcon class="w-6 h-6 pr-[1px]" />
         </button>
-        <button
-          @click="scrollnext()"
-          class="w-10 grid justify-start items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7 p-[2px] rounded-full hover:scale-110 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+        <button @click="scrollNext()" class="arrow-button mr-4">
+          <ChevronRigthIcon class="w-6 h-6 pl-[1px]" />
         </button>
       </div>
-      <div class="grid tablet:justify-end laptop:-mt-2 mt-8 mx-5 laptop:mx-0">
+      <div
+        class="grid tablet:justify-end mt-5 laptop:-mt-2 mt-8 mx-4 laptop:mx-0"
+      >
         <button
-          class="border-[2px] rounded-md items-center justify-center font-semibold transition-all flex border-stone-900 dark:border-gray-200 px-2"
-          @click="toFareharborItem(tour.book)"
+          class="rounded-full items-center justify-center font-semibold transition-all flex bg-stone-900 dark:bg-gray-200 p-1 px-4 text-gray-200 dark:text-stone-900 flex gap-x-2 align-middle"
+          @click="toFareHarborItem(tour.book)"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7 pr-2 mr-2 border-r-2 border-stone-900 dark:border-gray-200"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          <p class="pt-1 w-full leading-tight">
-            Book the {{ tour.titulo }} tour
-          </p>
+          <CalendarIcon
+            class="h-4 w-4 border-r-2 border-stone-900 dark:border-gray-200"
+          />
+          <span class="mt-1">Book the {{ tour.title }} tour</span>
         </button>
       </div>
       <!-- description -->
       <div class="p-div text-left">
-        <p v-for="parrafo of tour.desc" :key="parrafo">{{ parrafo }}</p>
+        <p v-for="paragraph of tour.desc" :key="paragraph">{{ paragraph }}</p>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import {useAsyncData, useHead, useRoute, useRouter} from "nuxt/app";
-let route = useRoute();
-let router = useRouter();
+<script setup lang="ts">
+import { useHead, useRoute, useRouter } from "nuxt/app";
+import untypedTours from "assets/json/tours.json";
+import { ref } from "#imports";
+import { Tours } from "assets/entities/Tour";
+import CalendarIcon from "assets/icons/CalendarIcon";
+import ChevronRigthIcon from "assets/icons/ChevronRigthIcon";
+import ChevronLeftIcon from "assets/icons/ChevronLeftIcon";
+import ArrowCircleIcon from "assets/icons/ArrowCircleIcon.vue";
 
-let id = route.params.id;
-let { data: tour } = await useAsyncData("tour", () =>
-  $fetch("/data/tours.json")
-);
-tour = tour.value[id];
+const tours: Tours = untypedTours;
+const route = useRoute();
+const router = useRouter();
+let id = route.params.id as string;
+const tour = tours[id];
+const isImageLoaded = ref<Boolean[]>([]);
+
 if (tour === undefined) {
   router.push({ path: "/404" });
 } else {
-  if (typeof tour.desc === "string" || tour.desc instanceof String) {
-    tour.desc = tour.desc.split("#");
-  }
   useHead({
-    title: `${tour.titulo} Tour | Boutique Tours Mexico`,
-    viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-    charset: "utf-8",
+    title: `${tour.title} Tour | Boutique Tours Mexico`,
     meta: [{ name: "description", content: tour.desc[0] }],
+  });
+}
+
+function scrollNext() {
+  const slider = document.getElementById("slider");
+  if (slider) {
+    let width = slider.scrollWidth - 300;
+    const scroll = (slider.scrollLeft += 300);
+    if (scroll > width - 400) {
+      slider.scrollLeft = 0;
+    }
+  }
+}
+
+function scrollBack() {
+  const slider = document.getElementById("slider");
+  if (slider) {
+    const scroll = (slider.scrollLeft -= 300);
+    if (scroll < -140) {
+      slider.scrollLeft = 300 * tour.imgs.length;
+    }
+  }
+}
+
+function toFareHarborItem(itemNo: string) {
+  return !FH.open({
+    shortname: "boutiquetoursmexico",
+    flow: 278797,
+    view: { item: itemNo },
   });
 }
 </script>
 
-<script>
-export default {
-  data() {
-    return {
-      imgLoaded: [],
-    };
-  },
-  methods: {
-    scrollnext() {
-      let width = document.getElementById("slider").scrollWidth - 200;
-      const scroll = (document.getElementById("slider").scrollLeft += 200);
-      if (scroll > width - 400) {
-        document.getElementById("slider").scrollLeft = 0;
-      }
-    },
-    scrollback() {
-      const scroll = (document.getElementById("slider").scrollLeft -= 200);
-      if (scroll < -140) {
-        document.getElementById("slider").scrollLeft =
-          200 * this.tour.imgs.length;
-      }
-    },
-    toFareharborItem(itemNo) {
-      return !FH.open({
-        shortname: "boutiquetoursmexico",
-        flow: 278797,
-        view: { item: itemNo },
-      });
-    },
-  },
-};
-</script>
+<style scoped lang="postcss">
+.arrow-button {
+  @apply grid items-center justify-center h-6 w-6 rounded-full opacity-40 hover:opacity-100 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100;
+}
+</style>
