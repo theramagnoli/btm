@@ -38,6 +38,7 @@ p {
 
 .c-div {
   @apply m-auto text-stone-900 grid laptop:max-w-3xl dark:text-gray-200 overflow-hidden;
+  min-height: calc(100vh - 89px - 121px - 109px);
 }
 .c-div > * {
   @apply laptop:max-w-3xl overflow-hidden grid;
