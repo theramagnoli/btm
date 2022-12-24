@@ -87,7 +87,9 @@
             :key="benefit"
             class="flex items-center"
           >
-            <CheckCircleIcon class="h-5 w-5 mr-2 tablet:mx-2 mb-1" />
+            <CheckCircleIcon
+              class="h-5 w-5 mr-2 tablet:mx-2 mb-1 min-w-[1.25rem]"
+            />
             <p>{{ benefit }}</p>
           </li>
         </ul>
@@ -130,12 +132,14 @@ import ArrowCircleIcon from "assets/icons/ArrowCircleIcon";
 const sliderIsPlaying = ref(true);
 const sliderInterval = ref<NodeJS.Timer | null>();
 const isImageLoaded = ref<Boolean[]>([]);
+const msBetweenSlides = 5000;
+const slideDesktopPx = 550;
 
 function scrollNext() {
   const slider = document.getElementById("slider");
   if (slider) {
-    let width = slider.scrollWidth - 444;
-    const scroll = (slider.scrollLeft += 444);
+    let width = slider.scrollWidth - slideDesktopPx;
+    const scroll = (slider.scrollLeft += slideDesktopPx);
     if (scroll > width) {
       slider.scrollLeft = 0;
     }
@@ -146,9 +150,9 @@ function scrollNext() {
 function scrollBack() {
   const slider = document.getElementById("slider");
   if (slider) {
-    const scroll = (slider.scrollLeft -= 800);
+    const scroll = (slider.scrollLeft -= slideDesktopPx);
     if (scroll < -400) {
-      slider.scrollLeft = 800 * Object.keys(data.reviews).length;
+      slider.scrollLeft = slideDesktopPx * Object.keys(data.reviews).length;
     }
     restartInterval();
   }
@@ -163,10 +167,10 @@ function restartInterval() {
 
 function autoplaySlider() {
   sliderInterval.value = setInterval(() => {
-    if (window.matchMedia("(min-width: 800px)").matches && sliderIsPlaying) {
+    if (window.matchMedia("(min-width: 1000px)").matches && sliderIsPlaying) {
       scrollNext();
     }
-  }, 5000);
+  }, msBetweenSlides);
 }
 
 onUnmounted(() => {

@@ -1,11 +1,19 @@
 <template>
-  <div class="tablet:mx-auto w-full laptop:max-w-3xl">
+  <div class="tablet:mx-auto w-full laptop:max-w-3xl relative">
     <div
-      class="transition-all text-gray-200 grid gap-2 mt-8 tablet:pb-4 pb-[90px] rounded-t-0 laptop:rounded-t-3xl p-4 laptop:p-8 bg-gradient-to-tr from-blue-700 to-green-800"
+      class="transition-all w-full text-gray-200 grid gap-2 mt-8 tablet:pb-4 pb-[90px] rounded-t-0 laptop:rounded-t-3xl p-4 laptop:p-8 absolute overflow-hidden"
       id="footer"
     >
+      <div class="-z-10 bg-black inset-0 absolute">
+        <div
+          class="footer-circle bg-gradient-to-t from from-emerald-600 to-emerald-700 dark:to-emerald-800 -right-24 -top-64 opacity-100 animate-interchange-l"
+        />
+        <div
+          class="footer-circle bg-gradient-to-t from-sky-600 to-sky-500 dark:to-sky-700 -left-40 -top-64 opacity-100 animate-interchange-r"
+        />
+      </div>
       <div
-        class="grid tablet:flex justify-between items-center tablet:items-start gap-6 w-full"
+        class="grid tablet:flex justify-between items-center tablet:items-start gap-6 w-full z-10 tablet:h-28"
       >
         <div class="grid items-center space-y-4 w-full">
           <h2 class="font-semibold text-xl text-gray-200 w-full">
@@ -58,5 +66,8 @@ import AtIcon from "/assets/icons/AtIcon";
 }
 .social-logo {
   @apply w-10 h-10 p-1 invert;
+}
+.footer-circle {
+  @apply absolute h-[28rem] tablet:h-[50rem] aspect-square rounded-full filter blur-[150px] opacity-70;
 }
 </style>

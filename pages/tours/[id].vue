@@ -37,8 +37,8 @@
               class="relative"
               :class="
                 img.ar === '4:3'
-                  ? 'h-[250px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
-                  : 'h-[250px] tablet:h-[300px] aspect-[3/4]'
+                  ? 'h-[320px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
+                  : 'h-[320px] tablet:h-[300px] aspect-[3/4]'
               "
             >
               <img
@@ -52,8 +52,8 @@
                 class="bg-gray-500 opacity-30 animate-pulse"
                 :class="
                   img.ar === '4:3'
-                    ? 'h-[250px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
-                    : 'h-[250px] tablet:h-[300px] aspect-[3/4]'
+                    ? 'h-[320px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
+                    : 'h-[320px] tablet:h-[300px] aspect-[3/4]'
                 "
                 v-if="!isImageLoaded[i]"
               />
@@ -105,6 +105,7 @@ const router = useRouter();
 let id = route.params.id as string;
 const tour = tours[id];
 const isImageLoaded = ref<Boolean[]>([]);
+const slideWidthInPx = 400;
 
 if (tour === undefined) {
   router.push({ path: "/404" });
@@ -118,8 +119,8 @@ if (tour === undefined) {
 function scrollNext() {
   const slider = document.getElementById("slider");
   if (slider) {
-    let width = slider.scrollWidth - 300;
-    const scroll = (slider.scrollLeft += 300);
+    let width = slider.scrollWidth - slideWidthInPx;
+    const scroll = (slider.scrollLeft += slideWidthInPx);
     if (scroll > width - 400) {
       slider.scrollLeft = 0;
     }
