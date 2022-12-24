@@ -37,8 +37,8 @@
               class="relative"
               :class="
                 img.ar === '4:3'
-                  ? 'h-[250px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
-                  : 'h-[250px] tablet:h-[300px] aspect-[3/4]'
+                  ? 'h-[320px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
+                  : 'h-[320px] tablet:h-[300px] aspect-[3/4]'
               "
             >
               <img
@@ -52,8 +52,8 @@
                 class="bg-gray-500 opacity-30 animate-pulse"
                 :class="
                   img.ar === '4:3'
-                    ? 'h-[250px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
-                    : 'h-[250px] tablet:h-[300px] aspect-[3/4]'
+                    ? 'h-[320px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
+                    : 'h-[320px] tablet:h-[300px] aspect-[3/4]'
                 "
                 v-if="!isImageLoaded[i]"
               />
@@ -66,7 +66,7 @@
           <ChevronLeftIcon class="w-6 h-6 pr-[1px]" />
         </button>
         <button @click="scrollNext()" class="arrow-button mr-4">
-          <ChevronRigthIcon class="w-6 h-6 pl-[1px]" />
+          <ChevronRightIcon class="w-6 h-6 pl-[1px]" />
         </button>
       </div>
       <div
@@ -96,9 +96,8 @@ import untypedTours from "assets/json/tours.json";
 import { ref } from "#imports";
 import { Tours } from "assets/entities/Tour";
 import CalendarIcon from "assets/icons/CalendarIcon";
-import ChevronRigthIcon from "assets/icons/ChevronRigthIcon";
+import ChevronRightIcon from "assets/icons/ChevronRightIcon.vue";
 import ChevronLeftIcon from "assets/icons/ChevronLeftIcon";
-import ArrowCircleIcon from "assets/icons/ArrowCircleIcon.vue";
 
 const tours: Tours = untypedTours;
 const route = useRoute();
@@ -106,6 +105,7 @@ const router = useRouter();
 let id = route.params.id as string;
 const tour = tours[id];
 const isImageLoaded = ref<Boolean[]>([]);
+const slideWidthInPx = 400;
 
 if (tour === undefined) {
   router.push({ path: "/404" });
@@ -119,8 +119,8 @@ if (tour === undefined) {
 function scrollNext() {
   const slider = document.getElementById("slider");
   if (slider) {
-    let width = slider.scrollWidth - 300;
-    const scroll = (slider.scrollLeft += 300);
+    let width = slider.scrollWidth - slideWidthInPx;
+    const scroll = (slider.scrollLeft += slideWidthInPx);
     if (scroll > width - 400) {
       slider.scrollLeft = 0;
     }

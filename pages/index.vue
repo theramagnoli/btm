@@ -36,7 +36,7 @@
               class="relative h-[400px] w-[300px] tablet:w-[400px] laptop:w-[550px] pb-4 flex flex-col-reverse justify-between items-center max-w-[70%] m-auto"
             >
               <div class="grid justify-center w-full">
-                <div class="flex justify-center gap-2">
+                <div class="flex justify-center gap-1">
                   <StarIcon
                     v-for="n in 5"
                     :key="n"
@@ -63,7 +63,7 @@
           @click="scrollNext()"
           class="grid items-center justify-center h-6 w-6 rounded-full opacity-40 hover:opacity-100 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100 mr-4"
         >
-          <ChevronRigthIcon class="w-6 h-6 pl-[1px]" />
+          <ChevronRightIcon class="w-6 h-6 pl-[1px]" />
         </button>
       </div>
       <div class="p-div mt-8 laptop:mt-2">
@@ -87,7 +87,9 @@
             :key="benefit"
             class="flex items-center"
           >
-            <CheckCircleIcon class="h-5 w-5 mr-2 tablet:mx-2 mb-1" />
+            <CheckCircleIcon
+              class="h-5 w-5 mr-2 tablet:mx-2 mb-1 min-w-[1.25rem]"
+            />
             <p>{{ benefit }}</p>
           </li>
         </ul>
@@ -101,12 +103,8 @@
           v-for="question of data.faq"
           :key="question"
         >
-          <summary
-            class="flex items-center gap-x-2 transition-all group cursor-pointer"
-          >
-            <ArrowCircleIcon
-              class="h-5 w-5 transition-all group-open:rotate-90"
-            />
+          <summary class="flex items-center gap-x-2 group cursor-pointer">
+            <ArrowCircleIcon class="h-5 w-5 group-open:rotate-90" />
             <span class="mt-1">{{ question.question }}</span>
           </summary>
           <div class="flex">
@@ -125,7 +123,7 @@
 <script setup lang="ts">
 import { onUnmounted, ref } from "#imports";
 import data from "../assets/json/inicio.json";
-import ChevronRigthIcon from "assets/icons/ChevronRigthIcon.vue";
+import ChevronRightIcon from "assets/icons/ChevronRightIcon.vue";
 import ChevronLeftIcon from "assets/icons/ChevronLeftIcon";
 import StarIcon from "assets/icons/StarIcon";
 import CheckCircleIcon from "assets/icons/CheckCircleIcon";
@@ -134,12 +132,14 @@ import ArrowCircleIcon from "assets/icons/ArrowCircleIcon";
 const sliderIsPlaying = ref(true);
 const sliderInterval = ref<NodeJS.Timer | null>();
 const isImageLoaded = ref<Boolean[]>([]);
+const msBetweenSlides = 5000;
+const slideDesktopPx = 550;
 
 function scrollNext() {
   const slider = document.getElementById("slider");
   if (slider) {
-    let width = slider.scrollWidth - 444;
-    const scroll = (slider.scrollLeft += 444);
+    let width = slider.scrollWidth - slideDesktopPx;
+    const scroll = (slider.scrollLeft += slideDesktopPx);
     if (scroll > width) {
       slider.scrollLeft = 0;
     }
@@ -150,9 +150,9 @@ function scrollNext() {
 function scrollBack() {
   const slider = document.getElementById("slider");
   if (slider) {
-    const scroll = (slider.scrollLeft -= 800);
+    const scroll = (slider.scrollLeft -= slideDesktopPx);
     if (scroll < -400) {
-      slider.scrollLeft = 800 * Object.keys(data.reviews).length;
+      slider.scrollLeft = slideDesktopPx * Object.keys(data.reviews).length;
     }
     restartInterval();
   }
@@ -167,10 +167,10 @@ function restartInterval() {
 
 function autoplaySlider() {
   sliderInterval.value = setInterval(() => {
-    if (window.matchMedia("(min-width: 800px)").matches && sliderIsPlaying) {
+    if (window.matchMedia("(min-width: 1000px)").matches && sliderIsPlaying) {
       scrollNext();
     }
-  }, 5000);
+  }, msBetweenSlides);
 }
 
 onUnmounted(() => {
