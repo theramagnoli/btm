@@ -24,7 +24,7 @@
 
       <!-- slider -->
       <ul
-        class="w-full flex gap-x-4 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-2xl"
+        class="w-full flex gap-x-4 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-3xl"
         id="slider"
       >
         <li
@@ -32,13 +32,13 @@
           :key="i"
           class="snap-center laptop:snap-start first:ml-4 last:mr-4 laptop:first:ml-0 laptop:last:mr-0"
         >
-          <div class="relative transition-all rounded-2xl overflow-hidden">
+          <div class="relative transition-all rounded-3xl overflow-hidden">
             <div
               class="relative"
               :class="
                 img.ar === '4:3'
-                  ? 'h-[320px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
-                  : 'h-[320px] tablet:h-[300px] aspect-[3/4]'
+                  ? 'h-[320px] aspect-[4/4] tablet:aspect-[4/3]'
+                  : 'h-[320px] aspect-[3/4]'
               "
             >
               <img
@@ -52,8 +52,8 @@
                 class="bg-gray-500 opacity-30 animate-pulse"
                 :class="
                   img.ar === '4:3'
-                    ? 'h-[320px] tablet:h-[300px] aspect-[4/4] tablet:aspect-[4/3]'
-                    : 'h-[320px] tablet:h-[300px] aspect-[3/4]'
+                    ? 'h-[320px] aspect-[4/4] tablet:aspect-[4/3]'
+                    : 'h-[320px] aspect-[3/4]'
                 "
                 v-if="!isImageLoaded[i]"
               />
@@ -79,7 +79,7 @@
           <CalendarIcon
             class="h-4 w-4 border-r-2 border-stone-900 dark:border-gray-200"
           />
-          <span class="mt-1">Book the {{ tour.title }} tour</span>
+          <span class="mt-1 font-normal">Book the {{ tour.title }} tour</span>
         </button>
       </div>
       <!-- description -->
@@ -105,7 +105,7 @@ const router = useRouter();
 let id = route.params.id as string;
 const tour = tours[id];
 const isImageLoaded = ref<Boolean[]>([]);
-const slideWidthInPx = 400;
+const slideWidthInPx = 300;
 
 if (tour === undefined) {
   router.push({ path: "/404" });

@@ -10,6 +10,9 @@ for (const tour in tours) {
 }
 
 export default defineNuxtConfig({
+  alias: {
+    icons: "assets/icons",
+  },
   nitro: {
     prerender: {
       routes: tourRoutes,

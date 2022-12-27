@@ -70,7 +70,7 @@ onMounted(() => {
   opacity: 0;
 }
 .circle {
-  @apply absolute h-[40rem] aspect-square rounded-full filter blur-[150px] opacity-10 dark:opacity-30 animate-blob;
+  @apply absolute h-[40rem] aspect-square rounded-full filter blur-[100px] opacity-10 dark:opacity-30 animate-blob;
 }
 
 .animation-delay-1000 {

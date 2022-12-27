@@ -43,7 +43,7 @@ module.exports = {
             transform: "translate(-10vw, 5vh) scale(1)",
           },
           "75%": {
-            transform: "translate(10vw, -10vh), scale(1.2)",
+            transform: "translate(10vw, -20vh), scale(1.2)",
           },
           "100%": {
             transform: "translate(0, 0) scale(1)",

@@ -1,16 +1,24 @@
 <template>
   <div class="tablet:mx-auto w-full laptop:max-w-3xl relative">
     <div
-      class="transition-all w-full text-gray-200 grid gap-2 mt-8 tablet:pb-4 pb-[90px] rounded-t-0 laptop:rounded-t-3xl p-4 laptop:p-8 absolute overflow-hidden"
+      class="transition-all w-full text-gray-200 grid gap-2 mt-8 tablet:pb-8 laptop:pb-8 pb-[90px] rounded-t-0 laptop:rounded-t-2xl p-4 laptop:p-8 pt-0 laptop:pt-0 absolute overflow-hidden"
       id="footer"
     >
-      <div class="-z-10 bg-black inset-0 absolute">
+      <div class="-z-10 bg-green-700 dark:bg-green-800 inset-0 absolute">
         <div
           class="footer-circle bg-gradient-to-t from from-emerald-600 to-emerald-700 dark:to-emerald-800 -right-24 -top-64 opacity-100 animate-interchange-l"
         />
         <div
           class="footer-circle bg-gradient-to-t from-sky-600 to-sky-500 dark:to-sky-700 -left-40 -top-64 opacity-100 animate-interchange-r"
         />
+      </div>
+      <div
+        class="bg-gradient-to-br from-stone-800/25 to-black/25 text-gray-200 p-4 laptop:mr-0 laptop:ml-auto rounded-b-xl right-0 flex gap-4 items-center justify-center mb-4 w-full relative"
+      >
+        <TagIcon class="w-4 min-w-[1rem] aspect-square mb-[2px]" />
+        <p class="">
+          Enjoy a 5% discount when booking through Facebook or Instagram
+        </p>
       </div>
       <div
         class="grid tablet:flex justify-between items-center tablet:items-start gap-6 w-full z-10 tablet:h-28"
@@ -28,25 +36,27 @@
             <AtIcon />sergeitravel22@gmail.com
           </div>
         </div>
-        <div class="flex gap-4">
-          <a
-            href="https://www.instagram.com/boutiquetoursmexico/"
-            target="_blank"
-            class="social-link group pl-1 pb-1 bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
-            ><InstagramLogo class="social-logo"
-          /></a>
-          <a
-            href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
-            target="_blank"
-            class="social-link group bg-green-700"
-            ><TripAdvisorLogo class="social-logo" />
-          </a>
-          <a
-            href="https://www.facebook.com/BoutiqueToursMexico/"
-            target="_blank"
-            class="social-link group bg-blue-700"
-            ><FacebookLogo class="social-logo"
-          /></a>
+        <div class="grid gap-4">
+          <div class="flex gap-4">
+            <a
+              href="https://www.instagram.com/boutiquetoursmexico/"
+              target="_blank"
+              class="social-link group pl-1 pb-1 bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
+              ><InstagramLogo class="social-logo"
+            /></a>
+            <a
+              href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
+              target="_blank"
+              class="social-link group bg-green-700"
+              ><TripAdvisorLogo class="social-logo" />
+            </a>
+            <a
+              href="https://www.facebook.com/BoutiqueToursMexico/"
+              target="_blank"
+              class="social-link group bg-blue-700"
+              ><FacebookLogo class="social-logo"
+            /></a>
+          </div>
         </div>
       </div>
     </div>
@@ -58,6 +68,7 @@ import InstagramLogo from "/assets/icons/InstagramLogo";
 import TripAdvisorLogo from "/assets/icons/TripAdvisorLogo";
 import TelephoneIcon from "/assets/icons/TelephoneIcon";
 import AtIcon from "/assets/icons/AtIcon";
+import TagIcon from "/assets/icons/TagIcon";
 </script>
 
 <style lang="postcss">
