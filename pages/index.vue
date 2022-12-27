@@ -51,7 +51,6 @@
           </div>
         </li>
       </ul>
-      <!-- slider arrows -->
       <div class="relative -top-[200px] hidden laptop:flex justify-between">
         <button
           @click="scrollBack()"

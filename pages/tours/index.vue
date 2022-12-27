@@ -2,7 +2,6 @@
   <div class="c-div">
     <div>
       <h1>Explore our tour catalogue</h1>
-      <!-- tour catalogue -->
       <div class="grid tablet:grid-cols-2 gap-4 mx-4 laptop:mx-0 pb-0 mb-4">
         <nuxt-link
           :to="'/tours/' + tour.id"

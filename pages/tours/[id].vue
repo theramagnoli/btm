@@ -22,7 +22,6 @@
         <h1 class="text-left">{{ tour.title }} Tour</h1>
       </div>
 
-      <!-- slider -->
       <ul
         class="w-full flex gap-x-4 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-3xl"
         id="slider"
@@ -82,7 +81,7 @@
           <span class="mt-1 font-normal">Book the {{ tour.title }} tour</span>
         </button>
       </div>
-      <!-- description -->
+
       <div class="p-div text-left">
         <p v-for="paragraph of tour.desc" :key="paragraph">{{ paragraph }}</p>
       </div>
