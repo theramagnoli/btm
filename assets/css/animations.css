@@ -1,0 +1,17 @@
+.animation-delay-1000 {
+  animation-delay: 2s;
+}
+.animation-delay-2000 {
+  animation-delay: 4s;
+}
+.animation-delay-3000 {
+  animation-delay: 6s;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}

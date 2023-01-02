@@ -1,7 +1,7 @@
 <template>
   <div class="tablet:mx-auto w-full laptop:max-w-3xl relative">
     <div
-      class="transition-all w-full text-gray-200 grid gap-2 mt-8 tablet:pb-8 laptop:pb-8 pb-[90px] rounded-t-0 laptop:rounded-t-2xl p-4 laptop:p-8 pt-0 laptop:pt-0 absolute overflow-hidden"
+      class="transition-all w-full text-gray-200 grid gap-2 mt-8 pb-[90px] tablet:pb-8 laptop:pb-8 rounded-t-0 laptop:rounded-t-lg p-4 laptop:p-8 absolute overflow-hidden"
       id="footer"
     >
       <div class="-z-10 bg-green-700 dark:bg-green-800 inset-0 absolute">
@@ -11,14 +11,6 @@
         <div
           class="footer-circle bg-gradient-to-t from-sky-600 to-sky-500 dark:to-sky-700 -left-40 -top-64 opacity-100 animate-interchange-r"
         />
-      </div>
-      <div
-        class="bg-gradient-to-br from-stone-800/25 to-black/25 text-gray-200 p-4 laptop:mr-0 laptop:ml-auto rounded-b-xl right-0 flex gap-4 items-center justify-center mb-4 w-full relative"
-      >
-        <TagIcon class="w-4 min-w-[1rem] aspect-square mb-[2px]" />
-        <p class="">
-          Enjoy a 5% discount when booking through Facebook or Instagram
-        </p>
       </div>
       <div
         class="grid tablet:flex justify-between items-center tablet:items-start gap-6 w-full z-10 tablet:h-28"
@@ -73,7 +65,7 @@ import TagIcon from "/assets/icons/TagIcon";
 
 <style lang="postcss">
 .social-link {
-  @apply border-2 border-gray-200 rounded-xl justify-center grid aspect-square items-center h-12 w-12;
+  @apply border border-gray-200 rounded-lg justify-center grid aspect-square items-center h-12 w-12;
 }
 .social-logo {
   @apply w-10 h-10 p-1 invert;

@@ -1,12 +1,12 @@
 <template>
-  <div class="c-div">
+  <div class="container-div">
     <div>
       <h1>
         An amazing experience, <br />
         not a tour
       </h1>
       <ul
-        class="w-full flex snap-x gap-x-4 snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-3xl"
+        class="w-full flex snap-x gap-x-4 snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-lg"
         id="slider"
       >
         <li
@@ -15,7 +15,7 @@
           class="snap-center laptop:last:snap-end laptop:first:snap-start first:ml-4 last:mr-4 laptop:first:ml-0 laptop:last:mr-0"
         >
           <div
-            class="relative overflow-hidden m-auto transition-all rounded-3xl overflow-hidden"
+            class="relative overflow-hidden m-auto transition-all rounded-lg overflow-hidden"
           >
             <img
               :src="review.img"
@@ -25,7 +25,7 @@
               @load="isImageLoaded[i] = true"
             />
             <div
-              class="absolute inset-0 w-full h-full bg-gray-500 opacity-30 animate-pulse rounded-3xl"
+              class="absolute inset-0 w-full h-full bg-gray-500 opacity-30 animate-pulse rounded-lg"
               v-if="!isImageLoaded[i]"
             />
             <div
@@ -33,7 +33,7 @@
               v-else
             />
             <div
-              class="relative h-[400px] w-[300px] tablet:w-[400px] laptop:w-[550px] pb-4 flex flex-col-reverse justify-between items-center max-w-[70%] m-auto"
+              class="relative h-[400px] w-[300px] tablet:w-[440px] laptop:w-[550px] pb-4 flex flex-col-reverse justify-between items-center max-w-[70%] m-auto"
             >
               <div class="grid justify-center w-full">
                 <div class="flex justify-center gap-1">
@@ -44,7 +44,7 @@
                   />
                 </div>
                 <h3 class="mt-2 text-gray-200 text-center drop-shadow-2xl">
-                  <a :href="review.ref" target="_blank">“{{ review.title }}”</a>
+                  <a :href="review.ref" target="_blank">"{{ review.title }}"</a>
                 </h3>
               </div>
             </div>
@@ -65,7 +65,7 @@
           <ChevronRightIcon class="w-6 h-6 pl-[1px]" />
         </button>
       </div>
-      <div class="p-div mt-8 laptop:mt-2">
+      <div class="paragraph-div mt-8 laptop:mt-2">
         <p
           v-for="paragraph of data.desc"
           :key="paragraph"
@@ -103,7 +103,9 @@
           :key="question"
         >
           <summary class="flex items-center gap-x-2 group cursor-pointer">
-            <ArrowCircleIcon class="h-5 w-5 group-open:rotate-90" />
+            <ArrowCircleIcon
+              class="h-5 w-5 group-open:rotate-90 transition-all"
+            />
             <span class="mt-1">{{ question.question }}</span>
           </summary>
           <div class="flex">

@@ -1,24 +1,24 @@
 <template>
-  <div class="c-div">
+  <div class="container-div">
     <div>
       <h1>Explore our tour catalogue</h1>
-      <div class="grid tablet:grid-cols-2 gap-4 mx-4 laptop:mx-0 pb-0 mb-4">
+      <div class="grid tablet:grid-cols-2 gap-4 mx-4 laptop:mx-0 pb-0">
         <nuxt-link
           :to="'/tours/' + tour.id"
           v-for="(tour, i) of tours"
           :key="tour"
           class="h-[250px] grid group relative"
         >
-          <div class="relative w-full h-full overflow-hidden rounded-2xl">
+          <div class="relative w-full h-full overflow-hidden rounded-lg">
             <img
               :alt="tour.title"
               :src="tour.portada"
-              class="inset-0 w-full h-[250px] object-cover group-hover:scale-110 transition-all delay-100 object-center"
+              class="inset-0 w-full h-[250px] object-cover group-hover:scale-105 transition-all object-center laptop:delay-100"
               @load="isImageLoaded[i] = true"
               v-show="isImageLoaded[i]"
             />
             <div
-              class="inset-0 w-full h-[250px] bg-gray-500 opacity-30 animate-pulse rounded-2xl"
+              class="inset-0 w-full h-[250px] bg-gray-500 opacity-30 animate-pulse rounded-lg"
               v-if="!isImageLoaded[i]"
             />
           </div>
@@ -27,27 +27,27 @@
             class="tour-name"
             :class="
               tour.id === 'ChichenItza'
-                ? 'from-green-600 to-green-700 dark:from-green-800 dark:to-green-900'
+                ? 'bg-green-700 dark:bg-green-800'
                 : tour.id === 'Tulum'
-                ? 'from-sky-600 to-sky-700 dark:from-sky-700 dark:to-sky-800'
+                ? 'bg-sky-600 dark:bg-sky-700'
                 : tour.id === 'Cenotes'
-                ? 'from-slate-600 to-slate-700 dark:from-slate-800 dark:to-slate-900'
+                ? 'bg-slate-600 dark:bg-slate-800'
                 : tour.id === 'Coba'
-                ? 'from-stone-500 to-stone-600 dark:from-stone-700 dark:to-stone-800'
+                ? 'bg-stone-600 dark:bg-stone-700'
                 : tour.id === 'Akumal'
-                ? 'from-cyan-600 to-cyan-700 dark:from-cyan-700 dark:to-cyan-800'
+                ? 'bg-cyan-600 dark:bg-cyan-700'
                 : tour.id === 'SianKaan&PuntaAllen'
-                ? 'from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-900'
+                ? 'bg-blue-600 dark:bg-blue-700'
                 : tour.id === 'SianKaan&Muyil'
-                ? 'from-yellow-600 to-yellow-700 dark:from-yellow-700 dark:to-yellow-800'
+                ? 'bg-yellow-600 dark:bg-yellow-700'
                 : tour.id === 'Kayaking&Snorkeling'
-                ? 'from-slate-600 to-slate-700 dark:from-slate-700 dark:to-slate-800'
+                ? 'bg-slate-600 dark:bg-slate-700'
                 : tour.id === 'MayanAdventure'
-                ? 'from-green-600 to-green-700 dark:from-green-800 dark:to-green-900'
-                : 'from-emerald-600 to-emerald-700 dark:from-emerald-800 dark:to-emerald-900'
+                ? 'bg-green-600 dark:bg-green-800'
+                : 'bg-emerald-600 dark:bg-emerald-800'
             "
           >
-            <h3 class="w-full transition-all delay-100">
+            <h3 class="">
               {{ tour.title }}
             </h3>
           </div>
@@ -72,6 +72,6 @@ const isImageLoaded = ref<Boolean[]>([]);
 
 <style scoped lang="postcss">
 .tour-name {
-  @apply rounded-xl p-4 absolute bg-gradient-to-r bottom-3.5 left-3.5 right-3.5 w-auto group-hover:pb-8 transition-all grid gap-2;
+  @apply rounded-l-lg p-4 absolute bottom-4 left-8 group-hover:left-4 right-0 w-auto transition-all grid gap-2 laptop:delay-100 overflow-hidden;
 }
 </style>

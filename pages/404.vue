@@ -1,7 +1,7 @@
 <template>
-  <div class="c-div px-4">
+  <div class="container-div px-4">
     <h1>404: Page not found</h1>
-    <div class="p-div mt-3">
+    <div class="paragraph-div mt-3">
       <p>The page you are looking for does not exists.</p>
       <p>
         Where you looking for an specific tour?
