@@ -65,7 +65,7 @@ import TagIcon from "/assets/icons/TagIcon";
 
 <style lang="postcss">
 .social-link {
-  @apply border border-gray-200 rounded-lg justify-center grid aspect-square items-center h-12 w-12;
+  @apply border-2 border-gray-200 rounded-lg justify-center grid aspect-square items-center h-12 w-12;
 }
 .social-logo {
   @apply w-10 h-10 p-1 invert;

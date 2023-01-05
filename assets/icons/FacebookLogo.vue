@@ -18,6 +18,6 @@
   fill: none;
   stroke: #1d1d1b;
   stroke-linejoin: round;
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 </style>

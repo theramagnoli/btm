@@ -23,6 +23,6 @@
   fill: none;
   stroke: #1d1d1b;
   stroke-miterlimit: 10;
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 </style>
