@@ -42,7 +42,7 @@ p {
 
 .container-div {
   @apply m-auto pt-20 text-stone-900 flex flex-col laptop:max-w-3xl dark:text-gray-200 overflow-hidden;
-  min-height: calc(100vh - 89px - 121px - 168px);
+  min-height: calc(100vh - 234px);
 }
 .container-div > * {
   @apply laptop:max-w-3xl overflow-hidden;
