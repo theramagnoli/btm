@@ -26,7 +26,7 @@ declare namespace FH {
     asn?: string;
     asnRef?: number;
     ref?: string;
-    view:
+    view?:
       | "items"
       | "all-availability"
       | { item: number; availability?: number };
