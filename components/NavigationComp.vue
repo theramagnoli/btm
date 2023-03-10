@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useRoute } from "nuxt/app";
 import { onMounted, onUnmounted, ref, watch } from "#imports";
-import SunIcon from "icons/SunIcon";
-import MoonIcon from "icons/MoonIcon";
+import SunIcon from "assets/icons/SunIcon.vue";
+import MoonIcon from "assets/icons/MoonIcon.vue";
 
 defineProps<{ prefersDarkMode: Boolean }>();
 

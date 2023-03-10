@@ -23,31 +23,31 @@
             />
           </div>
 
-          <div
-            class="tour-name"
-            :class="
-              tour.id === 'ChichenItza'
-                ? 'bg-green-700 dark:bg-green-800'
-                : tour.id === 'Tulum'
-                ? 'bg-sky-600 dark:bg-sky-700'
-                : tour.id === 'Cenotes'
-                ? 'bg-slate-600 dark:bg-slate-800'
-                : tour.id === 'Coba'
-                ? 'bg-stone-600 dark:bg-stone-700'
-                : tour.id === 'Akumal'
-                ? 'bg-cyan-600 dark:bg-cyan-700'
-                : tour.id === 'SianKaan&PuntaAllen'
-                ? 'bg-blue-600 dark:bg-blue-700'
-                : tour.id === 'SianKaan&Muyil'
-                ? 'bg-yellow-600 dark:bg-yellow-700'
-                : tour.id === 'Kayaking&Snorkeling'
-                ? 'bg-slate-600 dark:bg-slate-700'
-                : tour.id === 'MayanAdventure'
-                ? 'bg-green-600 dark:bg-green-800'
-                : 'bg-emerald-600 dark:bg-emerald-800'
-            "
-          >
-            <h3 class="">
+          <div class="tour-name-shadow">
+            <h3
+              class="tour-name"
+              :class="
+                tour.id === 'ChichenItza'
+                  ? 'bg-green-700 dark:bg-green-800'
+                  : tour.id === 'Tulum'
+                  ? 'bg-sky-600 dark:bg-sky-700'
+                  : tour.id === 'Cenotes'
+                  ? 'bg-slate-600 dark:bg-slate-800'
+                  : tour.id === 'Coba'
+                  ? 'bg-stone-600 dark:bg-stone-700'
+                  : tour.id === 'Akumal'
+                  ? 'bg-cyan-600 dark:bg-cyan-700'
+                  : tour.id === 'SianKaan&PuntaAllen'
+                  ? 'bg-blue-600 dark:bg-blue-700'
+                  : tour.id === 'SianKaan&Muyil'
+                  ? 'bg-yellow-600 dark:bg-yellow-700'
+                  : tour.id === 'Kayaking&Snorkeling'
+                  ? 'bg-slate-600 dark:bg-slate-700'
+                  : tour.id === 'MayanAdventure'
+                  ? 'bg-green-600 dark:bg-green-800'
+                  : 'bg-emerald-600 dark:bg-emerald-800'
+              "
+            >
               {{ tour.title }}
             </h3>
           </div>
@@ -72,6 +72,9 @@ const isImageLoaded = ref<Boolean[]>([]);
 
 <style scoped lang="postcss">
 .tour-name {
-  @apply rounded-l-lg p-4 absolute bottom-4 left-8 group-hover:left-4 right-0 w-auto transition-all grid gap-2 laptop:delay-100 overflow-hidden;
+  @apply rounded-b-lg rounded-t-sm p-4 absolute bottom-2 left-2 right-2 w-auto transition-all laptop:delay-100 overflow-hidden;
+}
+.tour-name-shadow {
+  @apply rounded-b-lg rounded-t-sm p-4 absolute bottom-0 left-0 right-0 w-auto transition-all  laptop:delay-100 overflow-hidden h-32 bg-gradient-radial-to-t from-gray-900;
 }
 </style>
