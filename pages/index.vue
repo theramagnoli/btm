@@ -1,189 +1,128 @@
+<script setup lang="ts">
+import { description, benefits, testimonials } from "assets/json/home";
+import { CheckCircleIcon } from "@heroicons/vue/20/solid";
+import MainSlider from "../components/ReviewsSlider.vue";
+import { useMediaQuery } from "@vueuse/core";
+import { ArrowLongRightIcon } from "@heroicons/vue/24/solid";
+import { watch } from "#imports";
+
+const testimonialChunks = ref<Array<any>>([]);
+const isMobile = useMediaQuery("(max-width: 768px)");
+const isTablet = useMediaQuery("(max-width: 1000px)");
+
+watch(
+  isTablet,
+  () => {
+    const numberOfChunks = isTablet.value ? 2 : 3;
+    const chunkSize = Math.ceil(testimonials.length / numberOfChunks);
+    testimonialChunks.value = [];
+    for (let i = 0; i < testimonials.length; i += chunkSize) {
+      testimonialChunks.value.push(testimonials.slice(i, i + chunkSize));
+    }
+  },
+  { immediate: true }
+);
+</script>
+
 <template>
   <div class="container-div">
-    <div>
-      <h1>
-        An amazing experience, <br />
-        not a tour
-      </h1>
-      <ul
-        class="w-full flex snap-x gap-x-4 snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-lg"
-        id="slider"
+    <section
+      class="grid laptop:flex justify-around items-end gap-x-8 desktop:gap-x-16 mt-4 px-4"
+    >
+      <div
+        class="self-center laptop:px-0 laptop:max-w-[47%] space-y-6 mb-8 px-4"
       >
-        <li
-          v-for="(review, i) in data.reviews"
-          :key="i"
-          class="snap-center laptop:last:snap-end laptop:first:snap-start first:ml-4 last:mr-4 laptop:first:ml-0 laptop:last:mr-0"
+        <h1
+          class="text-4xl tracking-tight bg-gradient-to-tl from-sky-700 to-green-700 dark:from-sky-600 dark:to-green-700 bg-clip-text text-transparent dark:text-transparent"
         >
-          <div
-            class="relative overflow-hidden m-auto transition-all rounded-lg overflow-hidden"
-          >
-            <img
-              :src="review.img"
-              alt=""
-              class="absolute inset-0 w-full h-full object-cover object-center"
-              v-show="isImageLoaded[i]"
-              @load="isImageLoaded[i] = true"
-            />
-            <div
-              class="absolute inset-0 w-full h-full bg-gray-500 opacity-30 animate-pulse rounded-lg"
-              v-if="!isImageLoaded[i]"
-            />
-            <div
-              class="absolute inset-0 h-full w-full bg-gradient-radial-to-t from-black via-black/30"
-              v-else
-            />
-            <div
-              class="relative h-[400px] w-[300px] tablet:w-[440px] laptop:w-[550px] pb-4 flex flex-col-reverse justify-between items-center max-w-[70%] m-auto"
-            >
-              <div class="grid justify-center w-full">
-                <div class="flex justify-center gap-1">
-                  <StarIcon
-                    v-for="n in 5"
-                    :key="n"
-                    class="h-6 w-6 text-yellow-600 drop-shadow-md"
-                  />
-                </div>
-                <h3 class="mt-2 text-gray-200 text-center drop-shadow-2xl">
-                  <a :href="review.ref" target="_blank">"{{ review.title }}"</a>
-                </h3>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="relative -top-[200px] hidden laptop:flex justify-between">
-        <button
-          @click="scrollBack()"
-          class="grid items-center justify-center h-6 w-6 rounded-full opacity-40 hover:opacity-100 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100 ml-4"
-        >
-          <ChevronLeftIcon class="w-6 h-6 pr-[1px]" />
-        </button>
-        <button
-          @click="scrollNext()"
-          class="grid items-center justify-center h-6 w-6 rounded-full opacity-40 hover:opacity-100 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100 mr-4"
-        >
-          <ChevronRightIcon class="w-6 h-6 pl-[1px]" />
-        </button>
-      </div>
-      <div class="paragraph-div mt-8 laptop:mt-2">
+          Not a tour, <br />
+          but an amazing <br />
+          experience
+        </h1>
         <p
-          v-for="paragraph of data.desc"
-          :key="paragraph"
-          class="last:font-semibold"
+          class="font-sans text-stone-900 dark:text-stone-200 text-base hyphens-auto"
         >
-          {{ paragraph }}
+          In
+          <span class="font-medium">Boutique Tours Mexico</span> we offer you
+          extraordinary experiences for your adventures in Mexico.
         </p>
+        <NuxtLink
+          to="/tours"
+          class="mb-8 inline-flex items-center justify-center text-base font-medium text-stone-800 dark:text-stone-200 transition-all duration-300 ease-in-out border-b-2 border-stone-800 dark:border-stone-200 hover:border-sky-600 dark:hover:border-sky-600 hover:pl-4"
+        >
+          Discover our tours
+          <ArrowLongRightIcon class="h-5 w-5 ml-2 mt-1" />
+        </NuxtLink>
       </div>
-    </div>
-    <div>
-      <h1>We help you discover the best of Mexico</h1>
-      <div class="grid px-4">
+      <MainSlider />
+    </section>
+    <Separator class="mt-0" v-if="!isMobile" />
+    <div class="h-10 w-full" v-else />
+    <section>
+      <h1 class="text-center mb-8 px-4">
+        We help you discover <br />
+        the best of Mexico!
+      </h1>
+      <div class="grid gap-8">
+        <div class="paragraph-div max-w-3xl m-auto">
+          <p
+            v-for="paragraph of description"
+            :key="paragraph"
+            class="hyphens-auto"
+          >
+            {{ paragraph }}
+          </p>
+        </div>
         <ul
-          class="gap-y-4 grid tablet:flex flex-wrap justify-center tablet:px-0"
+          class="gap-y-4 tablet:flex grid flex-wrap justify-center tablet:px-0 max-w-3xl m-auto px-4"
         >
           <li
-            v-for="benefit of data.list"
+            v-for="benefit of benefits"
             :key="benefit"
             class="flex items-center"
           >
-            <CheckCircleIcon
-              class="h-5 w-5 mr-2 tablet:mx-2 mb-1 min-w-[1.25rem]"
-            />
-            <p>{{ benefit }}</p>
+            <CheckCircleIcon class="h-4 w-4 mr-2 tablet:mx-2 min-w-[1.25rem]" />
+            <p class="hyphens-auto">{{ benefit }}</p>
           </li>
         </ul>
       </div>
-    </div>
-    <div>
-      <h1>Frequently asked questions</h1>
-      <div class="grid gap-y-4 mb-4">
-        <details
-          class="mx-4 laptop:mx-0 group"
-          v-for="question of data.faq"
-          :key="question"
+    </section>
+    <Separator />
+    <section>
+      <h1 class="text-center mb-4 px-4">And don't just take our word for it</h1>
+      <h1
+        class="text-center mb-8 px-4 flex justify-center items-center flex-wrap normal-case font-medium text-lg font-sans tracking-normal"
+      >
+        We count with over 500 5-star reviews on TripAdvisor.
+      </h1>
+      <div
+        class="grid tablet:grid-cols-2 laptop:grid-cols-3 gap-6 px-4 desktop-px-0"
+      >
+        <ul
+          v-for="(testimonialChunk, index) in testimonialChunks"
+          :key="index"
+          class="space-y-6"
         >
-          <summary class="flex items-center gap-x-2 group cursor-pointer">
-            <ArrowCircleIcon
-              class="h-5 w-5 group-open:rotate-90 transition-all"
-            />
-            <span class="mt-1">{{ question.question }}</span>
-          </summary>
-          <div class="flex">
-            <p
-              class="border-l-2 border-gray-800 dark:border-gray-300 ml-[9px] pl-4 py-4 mt-1"
-            >
-              {{ question.answer }}
-            </p>
-          </div>
-        </details>
+          <li
+            v-for="testimonial of testimonialChunk"
+            :key="testimonial.title"
+            class="bg-stone-100 dark:bg-stone-950 p-4 grid gap-2 rounded-sm dark:shadow-gray-800/50 text-sm"
+          >
+            <p>{{ testimonial.review }}</p>
+
+            <div class="grid grid-cols-[auto_1fr]">
+              <p class="font-medium text-stone-700 dark:text-stone-200">
+                {{ testimonial.author }}
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
-<script setup lang="ts">
-import { onUnmounted, ref } from "#imports";
-import data from "../assets/json/inicio.json";
-import ChevronRightIcon from "assets/icons/ChevronRightIcon.vue";
-import ChevronLeftIcon from "assets/icons/ChevronLeftIcon";
-import StarIcon from "assets/icons/StarIcon";
-import CheckCircleIcon from "assets/icons/CheckCircleIcon";
-import ArrowCircleIcon from "assets/icons/ArrowCircleIcon";
-
-const sliderIsPlaying = ref(true);
-const sliderInterval = ref<NodeJS.Timer | null>();
-const isImageLoaded = ref<Boolean[]>([]);
-const msBetweenSlides = 5000;
-const slideDesktopPx = 550;
-
-function scrollNext() {
-  const slider = document.getElementById("slider");
-  if (slider) {
-    let width = slider.scrollWidth - slideDesktopPx;
-    const scroll = (slider.scrollLeft += slideDesktopPx);
-    if (scroll > width) {
-      slider.scrollLeft = 0;
-    }
-    restartInterval();
-  }
-}
-
-function scrollBack() {
-  const slider = document.getElementById("slider");
-  if (slider) {
-    const scroll = (slider.scrollLeft -= slideDesktopPx);
-    if (scroll < -400) {
-      slider.scrollLeft = slideDesktopPx * Object.keys(data.reviews).length;
-    }
-    restartInterval();
-  }
-}
-
-function restartInterval() {
-  if (sliderInterval.value) {
-    clearInterval(sliderInterval.value);
-  }
-  autoplaySlider();
-}
-
-function autoplaySlider() {
-  sliderInterval.value = setInterval(() => {
-    if (window.matchMedia("(min-width: 1000px)").matches && sliderIsPlaying) {
-      scrollNext();
-    }
-  }, msBetweenSlides);
-}
-
-onUnmounted(() => {
-  if (sliderInterval.value) {
-    clearInterval(sliderInterval.value);
-  }
-});
-
-autoplaySlider();
-</script>
-
-<style>
+<style scoped>
 details > summary {
   list-style: none;
 }

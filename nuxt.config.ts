@@ -1,34 +1,13 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 import { defineNuxtConfig } from "nuxt/config";
-import untypedTours from "./assets/json/tours.json";
-import { Tours } from "assets/entities/Tour";
-const tours: Tours = untypedTours;
-
-let tourRoutes = [];
-for (const tour in tours) {
-  tourRoutes.push(`/tours/${tours[tour].id}`);
-}
 
 export default defineNuxtConfig({
-  alias: {
-    icons: "assets/icons",
-  },
-  nitro: {
-    prerender: {
-      routes: tourRoutes,
-    },
-  },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
+  //@ts-ignore
   css: ["assets/css/tailwind.css"],
-  ssr: false,
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
     head: {
+      htmlAttrs: {
+        lang: "en",
+      },
       title: "Boutique Tours Mexico | Premiere Archeology & History Tours",
       meta: [
         { charset: "utf-8" },
@@ -44,7 +23,7 @@ export default defineNuxtConfig({
           hid: "keywords",
           name: "keywords",
           content:
-            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichen, playa del carmen, private, mexico, mexico tours",
+            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichenitza, playa del carmen, private, mexico, mexico tours",
         },
       ],
       link: [
@@ -62,4 +41,28 @@ export default defineNuxtConfig({
       script: [{ src: "https://fareharbor.com/embeds/api/v1/" }],
     },
   },
+
+  modules: ["@pinia/nuxt", "@nuxt/image-edge"],
+  nitro: {
+    prerender: {
+      routes: [
+        "/tours/ChichenItza",
+        "/tours/Coba",
+        "/tours/Tulum",
+        "/tours/Cenotes",
+        "/tours/EkBalam",
+        "/tours/SianKaan&Muyil",
+        "/tours/SianKaan&PuntaAllen",
+        "/tours/Kayaking&Snorkeling",
+        "/tours/MayanAdventure",
+      ],
+    },
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  ssr: false,
 });

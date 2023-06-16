@@ -1,125 +1,21 @@
-<template>
-  <div class="container-div">
-    <div class="flex items-center">
-      <NuxtLink
-        to="/tours"
-        class="ml-4 laptop:ml-0 flex items-center gap-2 text-stone-900 dark:text-gray-200 rounded-full mt-2"
-      >
-        <ArrowLeftIcon class="w-6 h-6" />
-      </NuxtLink>
-      <h1 class="text-left">{{ tour.title }} Tour</h1>
-    </div>
-
-    <ul
-      class="w-full flex gap-x-4 snap-x snap-mandatory overflow-x-auto scroll-smooth laptop:rounded-lg"
-      id="slider"
-    >
-      <li
-        v-for="(img, i) of tour.imgs"
-        :key="i"
-        class="snap-center laptop:snap-start first:ml-4 last:mr-4 laptop:first:ml-0 laptop:last:mr-0"
-      >
-        <div class="relative transition-all rounded-lg overflow-hidden">
-          <div
-            class="relative"
-            :class="
-              img.ar === '4:3'
-                ? 'h-[320px] aspect-[4/4] tablet:aspect-[4/3]'
-                : 'h-[320px] aspect-[3/4]'
-            "
-          >
-            <img
-              :src="img.src"
-              :alt="img.alt"
-              class="h-full object-cover"
-              @load="isImageLoaded[i] = true"
-              v-show="isImageLoaded[i]"
-            />
-            <div
-              class="bg-gray-500 opacity-30 animate-pulse"
-              :class="
-                img.ar === '4:3'
-                  ? 'h-[320px] aspect-[4/4] tablet:aspect-[4/3]'
-                  : 'h-[320px] aspect-[3/4]'
-              "
-              v-if="!isImageLoaded[i]"
-            />
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="relative -top-[164px] hidden laptop:flex justify-between">
-      <button @click="scrollBack()" class="arrow-button ml-4">
-        <ChevronLeftIcon class="w-6 h-6 pr-[1px]" />
-      </button>
-      <button @click="scrollNext()" class="arrow-button mr-4">
-        <ChevronRightIcon class="w-6 h-6 pl-[1px]" />
-      </button>
-    </div>
-    <div class="grid tablet:justify-end mt-8 laptop:mt-0 mx-4 laptop:mx-0">
-      <button
-        class="rounded-lg items-center justify-center font-semibold transition-all flex bg-stone-900 dark:bg-gray-200 py-2 px-4 text-gray-200 dark:text-stone-900 flex gap-x-2 align-middle text-left"
-        @click="toFareHarborItem(tour.book)"
-      >
-        <CalendarIcon class="h-4 w-4 float-left" />
-        <span class="font-normal -mb-1"> Book the {{ tour.title }} tour </span>
-      </button>
-    </div>
-
-    <div class="paragraph-div text-left">
-      <p v-for="paragraph of tour.desc" :key="paragraph">
-        {{ paragraph }}
-      </p>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useHead, useRoute, useRouter } from "nuxt/app";
-import untypedTours from "assets/json/tours.json";
-import { ref } from "#imports";
-import { Tours } from "assets/entities/Tour";
-import CalendarIcon from "assets/icons/CalendarIcon.vue";
-import ChevronRightIcon from "assets/icons/ChevronRightIcon.vue";
-import ChevronLeftIcon from "assets/icons/ChevronLeftIcon.vue";
-import ArrowLeftIcon from "assets/icons/ArrowLeftIcon.vue";
+import { getTourById } from "assets/json/tours";
+import { CalendarIcon, ArrowLeftIcon } from "@heroicons/vue/20/solid";
+import ImageSlider from "~/components/tours/ImageSlider.vue";
 
-const tours: Tours = untypedTours;
 const route = useRoute();
 const router = useRouter();
 let id = route.params.id as string;
-const tour = tours[id];
-const isImageLoaded = ref<Boolean[]>([]);
-const slideWidthInPx = 300;
+const tour = ref(getTourById(id));
 
-if (tour === undefined) {
+if (tour === null) {
   router.push({ path: "/404" });
 } else {
   useHead({
-    title: `${tour.title} Tour | Boutique Tours Mexico`,
-    meta: [{ name: "description", content: tour.desc[0] }],
+    title: `${tour.value?.title} Tour | Boutique Tours Mexico`,
+    meta: [{ name: "description", content: tour.value?.desc[0] }],
   });
-}
-
-function scrollNext() {
-  const slider = document.getElementById("slider");
-  if (slider) {
-    let width = slider.scrollWidth - slideWidthInPx;
-    const scroll = (slider.scrollLeft += slideWidthInPx);
-    if (scroll > width - 400) {
-      slider.scrollLeft = 0;
-    }
-  }
-}
-
-function scrollBack() {
-  const slider = document.getElementById("slider");
-  if (slider) {
-    const scroll = (slider.scrollLeft -= 300);
-    if (scroll < -140) {
-      slider.scrollLeft = 300 * tour.imgs.length;
-    }
-  }
 }
 
 function toFareHarborItem(itemNo: string) {
@@ -131,8 +27,40 @@ function toFareHarborItem(itemNo: string) {
 }
 </script>
 
-<style scoped lang="postcss">
-.arrow-button {
-  @apply grid items-center justify-center h-6 w-6 rounded-full opacity-40 hover:opacity-100 transition-all text-stone-900 dark:text-gray-200 dark:bg-black bg-gray-100;
+<template>
+  <div class="container-div">
+    <div
+      class="flex flex-col laptop:flex-row justify-start items-center laptop:gap-8 laptop:mt-8 px-0 laptop:px-4"
+    >
+      <div class="flex flex-col gap-4 pt-4 pb-8 px-4 laptop:px-0 w-full">
+        <div class="flex gap-8">
+          <NuxtLink
+            to="/tours"
+            class="flex items-center gap-2 text-stone-200 opacity-60 hover:opacity-100 transition-all duration-30"
+          >
+            <ArrowLeftIcon class="w-5 h-5" /> Return
+          </NuxtLink>
+          <button
+            @click="toFareHarborItem(tour.book)"
+            class="flex items-center gap-2 text-stone-200 opacity-60 hover:opacity-100 transition-all duration-30"
+          >
+            <CalendarIcon class="w-5 h-5" /> Book this tour
+          </button>
+        </div>
+        <h1 class="text-stone-200">{{ tour.title }} Tour</h1>
+      </div>
+      <ImageSlider :images="tour.imgs" />
+    </div>
+    <div class="paragraph-div text-left text-stone-200 px-4">
+      <p v-for="paragraph of tour.desc" :key="paragraph" class="hyphens-auto">
+        {{ paragraph }}
+      </p>
+    </div>
+  </div>
+</template>
+
+<style lang="postcss">
+.background {
+  background-color: green !important;
 }
 </style>

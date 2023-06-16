@@ -10,10 +10,10 @@ declare namespace FH {
   function autoLightframe(
     options:
       | {
-          container: HTMLElement;
-          className: string;
+          container?: HTMLElement;
+          className?: string;
           callback: Function;
-          overrideOnClick: boolean | "all";
+          overrideOnClick?: boolean | "all";
         }
       | string
       | HTMLElement

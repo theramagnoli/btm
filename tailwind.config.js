@@ -8,15 +8,16 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ["Josefin Sans", "sans-serif"],
+      sans: ["Work Sans", "sans-serif"],
       display: ["Unbounded", "sans-serif"],
     },
     screens: {
       tablet: "520px",
       laptop: "1000px",
+      desktop: "1400px",
     },
     extend: {
       backgroundImage: () => ({
@@ -27,7 +28,7 @@ module.exports = {
         reverse: "reverse",
       },
       animation: {
-        blob: "blob 8s infinite",
+        blob: "blob 10s infinite",
         "interchange-r": "interchange-r 20s infinite",
         "interchange-l": "interchange-l 20s infinite",
       },

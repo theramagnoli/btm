@@ -1,56 +1,40 @@
 <template>
-  <div :class="{ dark: prefersDarkMode }">
-    <div class="superior-div">
-      <div class="background">
-        <div class="circle bg-emerald-900 top-1/2 right-1/2" />
-        <div
-          class="circle bg-green-200 dark:bg-green-900 bottom-1-2 left-1/2 animation-delay-1000"
-        />
-        <div
-          class="circle bg-cyan-200 dark:bg-cyan-900 bottom-1/2 right-1/2 animation-delay-2000"
-        />
-        <div
-          class="circle bg-teal-200 dark:bg-teal-900 top-1/2 left-1/2 animation-delay-3000"
-        />
-      </div>
-
-      <NavigationComp
-        @changeMode="prefersDarkMode = !prefersDarkMode"
-        :prefers-dark-mode="prefersDarkMode"
-      />
-      <NuxtPage />
-      <FooterComp />
-      <BookingButton />
-    </div>
+  <div
+    class="superior-div"
+    :class="{
+      'overflow-hidden': isDropdownOpen,
+    }"
+  >
+    <Background />
+    <NavigationComp />
+    <NuxtPage />
+    <FooterComp />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "nuxt/app";
-import { watch, ref, onMounted } from "#imports";
+import useAppStateStore from "~/store/appStateStore";
+const appState = useAppStateStore();
+const prefersDarkMode = computed<boolean>(() => appState.prefersDarkMode);
+const isDropdownOpen = computed(() => appState.isDropdownOpen);
 
-const prefersDarkMode = ref(false);
-
-const route = useRoute();
-watch(route, () => {
-  setTimeout(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  }, 200);
+watch(isDropdownOpen, (val) => {
+  if (val) document.body.style.overflow = "hidden";
+  else document.body.style.overflow = "auto";
 });
 
-onMounted(() => {
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-    prefersDarkMode.value = true;
-});
+watch(
+  prefersDarkMode,
+  (val) => {
+    if (val) document.body.classList.add("dark");
+    else document.body.classList.remove("dark");
+    appState.setTheme(val);
+  },
+  { immediate: true }
+);
 </script>
 
 <style>
 @import "assets/css/animations.css";
-.circle {
-  @apply absolute h-[40rem] aspect-square rounded-full filter blur-[100px] opacity-10 dark:opacity-30 animate-blob;
-}
+@import "assets/css/utils.css";
 </style>

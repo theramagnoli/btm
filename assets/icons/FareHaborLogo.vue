@@ -4,6 +4,7 @@
     data-name="Capa 1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 212 212"
+    stroke="currentColor"
   >
     <circle class="cls-1" cx="106" cy="106" r="101.5" />
     <path
@@ -28,7 +29,6 @@
 <style scoped>
 .cls-1 {
   fill: none;
-  stroke: #000;
   stroke-linejoin: round;
   stroke-width: 9px;
 }
