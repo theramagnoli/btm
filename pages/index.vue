@@ -4,9 +4,13 @@ import { CheckCircleIcon } from "@heroicons/vue/20/solid";
 import MainSlider from "../components/ReviewsSlider.vue";
 import { useMediaQuery } from "@vueuse/core";
 import { ArrowLongRightIcon } from "@heroicons/vue/24/solid";
-import { watch } from "#imports";
+import { watch, ref } from "#imports";
 
-const testimonialChunks = ref<Array<any>>([]);
+const testimonialChunks = ref<{
+  author: string;
+  review: string;
+  href: string;
+}[][]>([]);
 const isMobile = useMediaQuery("(max-width: 768px)");
 const isTablet = useMediaQuery("(max-width: 1000px)");
 
@@ -106,15 +110,16 @@ watch(
           <li
             v-for="testimonial of testimonialChunk"
             :key="testimonial.title"
-            class="bg-stone-100 dark:bg-stone-950 p-4 grid gap-2 rounded-sm dark:shadow-gray-800/50 text-sm"
+            class="bg-stone-100 dark:bg-black p-4 grid gap-2 rounded-sm dark:shadow-gray-800/50 text-sm"
           >
+            <a :href="testimonial.href" target="_blank">
             <p>{{ testimonial.review }}</p>
-
-            <div class="grid grid-cols-[auto_1fr]">
-              <p class="font-medium text-stone-700 dark:text-stone-200">
+            <div class="grid">
+              <p class="font-semibold text-stone-950 dark:text-stone-100 w-full text-right">
                 {{ testimonial.author }}
               </p>
             </div>
+            </a>
           </li>
         </ul>
       </div>

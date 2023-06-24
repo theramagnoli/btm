@@ -5,7 +5,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "deploy": "nuxt generate && firebase deploy",
-    "deploy:preview": "nuxt generate && firebase hosting:channel:deploy dev"
+    "deploy:preview": "nuxt generate && npx firebase hosting:channel:deploy dev"
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-28008586.381b906",

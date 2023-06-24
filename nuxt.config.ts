@@ -23,7 +23,7 @@ export default defineNuxtConfig({
           hid: "keywords",
           name: "keywords",
           content:
-            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichenitza, playa del carmen, private, mexico, mexico tours",
+            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichenitza, playa del carmen, private, mexico, mexico tours, world wonders, beach, cenote, cenotes",
         },
       ],
       link: [

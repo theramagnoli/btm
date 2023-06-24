@@ -126,7 +126,7 @@ autoplaySlider();
       </li>
     </ul>
     <div
-      class="hidden laptop:block absolute laptop:flex justify-between top-4 right-4 gap-4"
+      class="hidden absolute tablet:flex justify-between top-4 right-4 gap-4"
     >
       <button
         @click="scrollBack"

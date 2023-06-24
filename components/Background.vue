@@ -1,6 +1,6 @@
 <template>
   <div
-    class="-z-50 fixed w-full h-[100vh] filter"
+    class="-z-50 fixed w-full h-[100dvh]"
     :class="{
       'bg-gray-100 dark:bg-black': !isInTour,
       'bg-green-900':
@@ -14,15 +14,9 @@
       'bg-blue-900': isInTour && tourId === 'SianKaan&PuntaAllen',
     }"
   >
-    <div class="blur-[35px]">
-      <div class="circle bg-emerald-700 top-1/2 right-1/2" />
-      <div
-        class="circle bg-green-600 dark:bg-green-900 bottom-1-2 left-1/2 animation-delay-1000"
-      />
-      <div
-        class="circle bg-cyan-600 dark:bg-cyan-900 bottom-1/2 right-1/2 animation-delay-3000"
-      />
-      <div class="circle bg-teal-700 top-1/2 left-1/2 animation-delay-2000" />
+    <div class="blur-[50px]">
+      <div class="circle bg-emerald-950 dark:bg-emerald-700 top-0 right-1/2" />
+      <div class="circle bg-sky-950 dark:bg-sky-700 top-0 left-1/2 animation-delay-2000" />
     </div>
   </div>
 </template>
@@ -39,17 +33,10 @@ const tourId = computed(() => route.params.id);
 
 <style scoped>
 .circle {
-  @apply absolute h-[40rem] aspect-square rounded-full filter blur-[0px] opacity-10 dark:opacity-[0.15] animate-blob;
-}
-.animation-delay-1000 {
-  animation-delay: 1000ms;
+  @apply absolute h-[40rem] aspect-square rounded-full filter blur-[0px] opacity-10 animate-blob;
 }
 
 .animation-delay-2000 {
   animation-delay: 2000ms;
-}
-
-.animation-delay-3000 {
-  animation-delay: 3000ms;
 }
 </style>

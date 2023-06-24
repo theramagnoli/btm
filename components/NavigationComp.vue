@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from "nuxt/app";
 import { onMounted, onUnmounted, ref, watch, nextTick } from "#imports";
+import {Transition} from "@vue/runtime-dom";
 import FareHarborLogo from "/assets/icons/FareHaborLogo";
 import {
   Bars3Icon,
@@ -102,56 +103,47 @@ const isInTour = computed(() => appState.isInToursPage);
 </script>
 
 <template>
-  <Transition name="slide-fade">
-    <ResponsiveModal
-      title="Book Now"
-      v-if="isModalOpen"
-      @close="isModalOpen = !isModalOpen"
-    >
-      <div class="grid gap-4 grid-cols-2">
-        <p class="col-span-2">
-          <span class="font-medium">With one of our partners </span>
-          - recommended if you are booking a tour in our catalogue.
-        </p>
-        <button
-          class="relative overflow-hidden rounded-sm p-4 bg-[#0a6ece] col-span-2 hover:brightness-90 transition-all text-stone-200"
-        >
-          Book trough FareHarbor
-          <FareHarborLogo
-            class="h-14 absolute -right-2 top-1.5 fill-stone-200"
-          />
-        </button>
-        <p class="col-span-2">
-          <span class="font-medium">Directly with us </span>
-          - recommended if you are looking for a more personalized experience.
-        </p>
-        <button
-          class="relative overflow-hidden rounded-sm p-4 bg-blue-700 text-base/[1.12] hover:brightness-90 transition-all text-stone-200"
-        >
-          DM us on Facebook
-        </button>
-        <button
-          class="relative overflow-hidde rounded-sm p-4 bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500 text-base/[1.12] hover:brightness-90 transition-all text-stone-200"
-        >
-          DM us on Instagram
-        </button>
-      </div>
-    </ResponsiveModal>
-  </Transition>
+  <ResponsiveModal
+    title="Book Now"
+    @close="isModalOpen = !isModalOpen"
+    :isOpen="isModalOpen"
+  >
+    <div class="grid gap-4 grid-cols-2">
+      <p class="col-span-2">
+        <span class="font-medium">With one of our partners </span>
+        - recommended if you are booking a tour in our catalogue.
+      </p>
+      <button
+        class="relative overflow-hidden rounded-sm p-4 bg-[#0a6ece] col-span-2 hover:brightness-90 transition-all text-stone-200"
+        @click="toFareHarbor"
+      >
+        Book trough FareHarbor
+        <FareHarborLogo
+          class="h-14 absolute -right-2 top-1.5 fill-stone-200"
+        />
+      </button>
+      <p class="col-span-2">
+        <span class="font-medium">Directly with us </span>
+        - recommended if you are looking for a more personalized experience.
+      </p>
+      <a href="https://m.me/BoutiqueToursMexico" target="_blank"
+         class="relative overflow-hidden rounded-sm p-4 bg-blue-700 text-base/[1.12] hover:brightness-90 transition-all text-stone-200 text-center"
+      >
+        DM us on Facebook
+      </a>
+      <a href="https://ig.me/m/boutiquetoursmexico" target="_blank"
+        class="relative overflow-hidde rounded-sm p-4 bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500 text-base/[1.12] hover:brightness-90 transition-all text-stone-200 text-center"
+      >
+        DM us on Instagram
+      </a>
+    </div>
+  </ResponsiveModal>
   <div
-    class="fixed w-full z-50 text-gray-900 dark:text-gray-200 dark:shadow-gray-800/50 transition-all h-16 laptop:h-20 backdrop-blur-md"
+    class="fixed w-full z-50 text-gray-900 dark:text-gray-200 h-16 laptop:h-20 backdrop-blur-md transition-colors duration-300"
     :class="{
-      'bg-stone-100/70 dark:bg-black/70': !isScrollYZero && !isInTour,
       'shadow-xl': !isScrollYZero && !isDropdownOpen,
-      'bg-green-950/80':
-        isInTour && (tourId === 'ChichenItza' || tourId === 'MayanAdventure'),
-      'bg-sky-950/80': isInTour && tourId === 'Tulum',
-      'bg-stone-950/80': isInTour && tourId === 'Coba',
-      'bg-emerald-950/80': isInTour && tourId === 'EkBalam',
-      'bg-yellow-950/80': isInTour && tourId === 'SianKaan&Muyil',
-      'bg-slate-950/80':
-        isInTour && (tourId === 'Cenotes' || tourId === 'Kayaking&Snorkeling'),
-      'bg-blue-950/80': isInTour && tourId === 'SianKaan&PuntaAllen',
+      'bg-stone-200/90 dark:bg-black/90': !isScrollYZero && !isDropdownOpen && !isInTour,
+      'bg-stone-950/50': !isScrollYZero && !isDropdownOpen && isInTour,
     }"
     id="navbar"
     ref="navbar"
@@ -166,7 +158,7 @@ const isInTour = computed(() => appState.isInToursPage);
             alt="Boutique Tours Mexico Logo"
             class="h-8 laptop:h-12 brightness-[.20] dark:brightness-100"
             :class="{
-              'brightness-[20] dark:brightness-[20] opacity-[.80]': isInTour,
+              'brightness-[20] dark:brightness-[20] opacity-[.80]': isInTour && !isModalOpen,
             }"
           />
         </NuxtLink>
@@ -193,7 +185,7 @@ const isInTour = computed(() => appState.isInToursPage);
               :to="route.path"
               class="relative"
               :class="{
-                'text-stone-200': isInTour,
+                'text-stone-200': isInTour && !isModalOpen,
               }"
             >
               {{ route.name }}
@@ -205,7 +197,7 @@ const isInTour = computed(() => appState.isInToursPage);
       <div class="flex justify-end gap-4 items-center" v-if="isNotMobile">
         <button
           @click="toggleModal"
-          class="rounded-lg tablet:rounded-full items-center justify-center tablet:pl-1 tablet:pr-3 uppercase transition-all flex backdrop-blur-lg text-md bg-gray-300/70 p-1 font-display opacity-75 hover:opacity-100"
+          class="rounded-full items-center justify-center tablet:pl-1 tablet:pr-3 uppercase transition-all flex backdrop-blur-lg text-md bg-stone-300/70 p-1 font-display opacity-90 hover:opacity-100"
           :class="
             isInTour
               ? 'dark:bg-stone-300/70 dark:text-stone-800'
@@ -224,7 +216,7 @@ const isInTour = computed(() => appState.isInToursPage);
           :is="isDropdownOpen ? markRaw(XMarkIcon) : markRaw(Bars3Icon)"
           class="w-6 h-6 fill-stone-800 dark:fill-stone-200 cursor-pointer absolute right-4 top-[calc(50%-0.75rem)]"
           :class="{
-            'brightness-[20] opacity-90': isInTour,
+            'brightness-[20] opacity-90': isInTour && !isModalOpen,
           }"
           @click="appState.toggleDropdown"
         />
@@ -233,32 +225,33 @@ const isInTour = computed(() => appState.isInToursPage);
       <Teleport to="body" :disabled="isNotMobile" v-if="!isNotMobile">
         <Transition name="page">
           <div
-            class="fixed top-16 left-0 w-full h-[calc(100dvh-4rem)] bg-gradient-to-t from-black/80 via-black/50 backdrop-blur-md z-40"
+            class="fixed top-0 left-0 w-full h-[100dvh] pt-16 pb-4 bg-gradient-to-t from-black/80 via-black/50 backdrop-blur-lg z-40"
             :class="{
-              'to-stone-100/70': !isInTour && !prefersDarkMode,
-              'to-black/70': !isInTour && prefersDarkMode,
-              'to-green-950/80':
+              'to-stone-100/90': !isInTour && !prefersDarkMode,
+              'to-black/90': !isInTour && prefersDarkMode,
+              'to-green-900/80':
                 isInTour &&
                 (tourId === 'ChichenItza' || tourId === 'MayanAdventure'),
-              'to-sky-950/80': isInTour && tourId === 'Tulum',
-              'to-stone-950/80': isInTour && tourId === 'Coba',
-              'to-emerald-950/80': isInTour && tourId === 'EkBalam',
-              'to-yellow-950/80': isInTour && tourId === 'SianKaan&Muyil',
-              'to-slate-950/80':
+              'to-sky-900/80': isInTour && tourId === 'Tulum',
+              'to-stone-900/80': isInTour && tourId === 'Coba',
+              'to-emerald-900/80': isInTour && tourId === 'EkBalam',
+              'to-yellow-900/80': isInTour && tourId === 'SianKaan&Muyil',
+              'to-slate-900/80':
                 isInTour &&
                 (tourId === 'Cenotes' || tourId === 'Kayaking&Snorkeling'),
-              'to-blue-950/80': isInTour && tourId === 'SianKaan&PuntaAllen',
+              'to-blue-900/80': isInTour && tourId === 'SianKaan&PuntaAllen',
             }"
             v-if="isDropdownOpen"
             @click="appState.toggleDropdown"
           >
-            <div class="flex flex-col h-full px-10 py-10 justify-between">
+            <div class="flex flex-col h-full px-4 pt-10 justify-between">
               <ul class="menu flex flex-col gap-6 mb-6">
                 <li v-for="route in routes" :key="route.path" class="flex">
                   <NuxtLink
-                    class="tracking-wider uppercase text-xl text-stone-200 pl-4 border-l-4 border-black/20 w-full"
+                    class="items-center px-4 uppercase transition-all flex text-lg/6 pb-1 border-l-4 border-transparent"
                     :class="{
-                      'text-stone-800': !isInTour && !prefersDarkMode,
+                      'text-stone-200': isInTour,
+                      'text-stone-800 dark:text-stone-200': !isInTour,
                     }"
                     :to="route.path"
                   >
@@ -268,10 +261,12 @@ const isInTour = computed(() => appState.isInToursPage);
               </ul>
               <div class="actions grid gap-6 text-xl">
                 <button
-                  @click="toggleModal"
-                  class="flex items-center gap-4 text-stone-200 opacity-100"
+                    @click="toggleModal"
+                    class="rounded-t-sm items-center justify-center tablet:pl-1 tablet:pr-3 uppercase transition-all flex backdrop-blur-lg text-md bg-stone-200/80 py-4 active:scale-90 p-1 font-display dark:bg-stone-900 text-stone-800 dark:text-stone-200"
                 >
-                  <CalendarDaysIcon class="fill-stone-200 h-5 w-5" />
+                  <FareHarborLogo
+                      class="h-8 w-8 mr-2 dark:fill-stone-200"
+                  />
                   Book now
                 </button>
               </div>
@@ -283,8 +278,8 @@ const isInTour = computed(() => appState.isInToursPage);
   </div>
 </template>
 
-<style lang="postcss">
+<style scoped>
 .router-link-exact-active {
-  @apply font-semibold laptop:text-stone-900 laptop:dark:text-stone-200 border-l-sky-600;
+  @apply font-semibold laptop:text-stone-900 laptop:dark:text-stone-200 border-l-sky-600 opacity-100;
 }
 </style>
