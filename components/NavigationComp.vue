@@ -139,7 +139,7 @@ const isInTour = computed(() => appState.isInToursPage);
     </div>
   </ResponsiveModal>
   <div
-    class="fixed w-full z-50 text-gray-900 dark:text-gray-200 h-16 laptop:h-20 backdrop-blur-md transition-colors duration-300"
+    class="fixed w-full z-50 text-gray-900 dark:text-gray-200 h-16 laptop:h-20 backdrop-blur-md transition-colors duration-1000"
     :class="{
       'shadow-xl': !isScrollYZero && !isDropdownOpen,
       'bg-stone-200/90 dark:bg-black/90': !isScrollYZero && !isDropdownOpen && !isInTour,
