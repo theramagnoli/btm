@@ -7,7 +7,7 @@ export const benefits = [
   "An inspiring and rewarding travel experience",
   "Private tour guide",
   "All entrance fees",
-  "Snacks and drinks",
+  "Drinks",
   "Delicious lunch",
   "Snorkeling equipment",
   "Travel comfortably in an air-conditioned van",
