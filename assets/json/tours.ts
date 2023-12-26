@@ -1,9 +1,18 @@
-const tours = [
+type Tour = {
+  id: string;
+  title: string;
+  desc: string[];
+  cover: string;
+  imgs: { src: string; alt: string; ar: "3:4" | "4:3" }[];
+  book: string;
+};
+
+export const tours: Tour[] = [
   {
     id: "ChichenItza",
     title: "Chichen Itzá",
     desc: [
-      "Come to Chichen Itzá and visit the amazing Kukulcan pyramid right in the middle of this impressive archeological site in the state of Yucatán, Mexico.",
+      "Come to Chichen Itzá and visit the amazing Kukulcan pyramid right in the middle of this impressive archaeological site in the state of Yucatán, Mexico.",
       "It was recently discovered this pyramid was built above a huge Cenote (sinkhole) making the construction of this building a real feat.",
       "You can not miss visiting and knowing the history of this marvelous Mayan Toltec city.  You will also visit other impressive buildings like the biggest prehispanic ball court in America,  the great Planetarium, the Venus Platform and many other temples.",
       "Near Chichen Itzá, there are some wonderful refreshing Cenotes which are like an Oasis in the middle of this jungle, here you will be able to swim and snorkel and relax in the pristine waters of these natural swimming pools.",
@@ -84,6 +93,44 @@ const tours = [
       },
     ],
     book: "188272",
+  },
+  {
+    id: "YolasBiking",
+    title: "Yola's Biking",
+    desc: [
+      "If you like fun, adventure and exercise, join us in our exciting ride into the Mayan jungle, an amazing place full of natural wonders such as beautiful trees, colorful birds and breathtaking cenotes (crystal clear water sinkholes or natural pools).",
+      "We start by riding 10 kms into a beautiful dirt road and we stop to enjoy, swim, snorkel or just relay in a very nice semi open cenote with pristine water. Then we ride back and we visit another breathtaking underground river cenote full of stalactites, stalagmites and rock formations. Then we will enjoy some fruit and drinks and finally back to the meeting point.",
+    ],
+    cover:
+      "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FYolasBiking%2FGuidesInJungle.png?alt=media&token=ea94e3df-d9a6-4873-9d43-72fd614636ca",
+    imgs: [
+      {
+        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FYolasBiking%2FGuidesInJungle.png?alt=media&token=ea94e3df-d9a6-4873-9d43-72fd614636ca",
+        alt: "Guides in the jungle",
+        ar: "3:4",
+      },
+      {
+        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FYolasBiking%2FBikingGroup.jpg?alt=media&token=10b17b35-6bf7-4a75-8621-d0e80614f48c",
+        alt: "Group biking in the jungle",
+        ar: "3:4",
+      },
+      {
+        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FYolasBiking%2FGuidesInCenote.jpeg?alt=media&token=70c85110-b5cc-40f0-a33d-98733cc26b03",
+        alt: "Guides in cenote",
+        ar: "4:3",
+      },
+      {
+        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FYolasBiking%2FWomenBiking.jpg?alt=media&token=61e62169-d856-40a8-8ded-de11c687f507",
+        alt: "Women biking in the jungle",
+        ar: "3:4",
+      },
+      {
+        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FYolasBiking%2FGuidesSittingInCenote.jpeg?alt=media&token=3eb9fd69-ac53-40b3-8cd9-b163131ef82b",
+        alt: "Guides sitting in cenote",
+        ar: "3:4",
+      },
+    ],
+    book: "188290",
   },
   {
     id: "Tulum",
@@ -462,48 +509,10 @@ const tours = [
     book: "188291",
   },
   {
-    id: "Kayaking&Snorkeling",
-    title: "Kayaking & Snorkeling",
-    desc: [
-      "There are many great places to snorkel in the Mexican Caribbean, but this place, my hidden bay is my favorite one. We start the day kayaking into the reef, once we get there we are going to snorkel for 50 minutes in this amazing reef full of wonderful sea life such as colorful fish, sting rays, turtles, etc.",
-      "Then we are going to swim in one beautiful cenote, an open one where you can do cliff diving if you want or just relax in its pristine waters or a second one, wich is an amazing underground river full of stalactites, stalagmites and rock formations. Joins us in this adventure.",
-    ],
-    cover:
-      "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FKayaking%26Snorkeling%2FFriendsSnorkeling.png?alt=media",
-    imgs: [
-      {
-        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FKayaking%26Snorkeling%2FStingRay.jpg?alt=media",
-        alt: "Stingray",
-        ar: "4:3",
-      },
-      {
-        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FKayaking%26Snorkeling%2FCoupleSnorkeling2.png?alt=media",
-        alt: "Couple snorkeling",
-        ar: "4:3",
-      },
-      {
-        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FKayaking%26Snorkeling%2FCoupleSnorkeling.png?alt=media",
-        alt: "Couple snorkeling",
-        ar: "4:3",
-      },
-      {
-        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FKayaking%26Snorkeling%2FFriendsSnorkeling.png?alt=media",
-        alt: "Friends snorkeling",
-        ar: "4:3",
-      },
-      {
-        src: "https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FKayaking%26Snorkeling%2FGroupKayaking.png?alt=media",
-        alt: "Group kayaking",
-        ar: "4:3",
-      },
-    ],
-    book: "188305",
-  },
-  {
     id: "MayanAdventure",
     title: "Mayan Adventure",
     desc: [
-      "If you want to spend a full day. of fun and adventure doing zip- linning, rappelling, rock-climbing, hiking and swimming in a breathtaking underground river.",
+      "If you want to spend a full day. of fun and adventure doing zip- lining, rappelling, rock-climbing, hiking and swimming in a breathtaking underground river.",
       "I invite you to explore the Mayan jungle with me and do all these activities. You will also enjoy a delicious Mayan lunch in this park. ",
     ],
     cover:
@@ -549,43 +558,6 @@ const tours = [
   },
 ];
 
-export const archaeologicalTours = tours.filter((tour) => {
-  return (
-    tour.id === "Tulum" ||
-    tour.id === "ChichenItza" ||
-    tour.id === "Coba" ||
-    tour.id === "EkBalam" ||
-    tour.id === "SianKaan&Muyil"
-  );
-});
-
-export const archaeologicalToursBrief = archaeologicalTours.map((tour) => {
-  return {
-    id: tour.id,
-    title: tour.title,
-    cover: tour.cover,
-  };
-});
-
-export const adventureTours = tours.filter((tour) => {
-  return (
-    tour.id === "MayanAdventure" ||
-    tour.id === "Kayaking&Snorkeling" ||
-    tour.id === "Cenotes" ||
-    tour.id === "SianKaan&PuntaAllen"
-  );
-});
-
-export const adventureToursBrief = adventureTours.map((tour) => {
-  return {
-    id: tour.id,
-    title: tour.title,
-    cover: tour.cover,
-  };
-});
-
-export const getTourById = (id: string) => {
-  const index = tours.findIndex((tour) => tour.id === id);
-  if (index === -1) return null;
-  return tours[index];
+export const getTourById = (id: string): Tour | undefined => {
+  return tours.find((tour) => tour.id === id);
 };

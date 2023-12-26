@@ -1,4 +1,4 @@
-[
+export default [
   {
     "name": "Chichen Itzá",
     "shortDescription": "Mayan pyramid ruins",

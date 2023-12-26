@@ -23,25 +23,24 @@ export default defineNuxtConfig({
           hid: "keywords",
           name: "keywords",
           content:
-            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichenitza, playa del carmen, private, mexico, mexico tours, world wonders, beach, cenote, cenotes",
+            "tours, tour, private tours, vacation, tour mexico, cancun, tulum, chichenitza, playa del carmen, private, mexico, mexico tours, world wonders, beach, cenote, cenotes, private tour, vacations, ruins, mayan",
         },
       ],
       link: [
         {
           rel: "icon",
-          href: "/assets/icons/favicon.icon",
+          href: "/favicon.icon",
           sizes: "any",
         },
         {
           rel: "icon",
-          href: "/assets/icons/favicon.svg",
+          href: "/assets/logos/favicon.svg",
           type: "image/svg+xml",
         },
       ],
       script: [{ src: "https://fareharbor.com/embeds/api/v1/" }],
     },
   },
-
   modules: ["@pinia/nuxt", "@nuxt/image-edge"],
   nitro: {
     prerender: {
@@ -55,6 +54,7 @@ export default defineNuxtConfig({
         "/tours/SianKaan&PuntaAllen",
         "/tours/Kayaking&Snorkeling",
         "/tours/MayanAdventure",
+        "/tours/YolasBiking",
       ],
     },
   },

@@ -11,19 +11,26 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ["Work Sans", "sans-serif"],
+      sans: ["Syne", "sans-serif"],
       display: ["Unbounded", "sans-serif"],
     },
     screens: {
       tablet: "520px",
       laptop: "1000px",
       desktop: "1400px",
+      768: "768px",
+      coarse: { raw: "(pointer: coarse)" },
+      fine: { raw: "(pointer: fine)" },
     },
     extend: {
-      backgroundImage: () => ({
+      gridTemplateColumns: {
+        "300px": "repeat(auto-fill, minmax(300px, 1fr))",
+        "350px": "repeat(auto-fill, minmax(350px, 1fr))",
+      },
+      backgroundImage: {
         "gradient-radial-to-t":
           "radial-gradient(110% 100% at 50% 115%, var(--tw-gradient-stops))",
-      }),
+      },
       animationDirection: {
         reverse: "reverse",
       },

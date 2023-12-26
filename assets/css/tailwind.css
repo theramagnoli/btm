@@ -1,31 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 
-:root {
-  font-size: 16px;
+body {
+  @apply relative;
+}
+
+html:has(.dark) {
+  @apply bg-black;
+}
+
+@media (max-width: 520px) {
+  br {
+    @apply hidden;
+  }
 }
 
 h1 {
-  @apply text-3xl font-bold uppercase tracking-wider text-stone-900 dark:text-stone-200 font-display;
+  @apply text-2xl font-bold uppercase tracking-wider text-stone-900 dark:text-stone-200 font-display;
 }
 
 h2 {
-  @apply w-3/4 text-2xl text-stone-200 tracking-wider font-display;
+  @apply w-3/4 text-2xl text-stone-950 dark:text-stone-200 tracking-wider;
 }
 
 h3 {
   @apply text-stone-200 text-base font-display font-normal;
 }
 
-p {
-  @apply tracking-wide;
+p, ul, span, div {
+  @apply tracking-wide text-stone-900 dark:text-stone-200 text-base;
 }
 
 .paragraph-div {
-  @apply space-y-4 text-center mt-8 px-4 laptop:px-0;
+  @apply space-y-4 text-center mt-8 px-6 laptop:px-0;
 }
 
 .superior-div {
@@ -53,6 +63,11 @@ p {
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
 }
+
+:root {
+  font-size: 16px;
+}
+
 @tailwind utilities;
