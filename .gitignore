@@ -5,5 +5,5 @@ node_modules
 .cache
 .output
 .env
-dist/
-.idea/
+dist
+.idea

@@ -1,86 +1,40 @@
 <template>
-  <div id="colorMode">
-    <div class="s-div">
-      <navigation-comp @changeMode="changeMode" />
-      <div class="h-20"></div>
-      <NuxtPage />
-      <footer-comp />
-      <booking-button />
-    </div>
+  <div
+    class="superior-div"
+    :class="{
+      'overflow-hidden': isDropdownOpen,
+    }"
+  >
+    <Background />
+    <NavigationComp />
+    <NuxtPage />
+    <FooterComp />
   </div>
 </template>
 
-<script>
-import "./assets/css/tailwind.css";
-export default {
-  head: {
-    title: "Boutique Tours Mexico | Premiere Archeology & History Tours",
-    meta: [
-      { charset: "utf-8" },
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "Specialist in perzonalized flexible, small-group and private tours to the most amazing cenotes and impressive archeological areas. We help you discover the best of Mexico!",
-      },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "format-detection", content: "telephone=no" },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content:
-          "tours, tour, private tours, vacation, tour mexico, cancun, tulum",
-      },
-    ],
-    link: [
-      {
-        rel: "icon",
-        href: "/static/favicon.ico",
-        sizes: "any",
-      },
-      {
-        rel: "icon",
-        href: "/static/favicon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    script: [{ src: "https://fareharbor.com/embeds/api/v1/" }],
+<script setup lang="ts">
+import useAppStateStore from "~/store/appStateStore";
+const appState = useAppStateStore();
+const prefersDarkMode = computed<boolean>(() => appState.prefersDarkMode);
+const isDropdownOpen = computed(() => appState.isDropdownOpen);
+
+watch(isDropdownOpen, (val) => {
+  if (val) document.body.style.overflow = "hidden";
+  else document.body.style.overflow = "auto";
+});
+
+watch(
+  prefersDarkMode,
+  (val) => {
+    if (val) document.body.classList.add("dark");
+    else document.body.classList.remove("dark");
+    appState.setTheme(val);
   },
-  watch: {
-    $route() {
-      setTimeout(() => {
-        window.scroll({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 200);
-    },
-    darkMode(a) {
-      if (a == true) {
-        document.querySelector("#colorMode").classList.add("dark");
-      } else {
-        document.querySelector("#colorMode").classList.remove("dark");
-      }
-    },
-  },
-  data() {
-    return {
-      darkMode: false,
-    };
-  },
-  methods: {
-    changeMode() {
-      if (this.darkMode == false) {
-        this.darkMode = true;
-      } else {
-        this.darkMode = false;
-      }
-    },
-  },
-  mounted() {
-    let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (matched) this.darkMode = true;
-  },
-};
+  { immediate: true }
+);
 </script>
+
+<style>
+@import "assets/css/animations.css";
+@import "assets/css/utils.css";
+</style>

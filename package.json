@@ -1,17 +1,27 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "deploy": "nuxt generate && firebase deploy",
+    "deploy:preview": "nuxt generate && npx firebase hosting:channel:deploy dev"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.3",
-    "tailwindcss": "^3.0.24"
+    "@nuxt/image-edge": "1.0.0-28008586.381b906",
+    "nuxt": "3.3.3", 
+    "postcss": "8.4.20",
+    "tailwindcss": "3.3.0"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "postcss": "^8.4.14"
+    "@heroicons/vue": "2.0.16",
+    "@pinia/nuxt": "0.4.7",
+    "@vueuse/core": "9.13.0",
+    "axios": "0.27.2",
+    "pinia": "2.0.33",
+    "ts-node": "10.9.1"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
