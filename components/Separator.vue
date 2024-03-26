@@ -1,18 +1,7 @@
 <template>
-  <div class="gradient dark:dark-stops h-10 rotate-180 mt-8" />
+  <div
+    class="mx-auto mb-8 mt-10 h-2 w-1/3 rounded-full bg-stone-100 dark:bg-stone-800"
+  />
 </template>
 
-<style>
-:root {
-  --gradient-stops: #a8a29e70, transparent, transparent;
-}
-.dark .dark\:dark-stops {
-  --gradient-stops: rgb(31 41 55 / 0.9), transparent, transparent;
-}
-.gradient {
-  background-image: radial-gradient(
-    110% 100% at 50% 115%,
-    var(--gradient-stops)
-  );
-}
-</style>
+<style></style>
