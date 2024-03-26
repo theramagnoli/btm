@@ -12,11 +12,11 @@ declare namespace FH {
       | {
           container?: HTMLElement;
           className?: string;
-          callback: Function;
-          overrideOnClick?: boolean | "all";
+          callback?: Function;
+          overrideOnClick?: boolean | 'all';
         }
       | string
-      | HTMLElement
+      | HTMLElement,
   ): any;
 
   // This is an alternative to Auto-Lightframe, but does not provide any more functionality. However, FH.open can be used in any event handler code. Returns true if the Lightframe was opened, and false otherwise.
@@ -27,8 +27,8 @@ declare namespace FH {
     asnRef?: number;
     ref?: string;
     view?:
-      | "items"
-      | "all-availability"
+      | 'items'
+      | 'all-availability'
       | { item: number; availability?: number };
   }): boolean;
 

@@ -1,41 +1,33 @@
 <script setup lang="ts">
-import { useHead } from "nuxt/app";
-import {
-  adventureToursBrief,
-  archaeologicalToursBrief,
-} from "assets/json/tours";
+import ToursShowcase from '~/components/tours/ToursShowcase.vue';
 
-import ToursShowcase from "~/components/tours/ToursShowcase.vue";
-import { useMediaQuery } from "@vueuse/core";
-
-useHead({
-  title: "Tours | Boutique Tours Mexico",
+useHeadSafe({
+  title: 'Tours | Boutique Tours Mexico',
   meta: [
     {
-      name: "description",
+      name: 'description',
       content:
-        "Discover our tour catalogue. From the most popular destinations to the most remote and unknown places in Mexico. We are sure you will find the perfect tour for you.",
+        'Discover our tour catalogue. From the most popular destinations to the most remote and unknown places in Mexico. We are sure you will find the perfect tour for you.',
     },
   ],
 });
-
-const isTablet = useMediaQuery("(max-width: 1000px)");
 </script>
 
 <template>
-  <div class="container-div">
-    <div class="grid px-4 gap-4 mt-4 laptop:mt-0">
+  <div
+    class="m-auto flex min-h-[calc(100vh-234px)] flex-col overflow-hidden pb-16 pt-[120px] text-stone-900 laptop:max-w-5xl laptop:pt-[100px] dark:text-stone-200"
+  >
+    <div class="grid gap-4 px-6 laptop:pt-6 desktop:mt-4">
       <h1
-        class="text-4xl tracking-tight bg-gradient-to-t from-yellow-700 to-emerald-700 bg-clip-text text-transparent dark:text-transparent"
+        class="bg-gradient-to-t from-yellow-600 to-emerald-600 bg-clip-text text-4xl tracking-tight text-transparent tablet:text-5xl laptop:mb-4 dark:text-transparent"
       >
-        Find your <br />perfect <br />
+        Find your <br />
+        perfect <br />
         destination
       </h1>
 
-      <div class="grid gap-4 mt-4">
-        <ToursShowcase
-          :tours="archaeologicalToursBrief.concat(adventureToursBrief)"
-        />
+      <div class="mt-2 grid gap-4">
+        <ToursShowcase />
       </div>
     </div>
   </div>
