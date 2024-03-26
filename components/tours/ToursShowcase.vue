@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { ref } from "#imports";
-import { SparklesIcon } from "@heroicons/vue/16/solid";
-import { useMediaQuery } from "@vueuse/core";
-import { tours } from "assets/json/tours";
+import { ref } from '#imports';
+import { SparklesIcon } from '@heroicons/vue/16/solid';
+import { useMediaQuery } from '@vueuse/core';
+import { tours } from 'assets/json/tours';
+import { tourColorDictionary } from 'assets/json/tourColorDictionary';
 
-const isMobile = useMediaQuery("(max-width: 600px)");
+const isMobile = useMediaQuery('(max-width: 600px)');
 const isImageLoaded = ref<Boolean[]>([]);
 
 function preloadImages() {
   for (let i = 0; i < tours.length; i++) {
     const img = new Image();
-    img.src = tours[i].cover ?? "";
+    img.src = tours[i].cover ?? '';
     isImageLoaded.value.push(false);
     img.onload = () => {
       isImageLoaded.value[i] = true;
@@ -33,55 +34,40 @@ preloadImages();
       :to="`/tours/${tour.id}`"
       v-for="(tour, i) of tours"
       :key="tour"
-      class="h-[300px] grid group relative"
+      class="group relative grid h-[300px]"
     >
       <div
-        class="relative h-full overflow-hidden rounded-md border-green-50/20"
+        class="relative h-full overflow-hidden rounded-[30px] border-green-50/20"
       >
         <Transition name="fade" :duration="400">
           <NuxtImg
             format="webp"
             :src="tour.cover ?? ''"
             :lazy="true"
-            class="absolute inset-0 w-full h-full object-cover object-center"
+            class="absolute inset-0 h-full w-full object-cover object-center transition-all group-hover:scale-105"
             v-if="isImageLoaded[i]"
           />
           <div
-            class="absolute inset-0 w-full h-full bg-gray-500 opacity-30 animate-pulse rounded-md laptop:rounded-none"
+            class="absolute inset-0 h-full w-full animate-pulse rounded-[30px] bg-gray-500 opacity-30 laptop:rounded-none"
             v-else
           />
         </Transition>
         <div
-          class="rounded-b-sm rounded-t-sm p-4 absolute bottom-0 left-0 right-0 w-auto overflow-hidden h-32 bg-gradient-radial-to-t from-gray-900"
+          class="absolute bottom-0 left-0 right-0 h-32 w-auto overflow-hidden rounded-b-sm rounded-t-sm bg-gradient-radial-to-t from-gray-900 p-4"
         >
           <p
-            class="rounded-md p-4 absolute bottom-4 left-4 right-4 transition-all font-medium flex items-center justify-between bg-opacity-75 backdrop-blur-lg"
-            :class="{
-              'bg-green-300 dark:bg-green-700':
-                tour.id === 'ChichenItza' || tour.id === 'MayanAdventure',
-              'bg-lime-300 dark:bg-lime-700': tour.id === 'YolasBiking',
-              'bg-sky-300 dark:bg-sky-700': tour.id === 'Tulum',
-              'bg-stone-300 dark:bg-stone-700': tour.id === 'Coba',
-              'bg-emerald-300 dark:bg-emerald-700': tour.id === 'EkBalam',
-              'bg-cyan-300 dark:bg-cyan-700': tour.id === 'Akumal',
-              'bg-yellow-300 dark:bg-yellow-700': tour.id === 'SianKaan&Muyil',
-              'bg-slate-300 dark:bg-slate-900':
-                tour.id === 'Cenotes' || tour.id === 'Kayaking&Snorkeling',
-              'bg-blue-300 dark:bg-blue-700': tour.id === 'SianKaan&PuntaAllen',
-            }"
+            :class="`absolute inset-x-4 bottom-4 flex items-center justify-between rounded-[20px] p-4 font-medium backdrop-blur-lg transition-all bg-${tourColorDictionary[tour.id]}-300 dark:bg-${tourColorDictionary[tour.id]}-700`"
           >
             {{ tour.title }}
           </p>
         </div>
         <div
           v-if="tour.id === 'YolasBiking'"
-          class="absolute top-0 right-4 bg-yellow-500 dark:bg-yellow-600 p-1 px-2 rounded-b-md flex items-center text-sm font-bold"
+          class="absolute right-4 top-4 flex items-center rounded-[20px] bg-yellow-500 px-3 py-2 text-sm font-semibold dark:bg-yellow-600"
         >
-          <SparklesIcon class="w-3 h-3 mr-2" /> NEW
+          <SparklesIcon class="mr-2 h-3 w-3" /> NEW
         </div>
       </div>
     </NuxtLink>
   </div>
 </template>
-
-<style lang="postcss"></style>
