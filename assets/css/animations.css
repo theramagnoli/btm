@@ -1,9 +1,11 @@
 .animation-delay-1000 {
   animation-delay: 2s;
 }
+
 .animation-delay-2000 {
   animation-delay: 4s;
 }
+
 .animation-delay-3000 {
   animation-delay: 6s;
 }
@@ -39,7 +41,6 @@
   transform: translateX(-100%);
 }
 
-
 .slide-up-enter-from,
 .slide-down-leave-to {
   transform: translateY(100%);
@@ -49,6 +50,3 @@
 .slide-down-enter-from {
   transform: translateY(-100%);
 }
-
-
-/* Path: assets/css/variables.css */
