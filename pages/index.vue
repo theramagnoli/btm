@@ -1,106 +1,100 @@
 <script setup lang="ts">
-import { description, benefits, testimonials } from "assets/json/home";
-import { CheckCircleIcon } from "@heroicons/vue/20/solid";
-import MainSlider from "../components/ReviewsSlider.vue";
-import { useMediaQuery } from "@vueuse/core";
-import { ArrowLongRightIcon } from "@heroicons/vue/24/solid";
-import { watch, ref } from "#imports";
+import { testimonials, faq, benefits, pitch } from 'assets/json/home';
+import { StarIcon } from '@heroicons/vue/16/solid';
+import MainSlider from '../components/ReviewsSlider.vue';
+import { useMediaQuery } from '@vueuse/core';
+import {
+  ArrowRightIcon,
+  ChevronRightIcon,
+  ArrowTopRightOnSquareIcon,
+} from '@heroicons/vue/16/solid';
+import { watch, ref } from 'vue';
+import { Review } from '~/types/Review';
 
-const testimonialChunks = ref<{
-  author: string;
-  review: string;
-  href: string;
-}[][]>([]);
-const isMobile = useMediaQuery("(max-width: 768px)");
-const isTablet = useMediaQuery("(max-width: 1000px)");
+const testimonialChunks = ref<Review[][]>([]);
+const isTablet = useMediaQuery('(max-width: 999px)');
+const areQuestionsOpen = ref<boolean[]>([false, false]);
+const selectedReview = ref<Review | null>(null);
 
-watch(
-  isTablet,
-  () => {
-    const numberOfChunks = isTablet.value ? 2 : 3;
-    const chunkSize = Math.ceil(testimonials.length / numberOfChunks);
-    testimonialChunks.value = [];
-    for (let i = 0; i < testimonials.length; i += chunkSize) {
-      testimonialChunks.value.push(testimonials.slice(i, i + chunkSize));
-    }
-  },
-  { immediate: true }
-);
+function adjustTestimonialChunks() {
+  const chunkSize = isTablet.value ? 4 : 3;
+  testimonialChunks.value = [];
+  for (let i = 0; i < (isTablet.value ? 2 : 3); i++) {
+    testimonialChunks.value.push(
+      testimonials.slice(i * chunkSize, (i + 1) * chunkSize),
+    );
+  }
+}
+
+watch(isTablet, adjustTestimonialChunks, { immediate: true });
 </script>
 
 <template>
-  <div class="container-div">
+  <div
+    class="m-auto flex min-h-[calc(100vh-234px)] flex-col overflow-hidden pb-16 pt-[120px] text-stone-900 laptop:max-w-5xl laptop:pt-[100px] dark:text-stone-200"
+  >
     <section
-      class="grid laptop:flex justify-around items-end gap-x-8 desktop:gap-x-16 mt-4 px-4"
+      class="grid items-end justify-around gap-x-8 laptop:flex desktop:mt-4 desktop:gap-x-16 laptop:mx-6"
     >
-      <div
-        class="self-center laptop:px-0 laptop:max-w-[47%] space-y-6 mb-8 px-4"
-      >
+      <div class="m-auto w-full space-y-6 px-6 laptop:px-0">
         <h1
-          class="text-4xl tracking-tight bg-gradient-to-tl from-sky-700 to-green-700 dark:from-sky-600 dark:to-green-700 bg-clip-text text-transparent dark:text-transparent"
+          class="bg-gradient-to-tl from-sky-500 to-green-500 bg-clip-text text-4xl tracking-tight text-transparent brightness-[.85] tablet:text-5xl dark:text-transparent"
         >
           Not a tour, <br />
           but an amazing <br />
           experience
         </h1>
-        <p
-          class="font-sans text-stone-900 dark:text-stone-200 text-base hyphens-auto"
-        >
-          In
-          <span class="font-medium">Boutique Tours Mexico</span> we offer you
+        <p>
+          In <span class="font-medium">Boutique Tours Mexico</span> we offer you
           extraordinary experiences for your adventures in Mexico.
         </p>
         <NuxtLink
           to="/tours"
-          class="mb-8 inline-flex items-center justify-center text-base font-medium text-stone-800 dark:text-stone-200 transition-all duration-300 ease-in-out border-b-2 border-stone-800 dark:border-stone-200 hover:border-sky-600 dark:hover:border-sky-600 hover:pl-4"
+          class="group relative flex cursor-pointer items-center justify-between gap-2 overflow-hidden rounded-[20px] bg-green-300 p-4 pl-5 text-base/snug transition-all duration-300 ease-in-out fine:bg-opacity-85 fine:hover:bg-opacity-100 dark:bg-green-600 dark:fine:bg-opacity-85"
         >
-          Discover our tours
-          <ArrowLongRightIcon class="h-5 w-5 ml-2 mt-1" />
+          <WavesPatternGradient
+            class="absolute right-0 opacity-10 transition-all duration-700 ease-in-out group-hover:translate-x-4 group-hover:scale-110 group-hover:opacity-40"
+          />
+          Discover our destinations
+          <ArrowRightIcon class="size-5" />
         </NuxtLink>
       </div>
-      <MainSlider />
+      <MainSlider
+        @review-clicked="(clickedReview) => (selectedReview = clickedReview)"
+      />
     </section>
-    <Separator class="mt-0" v-if="!isMobile" />
-    <div class="h-10 w-full" v-else />
-    <section>
-      <h1 class="text-center mb-8 px-4">
-        We help you discover <br />
-        the best of Mexico!
+    <Separator />
+    <section class="flex w-full flex-col items-center justify-center">
+      <ul
+        class="mx-6 mb-8 flex max-w-2xl flex-row flex-wrap items-center gap-2 child:flex child:items-center child:gap-x-2 tablet:justify-center"
+      >
+        <li v-for="benefit in benefits">
+          <span class="-my-4 text-6xl font-bold text-sky-300 dark:text-sky-700"
+            >·</span
+          >
+          {{ benefit }}
+        </li>
+      </ul>
+      <h1
+        class="mb-6 bg-gradient-to-tl from-emerald-500 to-sky-500 bg-clip-text px-6 text-center tracking-tight text-transparent brightness-[.85] dark:text-transparent"
+      >
+        We help you discover the best of Mexico!
       </h1>
-      <div class="grid gap-8">
-        <div class="paragraph-div max-w-3xl m-auto">
-          <p
-            v-for="paragraph of description"
-            :key="paragraph"
-            class="hyphens-auto"
-          >
-            {{ paragraph }}
-          </p>
-        </div>
-        <ul
-          class="gap-y-4 tablet:flex grid flex-wrap justify-center tablet:px-0 max-w-3xl m-auto px-4"
-        >
-          <li
-            v-for="benefit of benefits"
-            :key="benefit"
-            class="flex items-center"
-          >
-            <CheckCircleIcon class="h-4 w-4 mr-2 tablet:mx-2 min-w-[1.25rem]" />
-            <p class="hyphens-auto">{{ benefit }}</p>
-          </li>
-        </ul>
-      </div>
+      <Paragraphs class="mx-auto px-6 text-center" :paragraphs="pitch" />
     </section>
     <Separator />
     <section>
-      <h1 class="text-center mb-4 px-4">And don't just take our word for it</h1>
       <h1
-        class="text-center mb-8 px-4 flex justify-center items-center flex-wrap normal-case font-medium text-lg font-sans tracking-normal"
+        class="mb-4 bg-gradient-to-tl from-green-500 to-emerald-500 bg-clip-text px-6 text-center tracking-tight text-transparent brightness-[.85] dark:text-transparent"
       >
-        We count with over 500 5-star reviews on TripAdvisor.
+        Don't just take our word for it
       </h1>
+      <p class="mb-6 px-6 text-center">
+        We count with over 500 five-star reviews on TripAdvisor
+      </p>
+
       <div
-        class="grid tablet:grid-cols-2 laptop:grid-cols-3 gap-6 px-4 desktop-px-0"
+        class="desktop-px-0 grid gap-6 px-6 tablet:grid-cols-2 laptop:grid-cols-3"
       >
         <ul
           v-for="(testimonialChunk, index) in testimonialChunks"
@@ -108,26 +102,93 @@ watch(
           class="space-y-6"
         >
           <li
-            v-for="testimonial of testimonialChunk"
-            :key="testimonial.title"
-            class="bg-stone-100 dark:bg-black p-4 grid gap-2 rounded-sm dark:shadow-gray-800/50 text-sm"
+            v-for="(testimonial, idx) in testimonialChunk"
+            :key="idx"
+            class="grid cursor-pointer items-center justify-center gap-2 rounded-[20px] bg-green-300 p-4 fine:bg-opacity-85 dark:bg-green-600 dark:fine:bg-opacity-85"
+            @click="selectedReview = testimonial"
           >
-            <a :href="testimonial.href" target="_blank">
-            <p>{{ testimonial.review }}</p>
-            <div class="grid">
-              <p class="font-semibold text-stone-950 dark:text-stone-100 w-full text-right">
-                {{ testimonial.author }}
-              </p>
-            </div>
-            </a>
+            <p>
+              {{ testimonial.headline }}
+            </p>
+            <p
+              class="mt-2 w-full text-right font-medium text-stone-950 dark:text-stone-100"
+            >
+              {{ testimonial.author }}
+            </p>
           </li>
         </ul>
       </div>
     </section>
+    <Separator />
+    <section>
+      <h1
+        class="mb-6 bg-gradient-to-tl from-sky-500 to-green-500 bg-clip-text px-6 text-center tracking-tight text-transparent brightness-[.85] dark:text-transparent"
+      >
+        Frequently asked questions
+      </h1>
+      <ul class="mx-6 grid gap-6">
+        <li
+          v-for="(question, index) in faq"
+          @click="areQuestionsOpen[index] = !areQuestionsOpen[index]"
+          :class="
+            areQuestionsOpen[index]
+              ? 'bg-sky-200 dark:bg-sky-700'
+              : 'bg-sky-200/85 fine:hover:bg-sky-200 dark:bg-sky-600/85 dark:fine:hover:bg-sky-700'
+          "
+          class="grid cursor-pointer rounded-[20px] p-4 text-base/snug transition-all duration-300 ease-in-out"
+        >
+          <div class="flex items-center justify-start gap-2">
+            <ChevronRightIcon
+              class="h-5 w-5 transform transition-all duration-300 ease-in-out"
+              :class="{ 'rotate-90': areQuestionsOpen[index] }"
+            />
+            <p class="w-full font-medium text-stone-950 dark:text-stone-100">
+              {{ question.question }}
+            </p>
+          </div>
+          <div
+            class="grid transition-all duration-300 ease-in-out"
+            :class="{
+              'grid-rows-[1fr]': areQuestionsOpen[index],
+              'grid-rows-[0fr]': !areQuestionsOpen[index],
+            }"
+          >
+            <div class="overflow-hidden">
+              <p class="mb-2 pl-7 pt-2">{{ question.answer }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <ResponsiveModal
+      :is-open="selectedReview !== null"
+      @close="selectedReview = null"
+    >
+      <div class="grid gap-4">
+        <p class="text-base/[1.4]">
+          {{ selectedReview?.headline }}
+        </p>
+        <div class="-mt-2 flex justify-start gap-1">
+          <StarIcon
+            v-for="n in 5"
+            :key="n"
+            class="size-5 fill-amber-400 dark:fill-amber-600"
+          />
+        </div>
+        <a
+          class="flex cursor-pointer items-center justify-between gap-2 rounded-[20px] bg-green-300 p-4 pl-5 text-base/snug transition-all duration-300 ease-in-out fine:bg-opacity-85 fine:hover:bg-opacity-100 dark:bg-green-600 fine:dark:bg-opacity-85"
+          :href="selectedReview?.url"
+          target="_blank"
+        >
+          <span>Read full review on Trip Advisor</span>
+          <ArrowTopRightOnSquareIcon class="fill-contrast size-5 min-w-5" />
+        </a>
+      </div>
+    </ResponsiveModal>
   </div>
 </template>
 
-<style scoped>
+<style>
 details > summary {
   list-style: none;
 }

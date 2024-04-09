@@ -1,105 +1,94 @@
+<script setup>
+import FacebookLogo from '/assets/icons/FacebookLogo';
+import InstagramLogo from '/assets/icons/InstagramLogo';
+import TripAdvisorLogo from '/assets/icons/TripAdvisorLogo';
+import { PhoneIcon, AtSymbolIcon } from '@heroicons/vue/16/solid';
+</script>
+
 <template>
-  <div class="tablet:mx-auto relative">
+  <div class="relative tablet:mx-auto">
     <div
-      class="transition-all w-full text-gray-200 grid gap-2 mt-8 tablet:pb-8 laptop:pb-8 py-4 absolute overflow-hidden tablet:justify-center tablet:items-center"
+      class="absolute mt-8 grid w-full gap-2 overflow-hidden pb-24 pt-12 transition-all tablet:items-center tablet:justify-center"
       id="footer"
     >
-      <div class="-z-10 bg-green-800 inset-0 absolute">
+      <div class="absolute inset-0 -z-10 bg-green-300 dark:bg-green-600">
         <div
-          class="footer-circle bg-gradient-to-t from-green-700 to-green-800 -right-24 -top-64 opacity-100 animate-interchange-l"
+          class="absolute -right-24 -top-64 aspect-square h-[28rem] animate-interchange-l rounded-full bg-gradient-to-t from-emerald-300 to-green-300 opacity-70 blur-[150px] filter tablet:h-[50rem] dark:from-emerald-700 dark:to-green-600"
         />
         <div
-          class="footer-circle bg-gradient-to-t from-sky-600 to-sky-700 -left-40 -top-64 opacity-100 animate-interchange-r"
+          class="absolute -left-40 -top-64 aspect-square h-[28rem] animate-interchange-r rounded-full bg-gradient-to-t from-sky-200 to-sky-300 opacity-70 blur-[150px] filter tablet:h-[50rem] dark:from-sky-600 dark:to-sky-700"
         />
       </div>
       <div
-        class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 px-4 gap-8 laptop:gap-x-16 items-center z-10 max-w-5xl"
+        class="z-10 grid max-w-5xl items-center justify-between gap-8 px-6 laptop:flex laptop:justify-start"
       >
-        <div class="grid space-y-2 mb-auto">
-          <h2 class="font-semibold text-xl text-gray-200 w-full">
-            About our company
-          </h2>
-          <p class="text-gray-200 text-sm">
-            We are a boutique tour company that specializes in personalized,
-            flexible, private tours to the most amazing destinations in Mexico.
-            We are committed to providing our clients with an unforgettable
-            travel experience.
+        <div class="mb-auto grid gap-2 laptop:max-w-[calc(66%)]">
+          <h2 class="mb-2 text-xl font-semibold">About us</h2>
+          <p>
+            <span class="font-medium">Boutique Tours Mexico</span>
+            is a wonderful family-owned business that treat you like family.
+            There tours are uniquely planned and executed. It is pure perfection
+            from start to finish.
+            <ExternalLink
+              :href="`https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html`"
+            >
+              — Amy P on TripAdvisor
+            </ExternalLink>
+          </p>
+          <p class="">
+            We have been recognized by TripAdvisor for outstanding traveler
+            reviews: Certificate of Excellence 2018 & 2019, Travellers' Choice
+            2020 & 2023.
           </p>
         </div>
 
-        <div class="grid space-y-2 mb-auto">
-          <h2 class="font-semibold text-xl text-gray-200 w-full">Awards</h2>
-          <div class="flex items-center gap-2 text-sm">
-            <TrophyIcon class="h-4" />TripAdvisor's Travellers' Choice 2020
-          </div>
-          <div class="flex items-center gap-2 text-sm">
-            <TrophyIcon class="h-4" />TripAdvisor's Certificate of Excellence
-            2019
-          </div>
-          <div class="flex items-center gap-2 text-sm">
-            <TrophyIcon class="h-4" />TripAdvisor's Certificate of Excellence
-            2018
-          </div>
-        </div>
-
         <div
-          class="grid space-y-2 tablet:grid-cols-2 laptop:grid-cols-1 mb-auto tablet:col-span-2 laptop:col-span-1 tablet:gap-8 laptop:gap-0"
+          class="flex flex-col gap-x-10 gap-y-4 tablet:flex-row laptop:flex-col"
         >
-          <div class="grid space-y-2">
-            <h2 class="font-semibold text-xl text-gray-200 w-full">
-              Get in touch with us
-            </h2>
-
-            <div class="flex items-center gap-2 text-sm">
+          <div class="grid gap-4">
+            <h2 class="w-full text-xl font-semibold">Get in touch with us</h2>
+            <div class="flex items-center gap-2">
               <PhoneIcon class="h-4" />+52 984 190 0856
             </div>
-            <div class="flex items-center gap-2 text-sm">
+            <div class="flex items-center gap-2">
               <AtSymbolIcon class="h-4" />sergeitravel22@gmail.com
             </div>
           </div>
 
-          <div
-            class="flex flex-row gap-4 pt-2 tablet:justify-start items-center"
-          >
-            <a
-              href="https://www.facebook.com/BoutiqueToursMexico/"
-              target="_blank"
-              class="social-link group bg-blue-700"
-              ><FacebookLogo class="social-logo"
-            /></a>
-            <a
-              href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
-              target="_blank"
-              class="social-link group bg-green-700"
-              ><TripAdvisorLogo class="social-logo stroke-black" />
-            </a>
-            <a
-              href="https://www.instagram.com/boutiquetoursmexico/"
-              target="_blank"
-              class="social-link group bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
-              ><InstagramLogo class="social-logo"
-            /></a>
+          <div class="flex flex-col gap-4">
+            <h2
+              class="hidden text-nowrap text-xl font-semibold tablet:block laptop:hidden"
+            >
+              Find us on...
+            </h2>
+            <div
+              class="mt-2 flex w-fit flex-row items-center gap-4 tablet:justify-start"
+            >
+              <a
+                href="https://www.facebook.com/BoutiqueToursMexico/"
+                target="_blank"
+                class="flex size-10 items-center justify-center rounded-[15px] border-stone-200 bg-blue-600"
+              >
+                <FacebookLogo class="size-6 fill-white stroke-transparent" />
+              </a>
+              <a
+                href="https://www.tripadvisor.com.mx/Attraction_Review-g150812-d12246056-Reviews-Boutique_Tours_Mexico-Playa_del_Carmen_Yucatan_Peninsula.html"
+                target="_blank"
+                class="flex size-10 items-center justify-center rounded-[15px] border-stone-200 bg-green-700"
+              >
+                <TripAdvisorLogo class="size-6 fill-white stroke-transparent" />
+              </a>
+              <a
+                href="https://www.instagram.com/boutiquetoursmexico/"
+                target="_blank"
+                class="flex size-10 items-center justify-center rounded-[15px] border-stone-200 bg-gradient-to-bl from-indigo-600 via-pink-600 to-yellow-500"
+              >
+                <InstagramLogo class="size-6 fill-white stroke-transparent" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup>
-import FacebookLogo from "/assets/icons/FacebookLogo";
-import InstagramLogo from "/assets/icons/InstagramLogo";
-import TripAdvisorLogo from "/assets/icons/TripAdvisorLogo";
-import { PhoneIcon, AtSymbolIcon, TrophyIcon } from "@heroicons/vue/20/solid";
-</script>
-
-<style lang="postcss">
-.social-link {
-  @apply border-2 border-gray-200 rounded-sm flex justify-center aspect-square items-center h-10 w-10;
-}
-.social-logo {
-  @apply w-6 fill-white stroke-transparent;
-}
-.footer-circle {
-  @apply absolute h-[28rem] tablet:h-[50rem] aspect-square rounded-full filter blur-[150px] opacity-70;
-}
-</style>

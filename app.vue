@@ -1,40 +1,20 @@
+<script setup lang="ts">
+const { isLargeMobile } = useScreenSizes();
+/*
+ TODO: Work on dark mode color scheme, to implement dark mode, use the following code:
+ Define in script: ```const { prefersDarkMode } = usePrefersDarkMode();```
+ Add property to 'main' tag: ```:class="prefersDarkMode && 'dark'"``` or apply directly to the body tag
+*/
+</script>
+
 <template>
-  <div
-    class="superior-div"
-    :class="{
-      'overflow-hidden': isDropdownOpen,
-    }"
-  >
+  <main>
     <Background />
     <NavigationComp />
     <NuxtPage />
     <FooterComp />
-  </div>
+    <BookingButton v-if="isLargeMobile" />
+  </main>
 </template>
 
-<script setup lang="ts">
-import useAppStateStore from "~/store/appStateStore";
-const appState = useAppStateStore();
-const prefersDarkMode = computed<boolean>(() => appState.prefersDarkMode);
-const isDropdownOpen = computed(() => appState.isDropdownOpen);
-
-watch(isDropdownOpen, (val) => {
-  if (val) document.body.style.overflow = "hidden";
-  else document.body.style.overflow = "auto";
-});
-
-watch(
-  prefersDarkMode,
-  (val) => {
-    if (val) document.body.classList.add("dark");
-    else document.body.classList.remove("dark");
-    appState.setTheme(val);
-  },
-  { immediate: true }
-);
-</script>
-
-<style>
-@import "assets/css/animations.css";
-@import "assets/css/utils.css";
-</style>
+<style></style>

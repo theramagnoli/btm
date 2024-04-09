@@ -1,30 +1,25 @@
-<template>
-  <button
-    class="rounded-full items-center justify-center tablet:pl-1 tablet:pr-3 uppercase transition-all flex backdrop-blur-lg text-md bg-gray-300 dark:bg-stone-800 p-2 tablet:p-1"
-    :class="{
-      'rounded-t-full': rounded === 'top',
-      'rounded-full': rounded === 'full',
-    }"
-  >
-    <FareHarborLogo
-      @click="toFareHarbor"
-      class="h-5 w-5 tablet:h-8 tablet:w-8 mr-2 dark:invert invert-0"
-    />
-
-    <span class="font-display dark:text-gray-200 text-stone-900">
-      Book now
-    </span>
-  </button>
-</template>
-
 <script setup lang="ts">
-import { defineProps } from "vue";
-defineProps<{
-  rounded?: 'top' | 'full';
-}>()
-import FareHarborLogo from "/assets/icons/FareHaborLogo";
+import FareHarborLogo from 'assets/icons/FareHarborLogo.vue';
+import { useHasScrolledToBottom } from '~/composables/useHasScrolledToBottom';
 
-function toFareHarbor() {
-  return !FH.open({ shortname: "boutiquetoursmexico", flow: 278797 });
+const { hasScrolledToBottom } = useHasScrolledToBottom();
+function goToFareHarbor() {
+  return !FH.open({ shortname: 'boutiquetoursmexico', flow: 278797 });
 }
 </script>
+
+<template>
+  <Teleport to="body">
+    <div
+      class="fixed bottom-0 left-0 right-0 z-30 flex justify-center px-4 pb-6"
+    >
+      <button
+        @click="goToFareHarbor"
+        class="flex items-center justify-center whitespace-nowrap rounded-full bg-sky-200 p-2 pl-4 text-base font-medium uppercase drop-shadow-[0px_10px_25px_rgba(0,0,0,0.20)] tablet:pr-2 dark:bg-sky-600"
+      >
+        Book now
+        <FareHarborLogo class="ml-3 h-8 w-8 fill-stone-200" />
+      </button>
+    </div>
+  </Teleport>
+</template>
