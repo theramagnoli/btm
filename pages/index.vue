@@ -34,7 +34,7 @@ watch(isTablet, adjustTestimonialChunks, { immediate: true });
     class="m-auto flex min-h-[calc(100vh-234px)] flex-col overflow-hidden pb-16 pt-[120px] text-stone-900 laptop:max-w-5xl laptop:pt-[100px] dark:text-stone-200"
   >
     <section
-      class="grid items-end justify-around gap-x-8 px-6 laptop:flex desktop:mt-4 desktop:gap-x-16"
+      class="grid items-end justify-around gap-x-8 laptop:flex desktop:mt-4 desktop:gap-x-16 laptop:mx-6"
     >
       <div class="m-auto w-full space-y-6 px-6 laptop:px-0">
         <h1
