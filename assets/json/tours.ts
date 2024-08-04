@@ -6,9 +6,9 @@ export const tours: Tour[] = [
     desc: [
       'Come to Chichen Itzá and visit the amazing Kukulcan pyramid right in the middle of this impressive archaeological site in the state of Yucatán, Mexico.',
       'It was recently discovered this pyramid was built above a huge Cenote (sinkhole) making the construction of this building a real feat.',
-      'You can not miss visiting and knowing the history of this marvelous Mayan Toltec city.  You will also visit other impressive buildings like the biggest prehispanic ball court in America,  the great Planetarium, the Venus Platform and many other temples.',
+      'You can not miss visiting and knowing the history of this marvelous Mayan-Toltec pyramid. You will also visit other impressive buildings, like the biggest prehispanic ball court in America, the great Planetarium, the Venus Platform and many other temples.',
       'Near Chichen Itzá, there are some wonderful refreshing Cenotes which are like an Oasis in the middle of this jungle, here you will be able to swim and snorkel and relax in the pristine waters of these natural swimming pools.',
-      'Finally we are going to visit the beautiful colonial town of Valladolid where you will get to know more of the real Mexico, visiting old churches, markets, etc. This is also a great place for shopping pretty handicrafts or delicious chocolate.',
+      'Finally we are going to visit the beautiful colonial town of Valladolid where you will get to know more of the real Mexico, visiting old churches, markets, etc. This is also a great place for shopping pretty handicrafts or delicious chocolate. At the end, we will take you to lunch with a Mayan family.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FChichenItza%2FChichenItzaPyramidAgain.jpg?alt=media',
@@ -128,9 +128,9 @@ export const tours: Tour[] = [
     id: 'Tulum',
     title: 'Tulum',
     desc: [
-      'Tulum, the most precious Pearl in the Caribbean sea, it is a beautiful Mayan city where you will be able to know more about the Mayan culture and admire the magnificent views of the turquoise Caribbean sea.',
+      'Tulum, the most precious pearl in the Caribbean sea, it is a beautiful Mayan city where you will be able to know more about the Mayan culture and admire the magnificent views of the turquoise Caribbean sea.',
       'After visiting Tulum, we are going to snorkel in one of the most amazing open cenotes with crystal clear waters surrounded by mangroves or limestone where you can watch fish and birds.',
-      'Then we will swim in a spectacular underground river in a cave cenote in which we can watch impressive rock formations like stalactites and stalagmites.',
+      'Then we will swim in a spectacular underground river in a cave cenote in which we can watch impressive rock formations like stalactites and stalagmites. At the end, we will take you downtown Tulum, to have a great traditional lunch in the area.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FTulum%2FTulumCliche.jpg?alt=media',
@@ -188,7 +188,7 @@ export const tours: Tour[] = [
     title: 'Cenotes',
     desc: [
       'Swimming and snorkeling in Cenotes is a lifetime experience which can only be done in this part of the world. We have chosen the best cenotes (caves and sinkholes) for you to enjoy.',
-      'You are going to explore 3 amazing cenotes, some of them full of beautiful fish, some others with interesting sea fossils, other ones full of stalactites, stalagmites and rock formations; but all of them with crystal clear water.',
+      'You are going to explore 3 amazing cenotes, some of them full of beautiful fish, some others with interesting sea fossils, other ones full of stalactites, stalagmites and rock formations; but all of them with crystal clear water. At the end, we will take you downtown Tulum for some amazing traditional tacos.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FCenotes%2FKidJumping.png?alt=media',
@@ -245,8 +245,8 @@ export const tours: Tour[] = [
     id: 'Coba',
     title: 'Coba',
     desc: [
-      'In this amazing Mayan city you are allowed to climb the second highest Mayan pyramid in Mexico with 120 steps. You will enjoy the tour riding bikes or taking the Mayan limo. Here you will be able to combine history and adventure.',
-      'Near Coba there are some spectacular cenotes with pristine waters where you will be able to dive or jump, or just swim in these refreshing waters. Finally we are going to have a delicious Mayan lunch in Coba village or in Tulum town.',
+      'In this amazing Mayan city you will be able to admire the second highest Mayan pyramid in Mexico with 120 steps. You will enjoy the tour riding bikes or taking the “Mayan limo”. Here you will be able to combine history and adventure.',
+      'Near Coba there are some spectacular cenotes with pristine waters, where you will be able to dive or jump, or just swim in these refreshing waters. Finally we are going to have a delicious Mayan lunch in Coba village or in Tulum town.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FCoba%2FCobaPyramid.jpg?alt=media',
@@ -299,7 +299,7 @@ export const tours: Tour[] = [
     title: 'Akumal',
     desc: [
       'Swimming with turtles is a must-do experience, in this activity you will be able to snorkel with this amazing sea creatures in their natural habitat, you can also see stingrays, colorful fish and all kind of sea life.',
-      'Afterwards we are going to swim and snorkel in a cenote.',
+      'Afterwards we are going to swim and snorkel in a beautiful cenote. And finally, some delicious tacos in Tulum town.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FAkumal%2FAnotherTurtleUderwater.jpg?alt=media',
@@ -341,9 +341,9 @@ export const tours: Tour[] = [
     id: 'EkBalam',
     title: 'Ek-Balam',
     desc: [
-      'Ek Balam, the Mayan Gem, means Black Jaguar, it is not very well known however it is one of the most outstanding Mayan cities ever. It has an amazing acropolis that is 90 feet high and 450 feet long and 165 feet wide. In this building you can see some of the greatest mayan carvings.',
-      'You are also allowed to climb and enter into most of the buildings like the Palace and Ball court.',
-      'Then, you will take bikes to go to a wonderful Cenote with crystal clear waters where you can dive, jump or just swim and relax in its refreshing waters. Finally we are going to visit the beautiful colonial town of Valladolid where you will get to know more of this beautiful country named Mexico.',
+      'Ek Balam, this Mayan Gem, means Black Jaguar, it is not very well known however it is one of the most outstanding Mayan cities ever. It has an amazing acropolis that is 96 feet high and 450 feet long and 165 feet wide. In this building you can see some of the greatest mayan carvings.',
+      'You are also allowed to climb and enter into most of the buildings like the Palace and Ball court, enjoying some amazing views.',
+      'Then, you visit a wonderful Cenote with crystal clear waters where you can dive, jump or just swim and relax in its refreshing waters. Finally we are going to visit the beautiful colonial town of Valladolid. After this, we will take you to have lunch with an authentic Mayan family.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FEkBalam%2FEkBalamFromAbove.jpg?alt=media',
@@ -396,9 +396,9 @@ export const tours: Tour[] = [
     title: "Sian Ka'an & Punta Allen",
     desc: [
       "If you love nature and enjoy watching wildlife this is the tour for you. Sian Ka'an means the place where heaven is born and it is a UNESCO World Heritage and a great place to visit.",
-      'You will start your adventure in Paso Lagartos where you will take a boat in the beautiful Ascension lagoon  where you can see different type of birds like sea eagles, frigates, jabiru storks, cormorant, pelicans and if you are lucky enough some manatees. Then you will head where the lagoon and the ocean meet, that is the place in which you will see many dolphins.',
+      'You will start your adventure in Paso Lagartos where you will take a boat in the beautiful Ascension lagoon where you can see different type of birds like sea eagles, frigates, jabiru storks, cormorant, pelicans and if you are lucky enough some manatees. Then you will head where the lagoon and the ocean meet, that is the place in which you will see many dolphins.',
       'After this you will sail a little bit into the ocean to watch big sea turtles. Afterwards you will be taken to a section of the second longest reef in the world where you will do some great snorkeling watching all kind of beautiful fish and sea life. After this activity I will take you to a beautiful crystal clear shallow area of the sea just to relax and have some beers, sodas or water.',
-      'Finally you will be having a delicious lunch in Punta Allen town.',
+      'To finish you experience, you will have lunch in the town of Punta Allen.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FSianKaan%26PuntaAllen%2FDolphin.jpg?alt=media',
@@ -445,7 +445,7 @@ export const tours: Tour[] = [
     id: 'SianKaan&Muyil',
     title: "Sian Ka'an & Muyil",
     desc: [
-      'If you are looking for a great relaxing day, I invite you to go with me to this Amazing World Heritage site called Sian Ka’an (door to Heaven). Once we get there we are going to take a beautiful ride in a boat through two crystal clear turquoise lagoons.',
+      'If you are looking for a great relaxing day, go with us to this Amazing World Heritage site called Sian Ka’an (door to Heaven). Once we get there we are going to take a beautiful ride in a boat through two crystal clear turquoise lagoons.',
       'Then we are going to swim and just let go in a breathtaking lazy river for about 30 or 40 minutes, this experience is so relaxing only floating while watching birds, mangroves, trees, total contact with nature.',
       'On the way back we can visit the wonderful small Mayan city of Muyil if you want to learn about Mayan culture. And finally, a delicious ceviche in Tulum.',
     ],
@@ -504,8 +504,8 @@ export const tours: Tour[] = [
     id: 'MayanAdventure',
     title: 'Mayan Adventure',
     desc: [
-      'If you want to spend a full day. of fun and adventure doing zip- lining, rappelling, rock-climbing, hiking and swimming in a breathtaking underground river.',
-      'I invite you to explore the Mayan jungle with me and do all these activities. You will also enjoy a delicious Mayan lunch in this park. ',
+      'If you want to spend a full day of fun and adventure doing zip- lining, rappelling, rock-climbing, hiking and swimming in a breathtaking underground river, this is the perfect tour for you.',
+      'Afterwards we are going to swim and explore in a magnificent cavern cenote. And finally, some delicious tacos in Tulum town.',
     ],
     cover:
       'https://firebasestorage.googleapis.com/v0/b/boutique-tours-mexico.appspot.com/o/tours%2FMayanAdventure%2FRidingATVS.jpg?alt=media',
