@@ -1,4 +1,4 @@
-export const tourColorDictionary = {
+export const tourColorDict = {
   ChichenItza: 'green',
   MayanAdventure: 'green',
   YolasBiking: 'lime',

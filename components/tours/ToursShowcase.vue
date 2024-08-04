@@ -3,7 +3,7 @@ import { ref } from '#imports';
 import { SparklesIcon } from '@heroicons/vue/16/solid';
 import { useMediaQuery } from '@vueuse/core';
 import { tours } from 'assets/json/tours';
-import { tourColorDictionary } from 'assets/json/tourColorDictionary';
+import { tourColorDict } from 'assets/json/tourColorDict';
 
 const isMobile = useMediaQuery('(max-width: 600px)');
 const isImageLoaded = ref<Boolean[]>([]);
@@ -56,7 +56,7 @@ preloadImages();
           class="absolute bottom-0 left-0 right-0 h-32 w-auto overflow-hidden rounded-b-sm rounded-t-sm bg-gradient-radial-to-t from-gray-900 p-4"
         >
           <p
-            :class="`absolute inset-x-4 bottom-4 flex items-center justify-between rounded-[20px] p-4 font-medium backdrop-blur-lg transition-all bg-${tourColorDictionary[tour.id]}-300 dark:bg-${tourColorDictionary[tour.id]}-700`"
+            :class="`absolute inset-x-4 bottom-4 flex items-center justify-between rounded-[20px] p-4 font-medium backdrop-blur-lg transition-all bg-${tourColorDict[tour.id]}-300 dark:bg-${tourColorDict[tour.id]}-700`"
           >
             {{ tour.title }}
           </p>

@@ -6,7 +6,7 @@
     viewBox="0 0 212 212"
     stroke="currentColor"
   >
-    <circle class="cls-1" cx="106" cy="106" r="101.5" />
+    <circle class="cls-1" cx="107" cy="107" r="101.5" />
     <path
       class="cls-1"
       d="M693.68,647.73V613.06l68,0,29,0-97.08-.06L681.32,601.6V589.12H801.8v13.44l-11,10.56q0,17.75,0,35.48"
@@ -30,6 +30,6 @@
 .cls-1 {
   fill: none;
   stroke-linejoin: round;
-  stroke-width: 9px;
+  stroke-width: 12px;
 }
 </style>

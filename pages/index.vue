@@ -69,7 +69,7 @@ watch(isTablet, adjustTestimonialChunks, { immediate: true });
         class="mx-6 mb-8 flex max-w-2xl flex-row flex-wrap items-center gap-2 child:flex child:items-center child:gap-x-2 tablet:justify-center"
       >
         <li v-for="benefit in benefits">
-          <span class="-my-4 text-6xl font-bold text-sky-300 dark:text-sky-700"
+          <span class="-my-4 pb-1 text-6xl font-bold text-sky-300 dark:text-sky-700 font-display"
             >·</span
           >
           {{ benefit }}

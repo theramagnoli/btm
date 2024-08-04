@@ -117,7 +117,7 @@ function toFareHarbor() {
             v-for="route in routes"
             :key="route.path"
             :id="route.path"
-            class="pb-1 pt-1 uppercase tracking-wider text-stone-950 dark:text-stone-100"
+            class="pb-1 pt-1 uppercase tracking-wider text-stone-950 dark:text-stone-100 font-display"
           >
             <NuxtLink :to="route.path" class="relative font-medium">
               {{ route.name }}
@@ -129,7 +129,7 @@ function toFareHarbor() {
       <div class="flex items-center justify-end gap-4" v-if="!isLargeMobile">
         <button
           @click="toFareHarbor"
-          class="group flex items-center justify-center whitespace-nowrap rounded-full bg-sky-200 p-2 pl-4 text-base font-medium uppercase drop-shadow-[0px_10px_25px_rgba(0,0,0,0.20)] transition-all duration-300 ease-in-out tablet:pr-2 fine:bg-opacity-70 dark:bg-sky-600"
+          class="group flex items-center justify-center whitespace-nowrap rounded-full bg-sky-200 p-2 pl-4 text-base font-medium uppercase drop-shadow-[0px_10px_25px_rgba(0,0,0,0.20)] transition-all duration-300 ease-in-out tablet:pr-2 fine:bg-opacity-70 dark:bg-sky-600 font-display"
         >
           Book now
           <FareHarborLogo

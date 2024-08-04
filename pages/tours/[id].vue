@@ -4,7 +4,7 @@ import { CalendarIcon, ArrowLeftIcon } from '@heroicons/vue/16/solid';
 import { useMediaQuery } from '@vueuse/core';
 import { Tour, emptyTour } from '~/types/Tour';
 import ImageSlider from '~/components/tours/ImageSlider.vue';
-import { tourColorDictionary } from 'assets/json/tourColorDictionary';
+import { tourColorDict } from 'assets/json/tourColorDict';
 
 const route = useRoute();
 const router = useRouter();
@@ -49,13 +49,13 @@ function toFareHarborItem(itemId: string) {
         <div class="flex gap-4">
           <NuxtLink
             to="/tours"
-            :class="`flex aspect-square size-10 items-center justify-center rounded-full bg-opacity-50 p-2 transition-all duration-300 hover:bg-opacity-80 dark:bg-opacity-50 bg-${tourColorDictionary[tour.id]}-50 dark:bg-${tourColorDictionary[tour.id]}-900`"
+            :class="`flex aspect-square size-10 items-center justify-center rounded-full bg-opacity-50 p-2 transition-all duration-300 hover:bg-opacity-80 dark:bg-opacity-50 bg-${tourColorDict[tour.id]}-50 dark:bg-${tourColorDict[tour.id]}-900`"
           >
             <ArrowLeftIcon class="size-5" />
           </NuxtLink>
           <button
             @click="toFareHarborItem(tour.book)"
-            :class="`flex h-10 items-center gap-2 rounded-full bg-opacity-50 p-2 pl-3 pr-4 transition-all duration-300 hover:bg-opacity-80 dark:bg-opacity-50 bg-${tourColorDictionary[tour.id]}-50 dark:bg-${tourColorDictionary[tour.id]}-900`"
+            :class="`flex h-10 items-center gap-2 rounded-full bg-opacity-50 p-2 pl-3 pr-4 transition-all duration-300 hover:bg-opacity-80 dark:bg-opacity-50 bg-${tourColorDict[tour.id]}-50 dark:bg-${tourColorDict[tour.id]}-900`"
           >
             <CalendarIcon class="size-5" /> Book this tour
           </button>

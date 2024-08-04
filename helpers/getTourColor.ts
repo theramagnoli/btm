@@ -1,6 +1,6 @@
-import { tourColorDictionary } from 'assets/json/tourColorDictionary';
+import { tourColorDict } from 'assets/json/tourColorDict';
 import { TourId } from '~/types/TourId';
 
 export const getTourColor = (tourId: TourId): string => {
-  return tourColorDictionary[tourId];
+  return tourColorDict[tourId];
 };

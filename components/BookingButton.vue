@@ -15,7 +15,7 @@ function goToFareHarbor() {
     >
       <button
         @click="goToFareHarbor"
-        class="flex items-center justify-center whitespace-nowrap rounded-full bg-sky-200 p-2 pl-4 text-base font-medium uppercase drop-shadow-[0px_10px_25px_rgba(0,0,0,0.20)] tablet:pr-2 dark:bg-sky-600"
+        class="flex items-center justify-center whitespace-nowrap rounded-full bg-sky-200 p-2 pl-4 text-base font-medium uppercase drop-shadow-[0px_10px_25px_rgba(0,0,0,0.20)] tablet:pr-2 dark:bg-sky-600 font-display"
       >
         Book now
         <FareHarborLogo class="ml-3 h-8 w-8 fill-stone-200" />
