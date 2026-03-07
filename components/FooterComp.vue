@@ -48,10 +48,22 @@ import { PhoneIcon, AtSymbolIcon } from '@heroicons/vue/16/solid';
           <div class="grid gap-4">
             <h2 class="w-full text-xl font-semibold">Get in touch with us</h2>
             <div class="flex items-center gap-2">
-              <PhoneIcon class="h-4" />+52 984 190 0856
+              <PhoneIcon class="h-4" />
+              <a
+                class="underline decoration-emerald-900/50 decoration-dotted decoration-2 underline-offset-4"
+                href="tel:+529841900856"
+              >
+                +52 984 190 0856
+              </a>
             </div>
             <div class="flex items-center gap-2">
-              <AtSymbolIcon class="h-4" />sergeitravel22@gmail.com
+              <AtSymbolIcon class="h-4" />
+              <a
+                class="underline decoration-emerald-900/50 decoration-dotted decoration-2 underline-offset-4"
+                href="mailto:contact@boutiquetoursmexico.com"
+              >
+                contact@boutiquetoursmexico.com
+              </a>
             </div>
           </div>
 
