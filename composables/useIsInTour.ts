@@ -1,5 +1,3 @@
-import { useRoute } from 'vue-router';
-
 export function useIsInTour() {
   const isInTour = computed(() => {
     const route = useRoute();
