@@ -51,9 +51,9 @@ import { PhoneIcon, AtSymbolIcon } from '@heroicons/vue/16/solid';
               <PhoneIcon class="h-4" />
               <a
                 class="underline decoration-emerald-900/50 decoration-dotted decoration-2 underline-offset-4"
-                href="tel:+529841900856"
+                href="tel:+529842347535"
               >
-                +52 984 190 0856
+                +52 984 234 7535
               </a>
             </div>
             <div class="flex items-center gap-2">
